@@ -1,6 +1,6 @@
 <!DOCTYPE html><!-- BEGIN app/views/layouts/application.html.erb
 --><html lang="en"><head>
-    <title>The University of Melbourne â Cultural Collections Search</title>
+    <title>The University of Melbourne — Cultural Collections Search</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Cultural Collections Search">
@@ -22,99 +22,52 @@
 <link rel="stylesheet" href="../../assets/responsive_overrides-4a8522a0.css" data-turbo-track="reload">
 <link rel="stylesheet" href="../../assets/search_results_banner-d9e1ad78.css" data-turbo-track="reload">
 <link rel="stylesheet" href="../../assets/tailwind-16beeb73.css" data-turbo-track="reload">
-    <script type="importmap" data-turbo-track="reload" nonce="LVpH1rnfRi44sZfcJkW87g==">{
-  "imports": {
-    "application": "/assets/application-17abd09c.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-9fd88cd5.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "controllers/search_dropdown_renderer": "/assets/controllers/search_dropdown_renderer-49b5bb55.js",
-    "@github/auto-complete-element": "/assets/@github--auto-complete-element-dcaeae99.js",
-    "@popperjs/core": "/assets/@popperjs--core-c61fbf9e.js",
-    "bootstrap": "/assets/bootstrap-9304d36f.js",
-    "@github/combobox-nav": "/assets/@github--combobox-nav-dd202526.js",
-    "blacklight-frontend/bookmark_toggle": "/assets/blacklight-frontend/bookmark_toggle-4db80d2f.js",
-    "blacklight-frontend/button_focus": "/assets/blacklight-frontend/button_focus-9e66e362.js",
-    "blacklight-frontend/checkbox_submit": "/assets/blacklight-frontend/checkbox_submit-a4b81576.js",
-    "blacklight-frontend/core": "/assets/blacklight-frontend/core-79dd4d36.js",
-    "blacklight-frontend/debounce": "/assets/blacklight-frontend/debounce-a77752c3.js",
-    "blacklight-frontend/facet_suggest": "/assets/blacklight-frontend/facet_suggest-8a45a83f.js",
-    "blacklight-frontend": "/assets/blacklight-frontend/index-7d352063.js",
-    "blacklight-frontend/modal": "/assets/blacklight-frontend/modal-bc2d1d06.js",
-    "blacklight-frontend/search_context": "/assets/blacklight-frontend/search_context-1287545b.js",
-    "controllers/advanced_search_controller": "/assets/controllers/advanced_search_controller-80ebbcd7.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/card_thumbnail_controller": "/assets/controllers/card_thumbnail_controller-f474101d.js",
-    "controllers/carousel_controller": "/assets/controllers/carousel_controller-7cd0d325.js",
-    "controllers/citation_controller": "/assets/controllers/citation_controller-a2c76099.js",
-    "controllers/copy_controller": "/assets/controllers/copy_controller-7911c560.js",
-    "controllers/date_histogram_controller": "/assets/controllers/date_histogram_controller-8719db11.js",
-    "controllers/facet_dropdown_controller": "/assets/controllers/facet_dropdown_controller-88eec59d.js",
-    "controllers/facet_search_controller": "/assets/controllers/facet_search_controller-4b1e690d.js",
-    "controllers/filter_modal_controller": "/assets/controllers/filter_modal_controller-cf446401.js",
-    "controllers/filter_tabs_controller": "/assets/controllers/filter_tabs_controller-6adaeca1.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/keyboard_shortcuts_controller": "/assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js",
-    "controllers/live_filter_controller": "/assets/controllers/live_filter_controller-059500ae.js",
-    "controllers/media_viewer_controller": "/assets/controllers/media_viewer_controller-b941babb.js",
-    "controllers/mega_menu_controller": "/assets/controllers/mega_menu_controller-0de8720b.js",
-    "controllers/mobile_menu_controller": "/assets/controllers/mobile_menu_controller-00e7d56f.js",
-    "controllers/motion_mosaic_controller": "/assets/controllers/motion_mosaic_controller-aa7208c5.js",
-    "controllers/popover_controller": "/assets/controllers/popover_controller-708a88f4.js",
-    "controllers/record_action_controller": "/assets/controllers/record_action_controller-fc9523e1.js",
-    "controllers/search_suggest_controller": "/assets/controllers/search_suggest_controller-8c8c4fdb.js",
-    "controllers/share_controller": "/assets/controllers/share_controller-8db659d3.js",
-    "controllers/show_more_controller": "/assets/controllers/show_more_controller-15ce54ba.js",
-    "controllers/sticky_top_reveal_controller": "/assets/controllers/sticky_top_reveal_controller-312a81f1.js",
-    "controllers/tooltip_controller": "/assets/controllers/tooltip_controller-f0b9e0b9.js"
-  }
-}</script>
-<link rel="modulepreload" href="../../assets/application-17abd09c.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/turbo.min-9fd88cd5.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/stimulus.min-4b1e420e.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/stimulus-loading-1fc53fe7.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/search_dropdown_renderer-49b5bb55.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/@github--auto-complete-element-dcaeae99.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/@popperjs--core-c61fbf9e.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/bootstrap-9304d36f.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/@github--combobox-nav-dd202526.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/button_focus-9e66e362.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/checkbox_submit-a4b81576.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/core-79dd4d36.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/debounce-a77752c3.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/facet_suggest-8a45a83f.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/index-7d352063.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/modal-bc2d1d06.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/search_context-1287545b.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/advanced_search_controller-80ebbcd7.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/application-3affb389.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/card_thumbnail_controller-f474101d.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/carousel_controller-7cd0d325.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/citation_controller-a2c76099.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/copy_controller-7911c560.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/date_histogram_controller-8719db11.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/facet_dropdown_controller-88eec59d.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/facet_search_controller-4b1e690d.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/filter_modal_controller-cf446401.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/filter_tabs_controller-6adaeca1.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/hello_controller-708796bd.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/index-ee64e1f1.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/live_filter_controller-059500ae.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/media_viewer_controller-b941babb.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/mega_menu_controller-0de8720b.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/mobile_menu_controller-00e7d56f.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/motion_mosaic_controller-aa7208c5.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/popover_controller-708a88f4.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/record_action_controller-fc9523e1.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/search_suggest_controller-8c8c4fdb.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/share_controller-8db659d3.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/show_more_controller-15ce54ba.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/sticky_top_reveal_controller-312a81f1.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<link rel="modulepreload" href="../../assets/controllers/tooltip_controller-f0b9e0b9.js" nonce="LVpH1rnfRi44sZfcJkW87g==">
-<script type="module" nonce="LVpH1rnfRi44sZfcJkW87g==">import "application"</script>
+    <script type="importmap" data-turbo-track="reload" nonce="Z2XRodsdcsCdCoHNvRontQ==">{"imports":{"application":"../../assets/application-17abd09c.js","@hotwired/turbo-rails":"../../assets/turbo.min-9fd88cd5.js","@hotwired/stimulus":"../../assets/stimulus.min-4b1e420e.js","@hotwired/stimulus-loading":"../../assets/stimulus-loading-1fc53fe7.js","controllers/search_dropdown_renderer":"../../assets/controllers/search_dropdown_renderer-49b5bb55.js","@github/auto-complete-element":"../../assets/@github--auto-complete-element-dcaeae99.js","@popperjs/core":"../../assets/@popperjs--core-c61fbf9e.js","bootstrap":"../../assets/bootstrap-9304d36f.js","@github/combobox-nav":"../../assets/@github--combobox-nav-dd202526.js","blacklight-frontend/bookmark_toggle":"../../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js","blacklight-frontend/button_focus":"../../assets/blacklight-frontend/button_focus-9e66e362.js","blacklight-frontend/checkbox_submit":"../../assets/blacklight-frontend/checkbox_submit-a4b81576.js","blacklight-frontend/core":"../../assets/blacklight-frontend/core-79dd4d36.js","blacklight-frontend/debounce":"../../assets/blacklight-frontend/debounce-a77752c3.js","blacklight-frontend/facet_suggest":"../../assets/blacklight-frontend/facet_suggest-8a45a83f.js","blacklight-frontend":"../../assets/blacklight-frontend/index-7d352063.js","blacklight-frontend/modal":"../../assets/blacklight-frontend/modal-bc2d1d06.js","blacklight-frontend/search_context":"../../assets/blacklight-frontend/search_context-1287545b.js","controllers/advanced_search_controller":"../../assets/controllers/advanced_search_controller-80ebbcd7.js","controllers/application":"../../assets/controllers/application-3affb389.js","controllers/card_thumbnail_controller":"../../assets/controllers/card_thumbnail_controller-f474101d.js","controllers/carousel_controller":"../../assets/controllers/carousel_controller-7cd0d325.js","controllers/citation_controller":"../../assets/controllers/citation_controller-a2c76099.js","controllers/copy_controller":"../../assets/controllers/copy_controller-7911c560.js","controllers/date_histogram_controller":"../../assets/controllers/date_histogram_controller-8719db11.js","controllers/facet_dropdown_controller":"../../assets/controllers/facet_dropdown_controller-88eec59d.js","controllers/facet_search_controller":"../../assets/controllers/facet_search_controller-4b1e690d.js","controllers/filter_modal_controller":"../../assets/controllers/filter_modal_controller-cf446401.js","controllers/filter_tabs_controller":"../../assets/controllers/filter_tabs_controller-6adaeca1.js","controllers/hello_controller":"../../assets/controllers/hello_controller-708796bd.js","controllers":"../../assets/controllers/index-ee64e1f1.js","controllers/keyboard_shortcuts_controller":"../../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js","controllers/live_filter_controller":"../../assets/controllers/live_filter_controller-059500ae.js","controllers/media_viewer_controller":"../../assets/controllers/media_viewer_controller-b941babb.js","controllers/mega_menu_controller":"../../assets/controllers/mega_menu_controller-0de8720b.js","controllers/mobile_menu_controller":"../../assets/controllers/mobile_menu_controller-00e7d56f.js","controllers/motion_mosaic_controller":"../../assets/controllers/motion_mosaic_controller-aa7208c5.js","controllers/popover_controller":"../../assets/controllers/popover_controller-708a88f4.js","controllers/record_action_controller":"../../assets/controllers/record_action_controller-fc9523e1.js","controllers/search_suggest_controller":"../../assets/controllers/search_suggest_controller-8c8c4fdb.js","controllers/share_controller":"../../assets/controllers/share_controller-8db659d3.js","controllers/show_more_controller":"../../assets/controllers/show_more_controller-15ce54ba.js","controllers/sticky_top_reveal_controller":"../../assets/controllers/sticky_top_reveal_controller-312a81f1.js","controllers/tooltip_controller":"../../assets/controllers/tooltip_controller-f0b9e0b9.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-17abd09c.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/turbo.min-9fd88cd5.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/stimulus.min-4b1e420e.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/stimulus-loading-1fc53fe7.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/search_dropdown_renderer-49b5bb55.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/@github--auto-complete-element-dcaeae99.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/@popperjs--core-c61fbf9e.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/bootstrap-9304d36f.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/@github--combobox-nav-dd202526.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/button_focus-9e66e362.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/checkbox_submit-a4b81576.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/core-79dd4d36.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/debounce-a77752c3.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/facet_suggest-8a45a83f.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/index-7d352063.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/modal-bc2d1d06.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/search_context-1287545b.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/advanced_search_controller-80ebbcd7.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/application-3affb389.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/card_thumbnail_controller-f474101d.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/carousel_controller-7cd0d325.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/citation_controller-a2c76099.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/copy_controller-7911c560.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/date_histogram_controller-8719db11.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/facet_dropdown_controller-88eec59d.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/facet_search_controller-4b1e690d.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/filter_modal_controller-cf446401.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/filter_tabs_controller-6adaeca1.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/hello_controller-708796bd.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/index-ee64e1f1.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/live_filter_controller-059500ae.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/media_viewer_controller-b941babb.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/mega_menu_controller-0de8720b.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/mobile_menu_controller-00e7d56f.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/motion_mosaic_controller-aa7208c5.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/popover_controller-708a88f4.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/record_action_controller-fc9523e1.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/search_suggest_controller-8c8c4fdb.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/share_controller-8db659d3.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/show_more_controller-15ce54ba.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/sticky_top_reveal_controller-312a81f1.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<link rel="modulepreload" href="../../assets/controllers/tooltip_controller-f0b9e0b9.js" nonce="Z2XRodsdcsCdCoHNvRontQ==">
+<script type="module" nonce="Z2XRodsdcsCdCoHNvRontQ==">import "application"</script>
   </head>
 
   <body class="min-h-screen overflow-x-clip bg-bg-light text-text-primary" data-controller="filter-modal keyboard-shortcuts" data-filter-modal-url-value="/catalog/filters">
@@ -142,11 +95,11 @@
 
     <div class="flex min-w-0 flex-1 flex-col">
       <div class="flex w-full justify-end border-b border-stroke-weak bg-footer-dark p-2">
-        <div class="w-full max-w-[288px]" data-controller="search-suggest" data-search-suggest-portal-value="true" data-search-suggest-search-url-value="/catalog">
-          <form class="flex h-12 w-full items-stretch border border-primary bg-white" action="/catalog" accept-charset="UTF-8" method="get">
+        <div class="w-full max-w-[288px]" data-controller="search-suggest" data-search-suggest-portal-value="true" data-search-suggest-search-url-value="https://enterprise-services-group.github.io/CCS-HiFI-prototype/catalog/">
+          <form class="flex h-12 w-full items-stretch border border-primary bg-white" action="../../catalog/index.html" accept-charset="UTF-8" method="get">
             <label class="flex min-w-0 flex-1 items-center">
               <span class="sr-only">Search Cross Collections</span>
-              <input type="text" name="q" id="header-search-desktop-q" placeholder="Search Cross Collectionsâ¦" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-dropdown" aria-expanded="false" class="w-full min-w-0 border-0 bg-transparent px-3 text-lg text-text-tertiary outline-none placeholder:text-text-tertiary" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+              <input type="text" name="q" id="header-search-desktop-q" placeholder="Search Cross Collections…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-dropdown" aria-expanded="false" class="w-full min-w-0 border-0 bg-transparent px-3 text-lg text-text-tertiary outline-none placeholder:text-text-tertiary" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
             </label>
             <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-primary bg-accent-secondary px-3 text-primary transition-colors hover:brightness-95">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
@@ -314,9 +267,9 @@
     </div>
   </div>
 
-  <div data-mobile-menu-target="panel" data-panel="search" hidden="" data-controller="search-suggest" data-search-suggest-search-url-value="/catalog" class="border-t border-stroke-weak px-4 py-4 lg:hidden">
-    <form class="flex h-12 w-full items-stretch border border-stroke-weak bg-white" action="/catalog" accept-charset="UTF-8" method="get">
-      <input type="text" name="q" id="header-search-mobile-q" placeholder="Search Cross Collectionsâ¦" class="w-full min-w-0 flex-1 border-0 bg-transparent px-3 text-lg text-text-brand outline-none placeholder:text-text-tertiary" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-suggestions" aria-expanded="false" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+  <div data-mobile-menu-target="panel" data-panel="search" hidden="" data-controller="search-suggest" data-search-suggest-search-url-value="https://enterprise-services-group.github.io/CCS-HiFI-prototype/catalog/" class="border-t border-stroke-weak px-4 py-4 lg:hidden">
+    <form class="flex h-12 w-full items-stretch border border-stroke-weak bg-white" action="../../catalog/index.html" accept-charset="UTF-8" method="get">
+      <input type="text" name="q" id="header-search-mobile-q" placeholder="Search Cross Collections…" class="w-full min-w-0 flex-1 border-0 bg-transparent px-3 text-lg text-text-brand outline-none placeholder:text-text-tertiary" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-suggestions" aria-expanded="false" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
       <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-stroke-weak bg-accent-secondary px-3 text-primary">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
       </button>
@@ -433,7 +386,7 @@
     Description
   </div>
   <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
-                            Murrtjumun (Grewia Retusifolia) the bark of the root is stripped, pounded and boiled in a billy. The resulting jelly like substance is used to draw and heal boils. This drawing is one part of six botanical drawings of medicinal plants. Artist Yalmakany Marawili holds the healing knowledge of YolÅu plant medicine and strives to promote and sustain it.
+                            Murrtjumun (Grewia Retusifolia) the bark of the root is stripped, pounded and boiled in a billy. The resulting jelly like substance is used to draw and heal boils. This drawing is one part of six botanical drawings of medicinal plants. Artist Yalmakany Marawili holds the healing knowledge of Yolŋu plant medicine and strives to promote and sustain it.
 
   </div>
 </div>
@@ -446,7 +399,7 @@
   <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
                             <span class="flex items-start gap-1.5">
                           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-4 shrink-0 text-text-tertiary" data-icon="lock"><path d="M6 22C5.45 22 4.97917 21.8042 4.5875 21.4125C4.19583 21.0208 4 20.55 4 20V10C4 9.45 4.19583 8.97917 4.5875 8.5875C4.97917 8.19583 5.45 8 6 8H7V6C7 4.61667 7.4875 3.4375 8.4625 2.4625C9.4375 1.4875 10.6167 1 12 1C13.3833 1 14.5625 1.4875 15.5375 2.4625C16.5125 3.4375 17 4.61667 17 6V8H18C18.55 8 19.0208 8.19583 19.4125 8.5875C19.8042 8.97917 20 9.45 20 10V20C20 20.55 19.8042 21.0208 19.4125 21.4125C19.0208 21.8042 18.55 22 18 22H6ZM12 17C12.55 17 13.0208 16.8042 13.4125 16.4125C13.8042 16.0208 14 15.55 14 15C14 14.45 13.8042 13.9792 13.4125 13.5875C13.0208 13.1958 12.55 13 12 13C11.45 13 10.9792 13.1958 10.5875 13.5875C10.1958 13.9792 10 14.45 10 15C10 15.55 10.1958 16.0208 10.5875 16.4125C10.9792 16.8042 11.45 17 12 17ZM9 8H15V6C15 5.16667 14.7083 4.45833 14.125 3.875C13.5417 3.29167 12.8333 3 12 3C11.1667 3 10.4583 3.29167 9.875 3.875C9.29167 4.45833 9 5.16667 9 6V8Z" fill="currentColor"></path></svg>
-                          <span>Copyright owner, Yalmakany Marawili (b.1957), Â© Copyright. This work and documentation is the copyright of the artist and may not be reproduced in any form without the written permission of the artist and clan concerned.; Copyright owner, Buku-Larrnggay Mulka Centre; Publish low resolution images online, Medical History Museum; Publish artist's text, Medical History Museum</span>
+                          <span>Copyright owner, Yalmakany Marawili (b.1957), © Copyright. This work and documentation is the copyright of the artist and may not be reproduced in any form without the written permission of the artist and clan concerned.; Copyright owner, Buku-Larrnggay Mulka Centre; Publish low resolution images online, Medical History Museum; Publish artist's text, Medical History Museum</span>
                         </span>
 
   </div>
@@ -627,7 +580,7 @@
             <option value="Harvard" data-citation-text="Yalmakany Marawili (b.1957) (2023) <em>Murrtjumun</em>, Medical History Museum, University of Melbourne. Available at: unimelb:item:medhist:38082 (Accessed: 14 September 2026)." data-citation-plain="Yalmakany Marawili (b.1957) (2023) Murrtjumun, Medical History Museum, University of Melbourne. Available at: unimelb:item:medhist:38082 (Accessed: 14 September 2026)." selected="">Harvard</option>
             <option value="APA 7th" data-citation-text="Yalmakany Marawili (b.1957) (2023). <em>Murrtjumun</em>. Medical History Museum, University of Melbourne. unimelb:item:medhist:38082" data-citation-plain="Yalmakany Marawili (b.1957) (2023). Murrtjumun. Medical History Museum, University of Melbourne. unimelb:item:medhist:38082">APA 7th</option>
             <option value="Chicago" data-citation-text="Yalmakany Marawili (b.1957). <em>Murrtjumun</em>. 2023. Medical History Museum, University of Melbourne. Persistent ID: unimelb:item:medhist:38082. Accessed 14 September 2026." data-citation-plain="Yalmakany Marawili (b.1957). Murrtjumun. 2023. Medical History Museum, University of Melbourne. Persistent ID: unimelb:item:medhist:38082. Accessed 14 September 2026.">Chicago</option>
-            <option value="MLA 9th" data-citation-text="Yalmakany Marawili (b.1957). âMurrtjumun.â <em>The University of Melbourne â Cultural Collections Search</em>, 2023, Medical History Museum, University of Melbourne. Accessed 14 September 2026." data-citation-plain="Yalmakany Marawili (b.1957). âMurrtjumun.â The University of Melbourne â Cultural Collections Search, 2023, Medical History Museum, University of Melbourne. Accessed 14 September 2026.">MLA 9th</option>
+            <option value="MLA 9th" data-citation-text="Yalmakany Marawili (b.1957). “Murrtjumun.” <em>The University of Melbourne — Cultural Collections Search</em>, 2023, Medical History Museum, University of Melbourne. Accessed 14 September 2026." data-citation-plain="Yalmakany Marawili (b.1957). “Murrtjumun.” The University of Melbourne — Cultural Collections Search, 2023, Medical History Museum, University of Melbourne. Accessed 14 September 2026.">MLA 9th</option>
         </select>
         <span class="pointer-events-none absolute right-3 flex items-center text-text-brand" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="chevron-down"><path d="M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z" fill="currentColor"></path></svg>
@@ -722,7 +675,7 @@
           </li>
           <li>
             <!-- BEGIN app/components/result_card_component.html.erb
---><article aria-label="Papier-mÃ¢chÃ© Anatomical Teaching Model, 1905" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+--><article aria-label="Papier-mâché Anatomical Teaching Model, 1905" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
   <a class="flex flex-col w-full no-underline" href="../../catalog/unimelb:item:medhist:anatomy-model-1905/index.html">
 
       <div class="uom-ds-placeholder-surface flex w-full items-center justify-center" style="aspect-ratio: 16/9">
@@ -730,7 +683,7 @@
       </div>
 
     <div class="flex w-full flex-1 flex-col gap-4 p-4">
-      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Papier-mÃ¢chÃ© Anatomical Teaching Model, 1905</span>
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Papier-mâché Anatomical Teaching Model, 1905</span>
 
 
         <div class="flex flex-col gap-1">
@@ -750,7 +703,7 @@
           </li>
           <li>
             <!-- BEGIN app/components/result_card_component.html.erb
---><article aria-label="Photograph â First Cohort of Medical Graduates, 1888" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+--><article aria-label="Photograph — First Cohort of Medical Graduates, 1888" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
   <a class="flex flex-col w-full no-underline" href="../../catalog/unimelb:item:medhist:graduation-photo-1888/index.html">
 
       <div class="uom-ds-placeholder-surface flex w-full items-center justify-center" style="aspect-ratio: 4/5">
@@ -758,7 +711,7 @@
       </div>
 
     <div class="flex w-full flex-1 flex-col gap-4 p-4">
-      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Photograph â First Cohort of Medical Graduates, 1888</span>
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Photograph — First Cohort of Medical Graduates, 1888</span>
 
 
         <div class="flex flex-col gap-1">
@@ -887,7 +840,7 @@
       </div>
 
       <div class="uom-ds-footer-logo-column flex min-w-[144px] flex-1 items-center justify-center md:items-start md:justify-end">
-        <span role="img" aria-label="The University of Melbourne" class="inline-block bg-white size-36" style="mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); mask-size: contain; mask-repeat: no-repeat; mask-position: center center; -webkit-mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center center"></span>
+        <span role="img" aria-label="The University of Melbourne" class="inline-block bg-white size-36" style="mask-image: url(../../assets/uom-logo-vertical-b4b3886b.svg); mask-size: contain; mask-repeat: no-repeat; mask-position: center center; -webkit-mask-image: url(../../assets/uom-logo-vertical-b4b3886b.svg); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center center"></span>
       </div>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <!DOCTYPE html><!-- BEGIN app/views/layouts/application.html.erb
 --><html lang="en"><head>
-    <title>Advanced Search â The University of Melbourne â Cultural Collections Search</title>
+    <title>Advanced Search — The University of Melbourne — Cultural Collections Search</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Cultural Collections Search">
@@ -24,99 +24,52 @@
 <link rel="stylesheet" href="../../assets/responsive_overrides-4a8522a0.css" data-turbo-track="reload">
 <link rel="stylesheet" href="../../assets/search_results_banner-d9e1ad78.css" data-turbo-track="reload">
 <link rel="stylesheet" href="../../assets/tailwind-16beeb73.css" data-turbo-track="reload">
-    <script type="importmap" data-turbo-track="reload" nonce="VJAjfTE8rXopjNRRfNDTLw==">{
-  "imports": {
-    "application": "/assets/application-17abd09c.js",
-    "@hotwired/turbo-rails": "/assets/turbo.min-9fd88cd5.js",
-    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
-    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
-    "controllers/search_dropdown_renderer": "/assets/controllers/search_dropdown_renderer-49b5bb55.js",
-    "@github/auto-complete-element": "/assets/@github--auto-complete-element-dcaeae99.js",
-    "@popperjs/core": "/assets/@popperjs--core-c61fbf9e.js",
-    "bootstrap": "/assets/bootstrap-9304d36f.js",
-    "@github/combobox-nav": "/assets/@github--combobox-nav-dd202526.js",
-    "blacklight-frontend/bookmark_toggle": "/assets/blacklight-frontend/bookmark_toggle-4db80d2f.js",
-    "blacklight-frontend/button_focus": "/assets/blacklight-frontend/button_focus-9e66e362.js",
-    "blacklight-frontend/checkbox_submit": "/assets/blacklight-frontend/checkbox_submit-a4b81576.js",
-    "blacklight-frontend/core": "/assets/blacklight-frontend/core-79dd4d36.js",
-    "blacklight-frontend/debounce": "/assets/blacklight-frontend/debounce-a77752c3.js",
-    "blacklight-frontend/facet_suggest": "/assets/blacklight-frontend/facet_suggest-8a45a83f.js",
-    "blacklight-frontend": "/assets/blacklight-frontend/index-7d352063.js",
-    "blacklight-frontend/modal": "/assets/blacklight-frontend/modal-bc2d1d06.js",
-    "blacklight-frontend/search_context": "/assets/blacklight-frontend/search_context-1287545b.js",
-    "controllers/advanced_search_controller": "/assets/controllers/advanced_search_controller-80ebbcd7.js",
-    "controllers/application": "/assets/controllers/application-3affb389.js",
-    "controllers/card_thumbnail_controller": "/assets/controllers/card_thumbnail_controller-f474101d.js",
-    "controllers/carousel_controller": "/assets/controllers/carousel_controller-7cd0d325.js",
-    "controllers/citation_controller": "/assets/controllers/citation_controller-a2c76099.js",
-    "controllers/copy_controller": "/assets/controllers/copy_controller-7911c560.js",
-    "controllers/date_histogram_controller": "/assets/controllers/date_histogram_controller-8719db11.js",
-    "controllers/facet_dropdown_controller": "/assets/controllers/facet_dropdown_controller-88eec59d.js",
-    "controllers/facet_search_controller": "/assets/controllers/facet_search_controller-4b1e690d.js",
-    "controllers/filter_modal_controller": "/assets/controllers/filter_modal_controller-cf446401.js",
-    "controllers/filter_tabs_controller": "/assets/controllers/filter_tabs_controller-6adaeca1.js",
-    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js",
-    "controllers/keyboard_shortcuts_controller": "/assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js",
-    "controllers/live_filter_controller": "/assets/controllers/live_filter_controller-059500ae.js",
-    "controllers/media_viewer_controller": "/assets/controllers/media_viewer_controller-b941babb.js",
-    "controllers/mega_menu_controller": "/assets/controllers/mega_menu_controller-0de8720b.js",
-    "controllers/mobile_menu_controller": "/assets/controllers/mobile_menu_controller-00e7d56f.js",
-    "controllers/motion_mosaic_controller": "/assets/controllers/motion_mosaic_controller-aa7208c5.js",
-    "controllers/popover_controller": "/assets/controllers/popover_controller-708a88f4.js",
-    "controllers/record_action_controller": "/assets/controllers/record_action_controller-fc9523e1.js",
-    "controllers/search_suggest_controller": "/assets/controllers/search_suggest_controller-8c8c4fdb.js",
-    "controllers/share_controller": "/assets/controllers/share_controller-8db659d3.js",
-    "controllers/show_more_controller": "/assets/controllers/show_more_controller-15ce54ba.js",
-    "controllers/sticky_top_reveal_controller": "/assets/controllers/sticky_top_reveal_controller-312a81f1.js",
-    "controllers/tooltip_controller": "/assets/controllers/tooltip_controller-f0b9e0b9.js"
-  }
-}</script>
-<link rel="modulepreload" href="../../assets/application-17abd09c.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/turbo.min-9fd88cd5.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/stimulus.min-4b1e420e.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/stimulus-loading-1fc53fe7.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/search_dropdown_renderer-49b5bb55.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/@github--auto-complete-element-dcaeae99.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/@popperjs--core-c61fbf9e.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/bootstrap-9304d36f.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/@github--combobox-nav-dd202526.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/button_focus-9e66e362.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/checkbox_submit-a4b81576.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/core-79dd4d36.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/debounce-a77752c3.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/facet_suggest-8a45a83f.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/index-7d352063.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/modal-bc2d1d06.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/blacklight-frontend/search_context-1287545b.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/advanced_search_controller-80ebbcd7.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/application-3affb389.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/card_thumbnail_controller-f474101d.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/carousel_controller-7cd0d325.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/citation_controller-a2c76099.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/copy_controller-7911c560.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/date_histogram_controller-8719db11.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/facet_dropdown_controller-88eec59d.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/facet_search_controller-4b1e690d.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/filter_modal_controller-cf446401.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/filter_tabs_controller-6adaeca1.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/hello_controller-708796bd.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/index-ee64e1f1.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/live_filter_controller-059500ae.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/media_viewer_controller-b941babb.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/mega_menu_controller-0de8720b.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/mobile_menu_controller-00e7d56f.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/motion_mosaic_controller-aa7208c5.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/popover_controller-708a88f4.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/record_action_controller-fc9523e1.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/search_suggest_controller-8c8c4fdb.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/share_controller-8db659d3.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/show_more_controller-15ce54ba.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/sticky_top_reveal_controller-312a81f1.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<link rel="modulepreload" href="../../assets/controllers/tooltip_controller-f0b9e0b9.js" nonce="VJAjfTE8rXopjNRRfNDTLw==">
-<script type="module" nonce="VJAjfTE8rXopjNRRfNDTLw==">import "application"</script>
+    <script type="importmap" data-turbo-track="reload" nonce="bHyDpfw1xTXuGtYpF1deMw==">{"imports":{"application":"../../assets/application-17abd09c.js","@hotwired/turbo-rails":"../../assets/turbo.min-9fd88cd5.js","@hotwired/stimulus":"../../assets/stimulus.min-4b1e420e.js","@hotwired/stimulus-loading":"../../assets/stimulus-loading-1fc53fe7.js","controllers/search_dropdown_renderer":"../../assets/controllers/search_dropdown_renderer-49b5bb55.js","@github/auto-complete-element":"../../assets/@github--auto-complete-element-dcaeae99.js","@popperjs/core":"../../assets/@popperjs--core-c61fbf9e.js","bootstrap":"../../assets/bootstrap-9304d36f.js","@github/combobox-nav":"../../assets/@github--combobox-nav-dd202526.js","blacklight-frontend/bookmark_toggle":"../../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js","blacklight-frontend/button_focus":"../../assets/blacklight-frontend/button_focus-9e66e362.js","blacklight-frontend/checkbox_submit":"../../assets/blacklight-frontend/checkbox_submit-a4b81576.js","blacklight-frontend/core":"../../assets/blacklight-frontend/core-79dd4d36.js","blacklight-frontend/debounce":"../../assets/blacklight-frontend/debounce-a77752c3.js","blacklight-frontend/facet_suggest":"../../assets/blacklight-frontend/facet_suggest-8a45a83f.js","blacklight-frontend":"../../assets/blacklight-frontend/index-7d352063.js","blacklight-frontend/modal":"../../assets/blacklight-frontend/modal-bc2d1d06.js","blacklight-frontend/search_context":"../../assets/blacklight-frontend/search_context-1287545b.js","controllers/advanced_search_controller":"../../assets/controllers/advanced_search_controller-80ebbcd7.js","controllers/application":"../../assets/controllers/application-3affb389.js","controllers/card_thumbnail_controller":"../../assets/controllers/card_thumbnail_controller-f474101d.js","controllers/carousel_controller":"../../assets/controllers/carousel_controller-7cd0d325.js","controllers/citation_controller":"../../assets/controllers/citation_controller-a2c76099.js","controllers/copy_controller":"../../assets/controllers/copy_controller-7911c560.js","controllers/date_histogram_controller":"../../assets/controllers/date_histogram_controller-8719db11.js","controllers/facet_dropdown_controller":"../../assets/controllers/facet_dropdown_controller-88eec59d.js","controllers/facet_search_controller":"../../assets/controllers/facet_search_controller-4b1e690d.js","controllers/filter_modal_controller":"../../assets/controllers/filter_modal_controller-cf446401.js","controllers/filter_tabs_controller":"../../assets/controllers/filter_tabs_controller-6adaeca1.js","controllers/hello_controller":"../../assets/controllers/hello_controller-708796bd.js","controllers":"../../assets/controllers/index-ee64e1f1.js","controllers/keyboard_shortcuts_controller":"../../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js","controllers/live_filter_controller":"../../assets/controllers/live_filter_controller-059500ae.js","controllers/media_viewer_controller":"../../assets/controllers/media_viewer_controller-b941babb.js","controllers/mega_menu_controller":"../../assets/controllers/mega_menu_controller-0de8720b.js","controllers/mobile_menu_controller":"../../assets/controllers/mobile_menu_controller-00e7d56f.js","controllers/motion_mosaic_controller":"../../assets/controllers/motion_mosaic_controller-aa7208c5.js","controllers/popover_controller":"../../assets/controllers/popover_controller-708a88f4.js","controllers/record_action_controller":"../../assets/controllers/record_action_controller-fc9523e1.js","controllers/search_suggest_controller":"../../assets/controllers/search_suggest_controller-8c8c4fdb.js","controllers/share_controller":"../../assets/controllers/share_controller-8db659d3.js","controllers/show_more_controller":"../../assets/controllers/show_more_controller-15ce54ba.js","controllers/sticky_top_reveal_controller":"../../assets/controllers/sticky_top_reveal_controller-312a81f1.js","controllers/tooltip_controller":"../../assets/controllers/tooltip_controller-f0b9e0b9.js"}}</script>
+<link rel="modulepreload" href="../../assets/application-17abd09c.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/turbo.min-9fd88cd5.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/stimulus.min-4b1e420e.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/stimulus-loading-1fc53fe7.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/search_dropdown_renderer-49b5bb55.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/@github--auto-complete-element-dcaeae99.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/@popperjs--core-c61fbf9e.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/bootstrap-9304d36f.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/@github--combobox-nav-dd202526.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/button_focus-9e66e362.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/checkbox_submit-a4b81576.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/core-79dd4d36.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/debounce-a77752c3.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/facet_suggest-8a45a83f.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/index-7d352063.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/modal-bc2d1d06.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/search_context-1287545b.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/advanced_search_controller-80ebbcd7.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/application-3affb389.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/card_thumbnail_controller-f474101d.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/carousel_controller-7cd0d325.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/citation_controller-a2c76099.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/copy_controller-7911c560.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/date_histogram_controller-8719db11.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/facet_dropdown_controller-88eec59d.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/facet_search_controller-4b1e690d.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/filter_modal_controller-cf446401.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/filter_tabs_controller-6adaeca1.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/hello_controller-708796bd.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/index-ee64e1f1.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/live_filter_controller-059500ae.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/media_viewer_controller-b941babb.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/mega_menu_controller-0de8720b.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/mobile_menu_controller-00e7d56f.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/motion_mosaic_controller-aa7208c5.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/popover_controller-708a88f4.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/record_action_controller-fc9523e1.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/search_suggest_controller-8c8c4fdb.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/share_controller-8db659d3.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/show_more_controller-15ce54ba.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/sticky_top_reveal_controller-312a81f1.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<link rel="modulepreload" href="../../assets/controllers/tooltip_controller-f0b9e0b9.js" nonce="bHyDpfw1xTXuGtYpF1deMw==">
+<script type="module" nonce="bHyDpfw1xTXuGtYpF1deMw==">import "application"</script>
   </head>
 
   <body class="min-h-screen overflow-x-clip bg-bg-light text-text-primary" data-controller="filter-modal keyboard-shortcuts" data-filter-modal-url-value="/catalog/filters">
@@ -144,11 +97,11 @@
 
     <div class="flex min-w-0 flex-1 flex-col">
       <div class="flex w-full justify-end border-b border-stroke-weak bg-footer-dark p-2">
-        <div class="w-full max-w-[288px]" data-controller="search-suggest" data-search-suggest-portal-value="true" data-search-suggest-search-url-value="/catalog">
-          <form class="flex h-12 w-full items-stretch border border-primary bg-white" action="/catalog" accept-charset="UTF-8" method="get">
+        <div class="w-full max-w-[288px]" data-controller="search-suggest" data-search-suggest-portal-value="true" data-search-suggest-search-url-value="https://enterprise-services-group.github.io/CCS-HiFI-prototype/catalog/">
+          <form class="flex h-12 w-full items-stretch border border-primary bg-white" action="../../catalog/index.html" accept-charset="UTF-8" method="get">
             <label class="flex min-w-0 flex-1 items-center">
               <span class="sr-only">Search Cross Collections</span>
-              <input type="text" name="q" id="header-search-desktop-q" placeholder="Search Cross Collectionsâ¦" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-dropdown" aria-expanded="false" class="w-full min-w-0 border-0 bg-transparent px-3 text-lg text-text-tertiary outline-none placeholder:text-text-tertiary" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+              <input type="text" name="q" id="header-search-desktop-q" placeholder="Search Cross Collections…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-dropdown" aria-expanded="false" class="w-full min-w-0 border-0 bg-transparent px-3 text-lg text-text-tertiary outline-none placeholder:text-text-tertiary" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
             </label>
             <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-primary bg-accent-secondary px-3 text-primary transition-colors hover:brightness-95">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
@@ -316,9 +269,9 @@
     </div>
   </div>
 
-  <div data-mobile-menu-target="panel" data-panel="search" hidden="" data-controller="search-suggest" data-search-suggest-search-url-value="/catalog" class="border-t border-stroke-weak px-4 py-4 lg:hidden">
-    <form class="flex h-12 w-full items-stretch border border-stroke-weak bg-white" action="/catalog" accept-charset="UTF-8" method="get">
-      <input type="text" name="q" id="header-search-mobile-q" placeholder="Search Cross Collectionsâ¦" class="w-full min-w-0 flex-1 border-0 bg-transparent px-3 text-lg text-text-brand outline-none placeholder:text-text-tertiary" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-suggestions" aria-expanded="false" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+  <div data-mobile-menu-target="panel" data-panel="search" hidden="" data-controller="search-suggest" data-search-suggest-search-url-value="https://enterprise-services-group.github.io/CCS-HiFI-prototype/catalog/" class="border-t border-stroke-weak px-4 py-4 lg:hidden">
+    <form class="flex h-12 w-full items-stretch border border-stroke-weak bg-white" action="../../catalog/index.html" accept-charset="UTF-8" method="get">
+      <input type="text" name="q" id="header-search-mobile-q" placeholder="Search Cross Collections…" class="w-full min-w-0 flex-1 border-0 bg-transparent px-3 text-lg text-text-brand outline-none placeholder:text-text-tertiary" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-suggestions" aria-expanded="false" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
       <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-stroke-weak bg-accent-secondary px-3 text-primary">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
       </button>
@@ -364,7 +317,7 @@
 <!-- END app/components/breadcrumb_component.html.erb -->
 
 <!-- BEGIN app/components/page_banner_component.html.erb
---><section data-component="PageBanner" class="uom-ds-page-banner uom-ds-page-banner--hero uom-ds-page-banner--photo" style="--uom-pb-image: url('/assets/hero-document-7eb02317.jpg')" aria-labelledby="advanced-search-heading">
+--><section data-component="PageBanner" class="uom-ds-page-banner uom-ds-page-banner--hero uom-ds-page-banner--photo" style="--uom-pb-image: url('../../assets/hero-document-7eb02317.jpg')" aria-labelledby="advanced-search-heading">
   <div class="uom-ds-page-banner-inner">
     <div class="uom-ds-page-banner-body">
 
@@ -411,7 +364,7 @@
       <option value="should">Contains any (OR)</option>
       <option value="must_not">Does not contain (NOT)</option>
   </select>
-  <input type="text" name="clause[__INDEX__][query]" value="" class="uom-ds-adv-input" placeholder="Enter search termsâ¦" aria-label="Search terms for row">
+  <input type="text" name="clause[__INDEX__][query]" value="" class="uom-ds-adv-input" placeholder="Enter search terms…" aria-label="Search terms for row">
   <button type="button" class="uom-ds-adv-delete" data-action="advanced-search#removeRow" data-advanced-search-delete="" aria-label="Delete search row">
     <span class="uom-ds-adv-delete-icon" aria-hidden="true">−</span> Delete row
   </button>
@@ -419,7 +372,7 @@
 <!-- END app/views/catalog/_advanced_search_term_row.html.erb -->
   </template>
 
-  <form class="advanced" role="search" aria-label="Advanced search" action="https://enterprise-services-group.github.io/CCS-HiFI-prototype/catalog" accept-charset="UTF-8" method="get">
+  <form class="advanced" role="search" aria-label="Advanced search" action="../../catalog/index.html" accept-charset="UTF-8" method="get">
     <div class="uom-ds-adv-section">
       <h2 class="uom-ds-adv-heading">Search</h2>
       <div data-advanced-search-target="termsList">
@@ -437,7 +390,7 @@
       <option value="should">Contains any (OR)</option>
       <option value="must_not">Does not contain (NOT)</option>
   </select>
-  <input type="text" name="clause[0][query]" value="" class="uom-ds-adv-input" placeholder="Enter search termsâ¦" aria-label="Search terms for row 1">
+  <input type="text" name="clause[0][query]" value="" class="uom-ds-adv-input" placeholder="Enter search terms…" aria-label="Search terms for row 1">
   <button type="button" class="uom-ds-adv-delete" data-action="advanced-search#removeRow" data-advanced-search-delete="" aria-label="Delete search row 1">
     <span class="uom-ds-adv-delete-icon" aria-hidden="true">−</span> Delete row
   </button>
@@ -457,7 +410,7 @@
       <option value="should">Contains any (OR)</option>
       <option value="must_not">Does not contain (NOT)</option>
   </select>
-  <input type="text" name="clause[1][query]" value="" class="uom-ds-adv-input" placeholder="Enter search termsâ¦" aria-label="Search terms for row 2">
+  <input type="text" name="clause[1][query]" value="" class="uom-ds-adv-input" placeholder="Enter search terms…" aria-label="Search terms for row 2">
   <button type="button" class="uom-ds-adv-delete" data-action="advanced-search#removeRow" data-advanced-search-delete="" aria-label="Delete search row 2">
     <span class="uom-ds-adv-delete-icon" aria-hidden="true">−</span> Delete row
   </button>
@@ -727,10 +680,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="aldis (1865â1921) creator; mr albert edward (1865â1921)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="aldis (1865–1921) creator; mr albert edward (1865–1921)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-8" type="checkbox" name="f_inclusive[creator_ssim][]" value="Aldis (1865â1921) creator; Mr Albert Edward (1865â1921)" data-item-label="Aldis (1865â1921) creator; Mr Albert Edward (1865â1921)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-8" class="cursor-pointer">Aldis (1865â1921) creator; Mr Albert Edward (1865â1921)</label>
+                  <input id="adv-filter-creator_ssim-8" type="checkbox" name="f_inclusive[creator_ssim][]" value="Aldis (1865–1921) creator; Mr Albert Edward (1865–1921)" data-item-label="Aldis (1865–1921) creator; Mr Albert Edward (1865–1921)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-8" class="cursor-pointer">Aldis (1865–1921) creator; Mr Albert Edward (1865–1921)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -797,17 +750,17 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">200</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="anonymous (creator); percy grainger (8 july 1882â20 february 1961) (creator); dom hughes (15 april 1889â8 october 1974) (creator)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="anonymous (creator); percy grainger (8 july 1882—20 february 1961) (creator); dom hughes (15 april 1889—8 october 1974) (creator)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-18" type="checkbox" name="f_inclusive[creator_ssim][]" value="Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (creator); Dom Hughes (15 April 1889â8 October 1974) (creator)" data-item-label="Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (creator); Dom Hughes (15 April 1889â8 October 1974) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-18" class="cursor-pointer">Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (creator); Dom Hughes (15 April 1889â8 October 1974) (creator)</label>
+                  <input id="adv-filter-creator_ssim-18" type="checkbox" name="f_inclusive[creator_ssim][]" value="Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (creator); Dom Hughes (15 April 1889—8 October 1974) (creator)" data-item-label="Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (creator); Dom Hughes (15 April 1889—8 October 1974) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-18" class="cursor-pointer">Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (creator); Dom Hughes (15 April 1889—8 October 1974) (creator)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">4</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="anonymous (creator); percy grainger (8 july 1882â20 february 1961) (editor); dom hughes (15 april 1889â8 october 1974) (transcriber)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="anonymous (creator); percy grainger (8 july 1882—20 february 1961) (editor); dom hughes (15 april 1889—8 october 1974) (transcriber)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-19" type="checkbox" name="f_inclusive[creator_ssim][]" value="Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (editor); Dom Hughes (15 April 1889â8 October 1974) (transcriber)" data-item-label="Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (editor); Dom Hughes (15 April 1889â8 October 1974) (transcriber)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-19" class="cursor-pointer">Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (editor); Dom Hughes (15 April 1889â8 October 1974) (transcriber)</label>
+                  <input id="adv-filter-creator_ssim-19" type="checkbox" name="f_inclusive[creator_ssim][]" value="Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (editor); Dom Hughes (15 April 1889—8 October 1974) (transcriber)" data-item-label="Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (editor); Dom Hughes (15 April 1889—8 October 1974) (transcriber)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-19" class="cursor-pointer">Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (editor); Dom Hughes (15 April 1889—8 October 1974) (transcriber)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -972,10 +925,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="bunny (1864â1947) creator; rupert charles wulsten (1864â1947)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="bunny (1864–1947) creator; rupert charles wulsten (1864–1947)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-43" type="checkbox" name="f_inclusive[creator_ssim][]" value="Bunny (1864â1947) creator; Rupert Charles Wulsten (1864â1947)" data-item-label="Bunny (1864â1947) creator; Rupert Charles Wulsten (1864â1947)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-43" class="cursor-pointer">Bunny (1864â1947) creator; Rupert Charles Wulsten (1864â1947)</label>
+                  <input id="adv-filter-creator_ssim-43" type="checkbox" name="f_inclusive[creator_ssim][]" value="Bunny (1864–1947) creator; Rupert Charles Wulsten (1864–1947)" data-item-label="Bunny (1864–1947) creator; Rupert Charles Wulsten (1864–1947)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-43" class="cursor-pointer">Bunny (1864–1947) creator; Rupert Charles Wulsten (1864–1947)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -1371,10 +1324,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="edvard grieg (15 june 1843â4 september 1907) [norwegian composer.] (creator); percy grainger (8 july 1882â20 february 1961) [australian composer and pianist] (creator)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="edvard grieg (15 june 1843—4 september 1907) [norwegian composer.] (creator); percy grainger (8 july 1882—20 february 1961) [australian composer and pianist] (creator)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-100" type="checkbox" name="f_inclusive[creator_ssim][]" value="Edvard Grieg (15 June 1843â4 September 1907) [Norwegian composer.] (creator); Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (creator)" data-item-label="Edvard Grieg (15 June 1843â4 September 1907) [Norwegian composer.] (creator); Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-100" class="cursor-pointer">Edvard Grieg (15 June 1843â4 September 1907) [Norwegian composer.] (creator); Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (creator)</label>
+                  <input id="adv-filter-creator_ssim-100" type="checkbox" name="f_inclusive[creator_ssim][]" value="Edvard Grieg (15 June 1843—4 September 1907) [Norwegian composer.] (creator); Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (creator)" data-item-label="Edvard Grieg (15 June 1843—4 September 1907) [Norwegian composer.] (creator); Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-100" class="cursor-pointer">Edvard Grieg (15 June 1843—4 September 1907) [Norwegian composer.] (creator); Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (creator)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -1497,24 +1450,24 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="fuiks (1893â1962) performer; lewis john (1893â1962) creator; arlen (1893â1962); harold (1893â1962)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="fuiks (1893–1962) performer; lewis john (1893–1962) creator; arlen (1893–1962); harold (1893–1962)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-118" type="checkbox" name="f_inclusive[creator_ssim][]" value="Fuiks (1893â1962) performer; Lewis John (1893â1962) creator; Arlen (1893â1962); Harold (1893â1962)" data-item-label="Fuiks (1893â1962) performer; Lewis John (1893â1962) creator; Arlen (1893â1962); Harold (1893â1962)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-118" class="cursor-pointer">Fuiks (1893â1962) performer; Lewis John (1893â1962) creator; Arlen (1893â1962); Harold (1893â1962)</label>
+                  <input id="adv-filter-creator_ssim-118" type="checkbox" name="f_inclusive[creator_ssim][]" value="Fuiks (1893–1962) performer; Lewis John (1893–1962) creator; Arlen (1893–1962); Harold (1893–1962)" data-item-label="Fuiks (1893–1962) performer; Lewis John (1893–1962) creator; Arlen (1893–1962); Harold (1893–1962)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-118" class="cursor-pointer">Fuiks (1893–1962) performer; Lewis John (1893–1962) creator; Arlen (1893–1962); Harold (1893–1962)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="g. schirmer inc. (1861âcurrent) (publisher); anonymous (creator); percy grainger (8 july 1882â20 february 1961) (editor); dom hughes (15 april 1889â8 october 1974) (transcriber)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="g. schirmer inc. (1861—current) (publisher); anonymous (creator); percy grainger (8 july 1882—20 february 1961) (editor); dom hughes (15 april 1889—8 october 1974) (transcriber)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-119" type="checkbox" name="f_inclusive[creator_ssim][]" value="G. Schirmer Inc. (1861âCurrent) (publisher); Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (editor); Dom Hughes (15 April 1889â8 October 1974) (transcriber)" data-item-label="G. Schirmer Inc. (1861âCurrent) (publisher); Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (editor); Dom Hughes (15 April 1889â8 October 1974) (transcriber)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-119" class="cursor-pointer">G. Schirmer Inc. (1861âCurrent) (publisher); Anonymous (creator); Percy Grainger (8 July 1882â20 February 1961) (editor); Dom Hughes (15 April 1889â8 October 1974) (transcriber)</label>
+                  <input id="adv-filter-creator_ssim-119" type="checkbox" name="f_inclusive[creator_ssim][]" value="G. Schirmer Inc. (1861—Current) (publisher); Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (editor); Dom Hughes (15 April 1889—8 October 1974) (transcriber)" data-item-label="G. Schirmer Inc. (1861—Current) (publisher); Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (editor); Dom Hughes (15 April 1889—8 October 1974) (transcriber)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-119" class="cursor-pointer">G. Schirmer Inc. (1861—Current) (publisher); Anonymous (creator); Percy Grainger (8 July 1882—20 February 1961) (editor); Dom Hughes (15 April 1889—8 October 1974) (transcriber)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="g. schirmer inc. (1861âcurrent) (publisher); percy grainger (8 july 1882â20 february 1961) (composer)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="g. schirmer inc. (1861—current) (publisher); percy grainger (8 july 1882—20 february 1961) (composer)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-120" type="checkbox" name="f_inclusive[creator_ssim][]" value="G. Schirmer Inc. (1861âCurrent) (publisher); Percy Grainger (8 July 1882â20 February 1961) (composer)" data-item-label="G. Schirmer Inc. (1861âCurrent) (publisher); Percy Grainger (8 July 1882â20 February 1961) (composer)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-120" class="cursor-pointer">G. Schirmer Inc. (1861âCurrent) (publisher); Percy Grainger (8 July 1882â20 February 1961) (composer)</label>
+                  <input id="adv-filter-creator_ssim-120" type="checkbox" name="f_inclusive[creator_ssim][]" value="G. Schirmer Inc. (1861—Current) (publisher); Percy Grainger (8 July 1882—20 February 1961) (composer)" data-item-label="G. Schirmer Inc. (1861—Current) (publisher); Percy Grainger (8 July 1882—20 February 1961) (composer)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-120" class="cursor-pointer">G. Schirmer Inc. (1861—Current) (publisher); Percy Grainger (8 July 1882—20 February 1961) (composer)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -1539,10 +1492,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="gabriel faurÃ© (1845â1924) (creator); percy grainger (8 july 1882â20 february 1961) (creator)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="gabriel fauré (1845—1924) (creator); percy grainger (8 july 1882—20 february 1961) (creator)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-124" type="checkbox" name="f_inclusive[creator_ssim][]" value="Gabriel FaurÃ© (1845â1924) (creator); Percy Grainger (8 July 1882â20 February 1961) (creator)" data-item-label="Gabriel FaurÃ© (1845â1924) (creator); Percy Grainger (8 July 1882â20 February 1961) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-124" class="cursor-pointer">Gabriel FaurÃ© (1845â1924) (creator); Percy Grainger (8 July 1882â20 February 1961) (creator)</label>
+                  <input id="adv-filter-creator_ssim-124" type="checkbox" name="f_inclusive[creator_ssim][]" value="Gabriel Fauré (1845—1924) (creator); Percy Grainger (8 July 1882—20 February 1961) (creator)" data-item-label="Gabriel Fauré (1845—1924) (creator); Percy Grainger (8 July 1882—20 February 1961) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-124" class="cursor-pointer">Gabriel Fauré (1845—1924) (creator); Percy Grainger (8 July 1882—20 February 1961) (creator)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -1623,17 +1576,17 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="grainger (1882â1961) creator; percy aldridge (1882â1961) creator; cross (1882â1961); burnett (1882â1961)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="grainger (1882–1961) creator; percy aldridge (1882–1961) creator; cross (1882–1961); burnett (1882–1961)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-136" type="checkbox" name="f_inclusive[creator_ssim][]" value="Grainger (1882â1961) creator; Percy Aldridge (1882â1961) creator; Cross (1882â1961); Burnett (1882â1961)" data-item-label="Grainger (1882â1961) creator; Percy Aldridge (1882â1961) creator; Cross (1882â1961); Burnett (1882â1961)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-136" class="cursor-pointer">Grainger (1882â1961) creator; Percy Aldridge (1882â1961) creator; Cross (1882â1961); Burnett (1882â1961)</label>
+                  <input id="adv-filter-creator_ssim-136" type="checkbox" name="f_inclusive[creator_ssim][]" value="Grainger (1882–1961) creator; Percy Aldridge (1882–1961) creator; Cross (1882–1961); Burnett (1882–1961)" data-item-label="Grainger (1882–1961) creator; Percy Aldridge (1882–1961) creator; Cross (1882–1961); Burnett (1882–1961)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-136" class="cursor-pointer">Grainger (1882–1961) creator; Percy Aldridge (1882–1961) creator; Cross (1882–1961); Burnett (1882–1961)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="grainger (1882â1961) performer; percy aldridge (1882â1961) creator; bach (1882â1961) creator; johann sebastian (1882â1961); liszt (1882â1961); franz (1882â1961)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="grainger (1882–1961) performer; percy aldridge (1882–1961) creator; bach (1882–1961) creator; johann sebastian (1882–1961); liszt (1882–1961); franz (1882–1961)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-137" type="checkbox" name="f_inclusive[creator_ssim][]" value="Grainger (1882â1961) performer; Percy Aldridge (1882â1961) creator; Bach (1882â1961) creator; Johann Sebastian (1882â1961); Liszt (1882â1961); Franz (1882â1961)" data-item-label="Grainger (1882â1961) performer; Percy Aldridge (1882â1961) creator; Bach (1882â1961) creator; Johann Sebastian (1882â1961); Liszt (1882â1961); Franz (1882â1961)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-137" class="cursor-pointer">Grainger (1882â1961) performer; Percy Aldridge (1882â1961) creator; Bach (1882â1961) creator; Johann Sebastian (1882â1961); Liszt (1882â1961); Franz (1882â1961)</label>
+                  <input id="adv-filter-creator_ssim-137" type="checkbox" name="f_inclusive[creator_ssim][]" value="Grainger (1882–1961) performer; Percy Aldridge (1882–1961) creator; Bach (1882–1961) creator; Johann Sebastian (1882–1961); Liszt (1882–1961); Franz (1882–1961)" data-item-label="Grainger (1882–1961) performer; Percy Aldridge (1882–1961) creator; Bach (1882–1961) creator; Johann Sebastian (1882–1961); Liszt (1882–1961); Franz (1882–1961)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-137" class="cursor-pointer">Grainger (1882–1961) performer; Percy Aldridge (1882–1961) creator; Bach (1882–1961) creator; Johann Sebastian (1882–1961); Liszt (1882–1961); Franz (1882–1961)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">2</span>
               </div>
@@ -1714,10 +1667,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="hauser (1884â1957) performer; hans (1884â1957) creator; benatzky (1884â1957); ralph (1884â1957)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="hauser (1884–1957) performer; hans (1884–1957) creator; benatzky (1884–1957); ralph (1884–1957)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-149" type="checkbox" name="f_inclusive[creator_ssim][]" value="Hauser (1884â1957) performer; Hans (1884â1957) creator; Benatzky (1884â1957); Ralph (1884â1957)" data-item-label="Hauser (1884â1957) performer; Hans (1884â1957) creator; Benatzky (1884â1957); Ralph (1884â1957)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-149" class="cursor-pointer">Hauser (1884â1957) performer; Hans (1884â1957) creator; Benatzky (1884â1957); Ralph (1884â1957)</label>
+                  <input id="adv-filter-creator_ssim-149" type="checkbox" name="f_inclusive[creator_ssim][]" value="Hauser (1884–1957) performer; Hans (1884–1957) creator; Benatzky (1884–1957); Ralph (1884–1957)" data-item-label="Hauser (1884–1957) performer; Hans (1884–1957) creator; Benatzky (1884–1957); Ralph (1884–1957)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-149" class="cursor-pointer">Hauser (1884–1957) performer; Hans (1884–1957) creator; Benatzky (1884–1957); Ralph (1884–1957)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -2456,10 +2409,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="mering (1894â1963) performer; constance (1894â1963) creator; akst (1894â1963) creator; harry (1894â1963); mering (1894â1963); constance (1894â1963)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="mering (1894–1963) performer; constance (1894–1963) creator; akst (1894–1963) creator; harry (1894–1963); mering (1894–1963); constance (1894–1963)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-255" type="checkbox" name="f_inclusive[creator_ssim][]" value="Mering (1894â1963) performer; Constance (1894â1963) creator; Akst (1894â1963) creator; Harry (1894â1963); Mering (1894â1963); Constance (1894â1963)" data-item-label="Mering (1894â1963) performer; Constance (1894â1963) creator; Akst (1894â1963) creator; Harry (1894â1963); Mering (1894â1963); Constance (1894â1963)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-255" class="cursor-pointer">Mering (1894â1963) performer; Constance (1894â1963) creator; Akst (1894â1963) creator; Harry (1894â1963); Mering (1894â1963); Constance (1894â1963)</label>
+                  <input id="adv-filter-creator_ssim-255" type="checkbox" name="f_inclusive[creator_ssim][]" value="Mering (1894–1963) performer; Constance (1894–1963) creator; Akst (1894–1963) creator; Harry (1894–1963); Mering (1894–1963); Constance (1894–1963)" data-item-label="Mering (1894–1963) performer; Constance (1894–1963) creator; Akst (1894–1963) creator; Harry (1894–1963); Mering (1894–1963); Constance (1894–1963)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-255" class="cursor-pointer">Mering (1894–1963) performer; Constance (1894–1963) creator; Akst (1894–1963) creator; Harry (1894–1963); Mering (1894–1963); Constance (1894–1963)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -2519,10 +2472,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="moran (1892â1953) performer; alan (1892â1953) creator; ahlert (1892â1953); fred e. (1892â1953)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="moran (1892–1953) performer; alan (1892–1953) creator; ahlert (1892–1953); fred e. (1892–1953)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-264" type="checkbox" name="f_inclusive[creator_ssim][]" value="Moran (1892â1953) performer; Alan (1892â1953) creator; Ahlert (1892â1953); Fred E. (1892â1953)" data-item-label="Moran (1892â1953) performer; Alan (1892â1953) creator; Ahlert (1892â1953); Fred E. (1892â1953)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-264" class="cursor-pointer">Moran (1892â1953) performer; Alan (1892â1953) creator; Ahlert (1892â1953); Fred E. (1892â1953)</label>
+                  <input id="adv-filter-creator_ssim-264" type="checkbox" name="f_inclusive[creator_ssim][]" value="Moran (1892–1953) performer; Alan (1892–1953) creator; Ahlert (1892–1953); Fred E. (1892–1953)" data-item-label="Moran (1892–1953) performer; Alan (1892–1953) creator; Ahlert (1892–1953); Fred E. (1892–1953)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-264" class="cursor-pointer">Moran (1892–1953) performer; Alan (1892–1953) creator; Ahlert (1892–1953); Fred E. (1892–1953)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -2540,10 +2493,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="mulkuá¹ wirrpanda (b.1946, d.2021)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="mulkuṉ wirrpanda (b.1946, d.2021)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-267" type="checkbox" name="f_inclusive[creator_ssim][]" value="Mulkuá¹ Wirrpanda (b.1946, d.2021)" data-item-label="Mulkuá¹ Wirrpanda (b.1946, d.2021)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-267" class="cursor-pointer">Mulkuá¹ Wirrpanda (b.1946, d.2021)</label>
+                  <input id="adv-filter-creator_ssim-267" type="checkbox" name="f_inclusive[creator_ssim][]" value="Mulkuṉ Wirrpanda (b.1946, d.2021)" data-item-label="Mulkuṉ Wirrpanda (b.1946, d.2021)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-267" class="cursor-pointer">Mulkuṉ Wirrpanda (b.1946, d.2021)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">4</span>
               </div>
@@ -2561,10 +2514,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="murn (1893â1976) performer; edith (1893â1976) performer; pardey (1893â1976) creator; laurel (1893â1976); baer (1893â1976); abel (1893â1976)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="murn (1893–1976) performer; edith (1893–1976) performer; pardey (1893–1976) creator; laurel (1893–1976); baer (1893–1976); abel (1893–1976)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-270" type="checkbox" name="f_inclusive[creator_ssim][]" value="Murn (1893â1976) performer; Edith (1893â1976) performer; Pardey (1893â1976) creator; Laurel (1893â1976); Baer (1893â1976); Abel (1893â1976)" data-item-label="Murn (1893â1976) performer; Edith (1893â1976) performer; Pardey (1893â1976) creator; Laurel (1893â1976); Baer (1893â1976); Abel (1893â1976)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-270" class="cursor-pointer">Murn (1893â1976) performer; Edith (1893â1976) performer; Pardey (1893â1976) creator; Laurel (1893â1976); Baer (1893â1976); Abel (1893â1976)</label>
+                  <input id="adv-filter-creator_ssim-270" type="checkbox" name="f_inclusive[creator_ssim][]" value="Murn (1893–1976) performer; Edith (1893–1976) performer; Pardey (1893–1976) creator; Laurel (1893–1976); Baer (1893–1976); Abel (1893–1976)" data-item-label="Murn (1893–1976) performer; Edith (1893–1976) performer; Pardey (1893–1976) creator; Laurel (1893–1976); Baer (1893–1976); Abel (1893–1976)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-270" class="cursor-pointer">Murn (1893–1976) performer; Edith (1893–1976) performer; Pardey (1893–1976) creator; Laurel (1893–1976); Baer (1893–1976); Abel (1893–1976)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -2582,10 +2535,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="mÃ¼nster, sebastian" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="münster, sebastian" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-273" type="checkbox" name="f_inclusive[creator_ssim][]" value="MÃ¼nster, Sebastian" data-item-label="MÃ¼nster, Sebastian" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-273" class="cursor-pointer">MÃ¼nster, Sebastian</label>
+                  <input id="adv-filter-creator_ssim-273" type="checkbox" name="f_inclusive[creator_ssim][]" value="Münster, Sebastian" data-item-label="Münster, Sebastian" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-273" class="cursor-pointer">Münster, Sebastian</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -2743,31 +2696,31 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882â20 february 1961)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882—20 february 1961)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-296" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882â20 February 1961)" data-item-label="Percy Grainger (8 July 1882â20 February 1961)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-296" class="cursor-pointer">Percy Grainger (8 July 1882â20 February 1961)</label>
+                  <input id="adv-filter-creator_ssim-296" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882—20 February 1961)" data-item-label="Percy Grainger (8 July 1882—20 February 1961)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-296" class="cursor-pointer">Percy Grainger (8 July 1882—20 February 1961)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">2</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882â20 february 1961) (creator)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882—20 february 1961) (creator)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-297" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882â20 February 1961) (creator)" data-item-label="Percy Grainger (8 July 1882â20 February 1961) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-297" class="cursor-pointer">Percy Grainger (8 July 1882â20 February 1961) (creator)</label>
+                  <input id="adv-filter-creator_ssim-297" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882—20 February 1961) (creator)" data-item-label="Percy Grainger (8 July 1882—20 February 1961) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-297" class="cursor-pointer">Percy Grainger (8 July 1882—20 February 1961) (creator)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882â20 february 1961) [australian composer and pianist] (artist)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882—20 february 1961) [australian composer and pianist] (artist)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-298" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (artist)" data-item-label="Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (artist)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-298" class="cursor-pointer">Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (artist)</label>
+                  <input id="adv-filter-creator_ssim-298" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (artist)" data-item-label="Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (artist)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-298" class="cursor-pointer">Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (artist)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">10</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882â20 february 1961) [australian composer and pianist] (artist); a. pearce (creator)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="percy grainger (8 july 1882—20 february 1961) [australian composer and pianist] (artist); a. pearce (creator)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-299" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (artist); A. Pearce (creator)" data-item-label="Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (artist); A. Pearce (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-299" class="cursor-pointer">Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (artist); A. Pearce (creator)</label>
+                  <input id="adv-filter-creator_ssim-299" type="checkbox" name="f_inclusive[creator_ssim][]" value="Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (artist); A. Pearce (creator)" data-item-label="Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (artist); A. Pearce (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-299" class="cursor-pointer">Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (artist); A. Pearce (creator)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -2974,24 +2927,24 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="schott and co. london (publisher); percy grainger (8 july 1882â20 february 1961) (composer)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="schott and co. london (publisher); percy grainger (8 july 1882—20 february 1961) (composer)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-329" type="checkbox" name="f_inclusive[creator_ssim][]" value="Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) (composer)" data-item-label="Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) (composer)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-329" class="cursor-pointer">Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) (composer)</label>
+                  <input id="adv-filter-creator_ssim-329" type="checkbox" name="f_inclusive[creator_ssim][]" value="Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) (composer)" data-item-label="Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) (composer)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-329" class="cursor-pointer">Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) (composer)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="schott and co. london (publisher); percy grainger (8 july 1882â20 february 1961) (creator)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="schott and co. london (publisher); percy grainger (8 july 1882—20 february 1961) (creator)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-330" type="checkbox" name="f_inclusive[creator_ssim][]" value="Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) (creator)" data-item-label="Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-330" class="cursor-pointer">Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) (creator)</label>
+                  <input id="adv-filter-creator_ssim-330" type="checkbox" name="f_inclusive[creator_ssim][]" value="Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) (creator)" data-item-label="Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-330" class="cursor-pointer">Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) (creator)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="schott and co. london (publisher); percy grainger (8 july 1882â20 february 1961) [australian composer and pianist] (creator)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="schott and co. london (publisher); percy grainger (8 july 1882—20 february 1961) [australian composer and pianist] (creator)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-331" type="checkbox" name="f_inclusive[creator_ssim][]" value="Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (creator)" data-item-label="Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-331" class="cursor-pointer">Schott and Co. London (publisher); Percy Grainger (8 July 1882â20 February 1961) [Australian composer and pianist] (creator)</label>
+                  <input id="adv-filter-creator_ssim-331" type="checkbox" name="f_inclusive[creator_ssim][]" value="Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (creator)" data-item-label="Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (creator)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-331" class="cursor-pointer">Schott and Co. London (publisher); Percy Grainger (8 July 1882—20 February 1961) [Australian composer and pianist] (creator)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">2</span>
               </div>
@@ -3296,10 +3249,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">173</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="unknown (mÄori carver)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="unknown (māori carver)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-375" type="checkbox" name="f_inclusive[creator_ssim][]" value="Unknown (MÄori carver)" data-item-label="Unknown (MÄori carver)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-375" class="cursor-pointer">Unknown (MÄori carver)</label>
+                  <input id="adv-filter-creator_ssim-375" type="checkbox" name="f_inclusive[creator_ssim][]" value="Unknown (Māori carver)" data-item-label="Unknown (Māori carver)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-375" class="cursor-pointer">Unknown (Māori carver)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -3310,10 +3263,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="unknown (yolÅu artist)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="unknown (yolŋu artist)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-377" type="checkbox" name="f_inclusive[creator_ssim][]" value="Unknown (YolÅu artist)" data-item-label="Unknown (YolÅu artist)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-377" class="cursor-pointer">Unknown (YolÅu artist)</label>
+                  <input id="adv-filter-creator_ssim-377" type="checkbox" name="f_inclusive[creator_ssim][]" value="Unknown (Yolŋu artist)" data-item-label="Unknown (Yolŋu artist)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-377" class="cursor-pointer">Unknown (Yolŋu artist)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
@@ -3513,10 +3466,10 @@
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">1</span>
               </div>
-              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="âdargeâ photographers (estab. 1903, closed 1940)" data-facet-search-target="row">
+              <div class="-mx-2 flex items-center justify-between gap-2 rounded-lg px-2 py-2.5 text-base text-text-primary transition-colors hover:bg-bg-light-hover" data-facet-value="“darge” photographers (estab. 1903, closed 1940)" data-facet-search-target="row">
                 <span class="flex items-center gap-3">
-                  <input id="adv-filter-creator_ssim-406" type="checkbox" name="f_inclusive[creator_ssim][]" value="âDargeâ Photographers (estab. 1903, closed 1940)" data-item-label="âDargeâ Photographers (estab. 1903, closed 1940)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
-                  <label for="adv-filter-creator_ssim-406" class="cursor-pointer">âDargeâ Photographers (estab. 1903, closed 1940)</label>
+                  <input id="adv-filter-creator_ssim-406" type="checkbox" name="f_inclusive[creator_ssim][]" value="“Darge” Photographers (estab. 1903, closed 1940)" data-item-label="“Darge” Photographers (estab. 1903, closed 1940)" data-advanced-search-target="filterCheckbox" data-action="advanced-search#updateFilterSummary" class="rea-checkbox">
+                  <label for="adv-filter-creator_ssim-406" class="cursor-pointer">“Darge” Photographers (estab. 1903, closed 1940)</label>
                 </span>
                 <span class="rounded-full bg-bg-light-hover px-2 py-0.5 text-xs text-text-tertiary">3</span>
               </div>
@@ -3729,7 +3682,7 @@
       <label class="uom-ds-adv-add-filter">
         <span class="uom-ds-adv-add-icon" aria-hidden="true">+</span>
         <select data-advanced-search-target="addFilterSelect" data-action="advanced-search#addFilter" aria-label="Add filter">
-          <option value="">Add filterâ¦</option>
+          <option value="">Add filter…</option>
             <option value="collection_ssim" hidden="">Collection Title</option>
             <option value="creator_ssim">Creator Name</option>
             <option value="objectType_ssim" hidden="">Object Type</option>
@@ -3765,7 +3718,7 @@
       <li><strong>Rows:</strong> add rows to expand your search, or delete rows to simplify it.</li>
       <li><strong>Search fields:</strong> search a specific field (Title, Creator, Subject, Description) instead of everywhere.</li>
       <li><strong>Match type:</strong> each row can require its terms (<em>Contains all</em>), allow either (<em>Contains any</em>), or exclude them (<em>Does not contain</em>).</li>
-      <li><strong>Filters:</strong> narrow by object type, collection, creator, licence, access and production date â each filter has its own <em>Includes all (AND)</em> / <em>Includes any (OR)</em> choice.</li>
+      <li><strong>Filters:</strong> narrow by object type, collection, creator, licence, access and production date — each filter has its own <em>Includes all (AND)</em> / <em>Includes any (OR)</em> choice.</li>
       <li>Use quotation marks to search for an exact phrase, e.g. <code>"eucalyptus oil"</code>.</li>
     </ul>
   </div>
@@ -3775,9 +3728,9 @@
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg> Search examples
     </h3>
     <ul class="flex flex-col gap-3 text-[15px] leading-[1.5] text-text-primary list-disc pl-5">
-      <li>All Fields â Contains all â <em>eucalyptus oil bottle</em> will display records with all three terms anywhere in the record.</li>
-      <li>Subject field â Contains all â <em>botanical illustration</em> will display records with <em>botanical</em> AND <em>illustration</em> in the subject field.</li>
-      <li>Subject field â Contains any â <em>botanical illustration</em> will display records with <em>botanical</em> OR <em>illustration</em> in the subject field.</li>
+      <li>All Fields → Contains all → <em>eucalyptus oil bottle</em> will display records with all three terms anywhere in the record.</li>
+      <li>Subject field → Contains all → <em>botanical illustration</em> will display records with <em>botanical</em> AND <em>illustration</em> in the subject field.</li>
+      <li>Subject field → Contains any → <em>botanical illustration</em> will display records with <em>botanical</em> OR <em>illustration</em> in the subject field.</li>
     </ul>
   </div>
 
@@ -3786,8 +3739,8 @@
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" data-icon="filter" aria-hidden="true"><path d="M11 20C10.7167 20 10.4792 19.9042 10.2875 19.7125C10.0958 19.5208 10 19.2833 10 19V13L4.025 5.375C3.79167 5.09167 3.75833 4.79167 3.925 4.475C4.09167 4.15833 4.35 4 4.7 4H19.3C19.65 4 19.9083 4.15833 20.075 4.475C20.2417 4.79167 20.2083 5.09167 19.975 5.375L14 13V19C14 19.2833 13.9042 19.5208 13.7125 19.7125C13.5208 19.9042 13.2833 20 13 20H11ZM12 13.1L18 5.5H6L12 13.1Z" fill="currentColor"></path></svg> Filter examples
     </h3>
     <ul class="flex flex-col gap-3 text-[15px] leading-[1.5] text-text-primary list-disc pl-5">
-      <li>Object Type â Includes all â <em>Photograph, Manuscript</em> will display records tagged with both Photograph AND Manuscript.</li>
-      <li>Object Type â Includes any â <em>Photograph, Manuscript</em> will display records tagged with either Photograph OR Manuscript.</li>
+      <li>Object Type → Includes all → <em>Photograph, Manuscript</em> will display records tagged with both Photograph AND Manuscript.</li>
+      <li>Object Type → Includes any → <em>Photograph, Manuscript</em> will display records tagged with either Photograph OR Manuscript.</li>
     </ul>
   </div>
 </div>
@@ -3904,7 +3857,7 @@
       </div>
 
       <div class="uom-ds-footer-logo-column flex min-w-[144px] flex-1 items-center justify-center md:items-start md:justify-end">
-        <span role="img" aria-label="The University of Melbourne" class="inline-block bg-white size-36" style="mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); mask-size: contain; mask-repeat: no-repeat; mask-position: center center; -webkit-mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center center"></span>
+        <span role="img" aria-label="The University of Melbourne" class="inline-block bg-white size-36" style="mask-image: url(../../assets/uom-logo-vertical-b4b3886b.svg); mask-size: contain; mask-repeat: no-repeat; mask-position: center center; -webkit-mask-image: url(../../assets/uom-logo-vertical-b4b3886b.svg); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center center"></span>
       </div>
     </div>
   </div>
