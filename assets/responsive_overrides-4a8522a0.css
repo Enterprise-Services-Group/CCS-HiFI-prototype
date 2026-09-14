@@ -1,0 +1,122 @@
+/* Shared responsive corrections. These rules are loaded after the generated
+   Tailwind asset so the app remains usable when the watcher is not running. */
+html {
+  overflow-x: clip;
+}
+
+body,
+main,
+section,
+header,
+footer,
+div,
+aside,
+dl {
+  min-width: 0;
+}
+
+/* Exceptions to the blanket `div { min-width: 0 }` above: this file is plain,
+   unlayered CSS, which per the Cascade Layers spec always wins over Tailwind's
+   layered utilities regardless of specificity (see the DDS import comment in
+   application.css) — so any `min-w-[...]` utility on a <div> is silently
+   canceled unless re-asserted here at a higher specificity than the bare
+   `div` selector above. Affects FacetDropdownComponent's panel (needs a
+   280px floor so its value list doesn't collapse to its trigger's width —
+   confirmed via live inspection, was rendering ~130px wide) and the footer's
+   contact column (needs a 144px floor as a flex item). */
+[data-facet-dropdown-target="panel"] {
+  min-width: 280px;
+}
+
+.uom-ds-footer-logo-column {
+  min-width: 144px;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+.uom-ds-site-header-bar,
+.uom-ds-site-header-desktop-shell {
+  min-width: 0;
+}
+
+.uom-ds-footer-column {
+  min-width: 0;
+}
+
+.uom-ds-footer-copy,
+.uom-ds-footer-link,
+.uom-ds-page-banner-description,
+dd,
+td,
+th {
+  overflow-wrap: anywhere;
+}
+
+/* The search banner needs more room than a tablet viewport can provide for
+   its heading, sort control, and view toggle in one row. */
+@media (max-width: 1023px) {
+  .uom-ds-search-results-banner-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .uom-ds-search-results-banner-controls {
+    justify-content: space-between;
+  }
+
+  #item-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 639px) {
+  .uom-ds-site-header-bar {
+    padding-inline: 12px;
+  }
+
+  .uom-ds-section-shell {
+    padding-inline: 16px;
+    padding-block: 32px;
+  }
+
+  .uom-ds-page-banner--tertiary .uom-ds-page-banner-body {
+    padding: 24px 16px;
+  }
+
+  #collection-details {
+    padding: 24px;
+  }
+
+  #collection-explore-header,
+  #collection-filter-actions,
+  #collection-filter-actions form {
+    width: 100%;
+  }
+
+  #collection-filter-actions,
+  #collection-filter-actions form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  #collection-filter-actions .uom-ds-inline-filter-dropdown,
+  #collection-filter-actions [data-component="Button"] {
+    width: 100%;
+  }
+
+  #collection-filter-actions [data-component="Button"] {
+    justify-content: center;
+  }
+
+  .uom-ds-footer-column,
+  .uom-ds-footer-copy,
+  .uom-ds-footer-link {
+    width: 100%;
+  }
+}

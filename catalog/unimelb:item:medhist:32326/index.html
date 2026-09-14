@@ -1,0 +1,910 @@
+<!DOCTYPE html><!-- BEGIN app/views/layouts/application.html.erb
+--><html lang="en"><head>
+    <title>The University of Melbourne â Cultural Collections Search</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Cultural Collections Search">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+
+    
+
+    
+
+
+    <link rel="icon" href="../../icon.png" type="image/png">
+    <link rel="icon" href="../../icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../icon.png">
+
+
+    <link rel="stylesheet" href="../../assets/application-93695a83.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../../assets/card_image-034552e2.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../../assets/responsive_overrides-4a8522a0.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../../assets/search_results_banner-d9e1ad78.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../../assets/tailwind-16beeb73.css" data-turbo-track="reload">
+    <script type="importmap" data-turbo-track="reload" nonce="HpgWc1eJYgOJHhOMXYhcRw==">{
+  "imports": {
+    "application": "/assets/application-17abd09c.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-9fd88cd5.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/search_dropdown_renderer": "/assets/controllers/search_dropdown_renderer-49b5bb55.js",
+    "@github/auto-complete-element": "/assets/@github--auto-complete-element-dcaeae99.js",
+    "@popperjs/core": "/assets/@popperjs--core-c61fbf9e.js",
+    "bootstrap": "/assets/bootstrap-9304d36f.js",
+    "@github/combobox-nav": "/assets/@github--combobox-nav-dd202526.js",
+    "blacklight-frontend/bookmark_toggle": "/assets/blacklight-frontend/bookmark_toggle-4db80d2f.js",
+    "blacklight-frontend/button_focus": "/assets/blacklight-frontend/button_focus-9e66e362.js",
+    "blacklight-frontend/checkbox_submit": "/assets/blacklight-frontend/checkbox_submit-a4b81576.js",
+    "blacklight-frontend/core": "/assets/blacklight-frontend/core-79dd4d36.js",
+    "blacklight-frontend/debounce": "/assets/blacklight-frontend/debounce-a77752c3.js",
+    "blacklight-frontend/facet_suggest": "/assets/blacklight-frontend/facet_suggest-8a45a83f.js",
+    "blacklight-frontend": "/assets/blacklight-frontend/index-7d352063.js",
+    "blacklight-frontend/modal": "/assets/blacklight-frontend/modal-bc2d1d06.js",
+    "blacklight-frontend/search_context": "/assets/blacklight-frontend/search_context-1287545b.js",
+    "controllers/advanced_search_controller": "/assets/controllers/advanced_search_controller-80ebbcd7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/card_thumbnail_controller": "/assets/controllers/card_thumbnail_controller-f474101d.js",
+    "controllers/carousel_controller": "/assets/controllers/carousel_controller-7cd0d325.js",
+    "controllers/citation_controller": "/assets/controllers/citation_controller-a2c76099.js",
+    "controllers/copy_controller": "/assets/controllers/copy_controller-7911c560.js",
+    "controllers/date_histogram_controller": "/assets/controllers/date_histogram_controller-8719db11.js",
+    "controllers/facet_dropdown_controller": "/assets/controllers/facet_dropdown_controller-88eec59d.js",
+    "controllers/facet_search_controller": "/assets/controllers/facet_search_controller-4b1e690d.js",
+    "controllers/filter_modal_controller": "/assets/controllers/filter_modal_controller-cf446401.js",
+    "controllers/filter_tabs_controller": "/assets/controllers/filter_tabs_controller-6adaeca1.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/keyboard_shortcuts_controller": "/assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js",
+    "controllers/live_filter_controller": "/assets/controllers/live_filter_controller-059500ae.js",
+    "controllers/media_viewer_controller": "/assets/controllers/media_viewer_controller-b941babb.js",
+    "controllers/mega_menu_controller": "/assets/controllers/mega_menu_controller-0de8720b.js",
+    "controllers/mobile_menu_controller": "/assets/controllers/mobile_menu_controller-00e7d56f.js",
+    "controllers/motion_mosaic_controller": "/assets/controllers/motion_mosaic_controller-aa7208c5.js",
+    "controllers/popover_controller": "/assets/controllers/popover_controller-708a88f4.js",
+    "controllers/record_action_controller": "/assets/controllers/record_action_controller-fc9523e1.js",
+    "controllers/search_suggest_controller": "/assets/controllers/search_suggest_controller-8c8c4fdb.js",
+    "controllers/share_controller": "/assets/controllers/share_controller-8db659d3.js",
+    "controllers/show_more_controller": "/assets/controllers/show_more_controller-15ce54ba.js",
+    "controllers/sticky_top_reveal_controller": "/assets/controllers/sticky_top_reveal_controller-312a81f1.js",
+    "controllers/tooltip_controller": "/assets/controllers/tooltip_controller-f0b9e0b9.js"
+  }
+}</script>
+<link rel="modulepreload" href="../../assets/application-17abd09c.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/turbo.min-9fd88cd5.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/stimulus.min-4b1e420e.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/stimulus-loading-1fc53fe7.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/search_dropdown_renderer-49b5bb55.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/@github--auto-complete-element-dcaeae99.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/@popperjs--core-c61fbf9e.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/bootstrap-9304d36f.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/@github--combobox-nav-dd202526.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/button_focus-9e66e362.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/checkbox_submit-a4b81576.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/core-79dd4d36.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/debounce-a77752c3.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/facet_suggest-8a45a83f.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/index-7d352063.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/modal-bc2d1d06.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/blacklight-frontend/search_context-1287545b.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/advanced_search_controller-80ebbcd7.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/application-3affb389.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/card_thumbnail_controller-f474101d.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/carousel_controller-7cd0d325.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/citation_controller-a2c76099.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/copy_controller-7911c560.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/date_histogram_controller-8719db11.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/facet_dropdown_controller-88eec59d.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/facet_search_controller-4b1e690d.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/filter_modal_controller-cf446401.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/filter_tabs_controller-6adaeca1.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/hello_controller-708796bd.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/index-ee64e1f1.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/live_filter_controller-059500ae.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/media_viewer_controller-b941babb.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/mega_menu_controller-0de8720b.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/mobile_menu_controller-00e7d56f.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/motion_mosaic_controller-aa7208c5.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/popover_controller-708a88f4.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/record_action_controller-fc9523e1.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/search_suggest_controller-8c8c4fdb.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/share_controller-8db659d3.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/show_more_controller-15ce54ba.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/sticky_top_reveal_controller-312a81f1.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<link rel="modulepreload" href="../../assets/controllers/tooltip_controller-f0b9e0b9.js" nonce="HpgWc1eJYgOJHhOMXYhcRw==">
+<script type="module" nonce="HpgWc1eJYgOJHhOMXYhcRw==">import "application"</script>
+  </head>
+
+  <body class="min-h-screen overflow-x-clip bg-bg-light text-text-primary" data-controller="filter-modal keyboard-shortcuts" data-filter-modal-url-value="/catalog/filters">
+    <a href="#main-container" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-[#000f46] focus:shadow-lg focus:outline-none">
+      Skip to main content
+    </a>
+    <!-- BEGIN app/components/header_component.html.erb
+--><header data-component="Header" class="uom-ds-site-header z-50 w-full bg-primary" data-controller="mobile-menu">
+  <div class="flex min-h-[77px] items-center justify-between gap-2 p-4 lg:hidden">
+    <button type="button" aria-label="Open menu" data-action="mobile-menu#toggle" data-panel="menu" class="uom-ds-header-icon-button">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="menu" aria-hidden="true"><path d="M3 12H21M3 6H21M3 18H21" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+    </button>
+    <a href="../../index.html">
+      <img alt="The University of Melbourne" class="h-10 w-10 object-contain" src="../../assets/UoM_Logo_Vert_UnhousedAlt_onDark-20ff1950.png">
+</a>    <button type="button" aria-label="Open search" data-action="mobile-menu#toggle" data-panel="search" class="uom-ds-header-icon-button">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+    </button>
+  </div>
+
+  <div class="flex w-full items-stretch max-lg:hidden border-b border-stroke-weak">
+    <div class="flex shrink-0 w-[110px] border-r border-stroke-weak">
+      <a class="flex size-[110px] items-center justify-center p-2" href="../../index.html">
+        <img alt="The University of Melbourne" class="h-full w-full object-contain" src="../../assets/UoM_Logo_Vert_UnhousedAlt_onDark-20ff1950.png">
+</a>    </div>
+
+    <div class="flex min-w-0 flex-1 flex-col">
+      <div class="flex w-full justify-end border-b border-stroke-weak bg-footer-dark p-2">
+        <div class="w-full max-w-[288px]" data-controller="search-suggest" data-search-suggest-portal-value="true" data-search-suggest-search-url-value="/catalog">
+          <form class="flex h-12 w-full items-stretch border border-primary bg-white" action="/catalog" accept-charset="UTF-8" method="get">
+            <label class="flex min-w-0 flex-1 items-center">
+              <span class="sr-only">Search Cross Collections</span>
+              <input type="text" name="q" id="header-search-desktop-q" placeholder="Search Cross Collectionsâ¦" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-dropdown" aria-expanded="false" class="w-full min-w-0 border-0 bg-transparent px-3 text-lg text-text-tertiary outline-none placeholder:text-text-tertiary" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+            </label>
+            <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-primary bg-accent-secondary px-3 text-primary transition-colors hover:brightness-95">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+            </button>
+</form>          <!-- BEGIN app/components/search_dropdown_component.html.erb
+--><div id="header-search-dropdown" data-component="SearchDropdown" data-search-suggest-target="dropdown" hidden="" class="uom-ds-header-dropdown" role="listbox" aria-live="polite"></div>
+<!-- END app/components/search_dropdown_component.html.erb -->
+        </div>
+      </div>
+
+      <div class="flex h-[65px] w-full items-center justify-between p-2">
+        <a class="uom-ds-header-ghost-link" href="../../index.html">Cultural Collections Search</a>
+        <nav class="relative flex items-center" aria-label="Primary navigation" data-controller="mega-menu">
+          <a class="uom-ds-header-ghost-link" href="../../catalog/index.html?search_field=all_fields">Search all records</a>
+
+          <div class="relative">
+            <button type="button" class="uom-ds-header-ghost-link inline-flex items-center gap-1" data-action="mega-menu#toggle" data-menu="browse" aria-haspopup="true" aria-expanded="false" aria-controls="mega-menu-browse-panel">
+              Browse collections
+              <span class="mega-menu-chevron size-5" data-mega-menu-target="chevron" data-menu="browse">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="chevron-down" aria-hidden="true"><path d="M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z" fill="currentColor"></path></svg>
+              </span>
+            </button>
+            <div id="mega-menu-browse-panel" class="mega-menu-panel absolute right-0 top-full w-[540px] rounded-bl-lg rounded-br-lg border-t-2 border-accent bg-footer-dark shadow-[0px_10px_7.5px_rgba(0,0,0,0.35)]" data-mega-menu-target="panel" data-menu="browse" role="region" aria-labelledby="browse-collections-heading">
+              <div class="flex flex-col gap-6 p-8">
+                <div class="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                  <h2 id="browse-collections-heading" class="font-display text-3xl leading-tight">
+                    <a class="font-semibold text-white no-underline hover:underline" href="../../collections/index.html">Browse collections</a>
+                  </h2>
+                </div>
+                <hr class="border-white/20">
+                <ul class="flex flex-col gap-6">
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../collections/grainger-museum/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Grainger Museum Collection</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">The personal collection of composer Percy Grainger including instruments, man...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../collections/ian-potter-art/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">University Art Collection</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">A major university art collection featuring Australian and international work...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../collections/medical-history-museum/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Medical History Museum</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Historical medical instruments, teaching models, pathological specimens and r...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../collections/university-archives/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">University Archives</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Official records documenting the history and administration of the University...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../collections/rare-books/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Rare Books &amp; Special Collections</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Rare printed works, manuscripts, incunabula and illuminated texts from the Ba...</p>
+</a>                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <button type="button" class="uom-ds-header-ghost-link inline-flex items-center gap-1" data-action="mega-menu#toggle" data-menu="help" aria-haspopup="true" aria-expanded="false" aria-controls="mega-menu-help-panel">
+              Help and support
+              <span class="mega-menu-chevron size-5" data-mega-menu-target="chevron" data-menu="help">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="chevron-down" aria-hidden="true"><path d="M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z" fill="currentColor"></path></svg>
+              </span>
+            </button>
+            <div id="mega-menu-help-panel" class="mega-menu-panel absolute right-0 top-full w-[540px] rounded-bl-lg rounded-br-lg border-t-2 border-accent bg-footer-dark shadow-[0px_10px_7.5px_rgba(0,0,0,0.35)]" data-mega-menu-target="panel" data-menu="help" role="region" aria-labelledby="help-support-heading">
+              <div class="flex flex-col gap-6 p-8">
+                <div class="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                  <h2 id="help-support-heading" class="font-display text-3xl font-semibold leading-tight text-white">
+                    <a class="no-underline hover:underline" href="../../help-and-support/index.html">Help and support</a>
+                  </h2>
+                </div>
+                <hr class="border-white/20">
+                <ul class="flex flex-col gap-6">
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/search-tips/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Search Tips</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Cultural Collections Search is a search-first discovery platform. These tips help you find records quickly and precisely across all collections.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/metadata-and-fields/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Metadata and Fields</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Every record is described using a consistent set of metadata fields. Understanding these fields helps you interpret records and search more effectively.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/rights-and-licensing/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Rights and Licensing</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Rights vary from item to item. Always check the rights statement on an individual record before reusing material.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/citing-collections/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Citing Collections</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Cite collection items so others can locate the exact record you used. Every item record provides the details you need to build a citation.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/access-restrictions/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Access Restrictions Explained</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Records carry an Object Access Condition that tells you what you can do with the digital asset. Look for it on item records and result cards.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/faqs/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Frequently Asked Questions</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Answers to common questions about searching, downloading and using Cultural Collections Search.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/indigenous-cultural-data/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Indigenous Cultural Data and Access</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">How Cultural Collections Search supports the respectful management, description and discovery of Aboriginal and Torres Strait Islander cultural heritage, knowledge and collections.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../../help-and-support/contact/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Contact the Collections Team</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Submit an enquiry, request access to an item, or ask for further information from the Collections team.</p>
+</a>                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div data-mobile-menu-target="panel" data-panel="search" hidden="" data-controller="search-suggest" data-search-suggest-search-url-value="/catalog" class="border-t border-stroke-weak px-4 py-4 lg:hidden">
+    <form class="flex h-12 w-full items-stretch border border-stroke-weak bg-white" action="/catalog" accept-charset="UTF-8" method="get">
+      <input type="text" name="q" id="header-search-mobile-q" placeholder="Search Cross Collectionsâ¦" class="w-full min-w-0 flex-1 border-0 bg-transparent px-3 text-lg text-text-brand outline-none placeholder:text-text-tertiary" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-suggestions" aria-expanded="false" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+      <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-stroke-weak bg-accent-secondary px-3 text-primary">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+      </button>
+</form>    <!-- BEGIN app/components/search_dropdown_component.html.erb
+--><div id="header-search-suggestions" data-component="SearchDropdown" data-search-suggest-target="dropdown" hidden="" class="uom-ds-header-dropdown" role="listbox" aria-live="polite"></div>
+<!-- END app/components/search_dropdown_component.html.erb -->
+  </div>
+
+  <div data-mobile-menu-target="panel" data-panel="menu" hidden="" class="lg:hidden">
+    <nav class="flex w-full flex-col gap-1 bg-primary p-4" aria-label="Mobile navigation">
+      <a class="flex items-center gap-3 rounded-lg bg-white/10 p-3 font-semibold text-text-header" href="../../index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="home" aria-hidden="true"><path d="M4 21V9L12 3L20 9V21H14V14H10V21H4Z" fill="currentColor"></path></svg>
+        <span class="text-base">Home</span>
+</a>      <a class="flex items-center gap-3 rounded-lg p-3 font-normal text-text-header-muted" href="../../catalog/index.html?search_field=all_fields">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+        <span class="text-base">Search all records</span>
+</a>      <a class="flex items-center gap-3 rounded-lg p-3 font-normal text-text-header-muted" href="../../collections/index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="browse-collections" aria-hidden="true"><path d="M4 20V18H6.75L6.35 17.65C5.48333 16.8833 4.875 16.0083 4.525 15.025C4.175 14.0417 4 13.05 4 12.05C4 10.2 4.55417 8.55417 5.6625 7.1125C6.77083 5.67083 8.21667 4.71667 10 4.25V6.35C8.8 6.78333 7.83333 7.52083 7.1 8.5625C6.36667 9.60417 6 10.7667 6 12.05C6 12.8 6.14167 13.5292 6.425 14.2375C6.70833 14.9458 7.15 15.6 7.75 16.2L8 16.45V14H10V20H4ZM14 19.75V17.65C15.2 17.2167 16.1667 16.4792 16.9 15.4375C17.6333 14.3958 18 13.2333 18 11.95C18 11.2 17.8583 10.4708 17.575 9.7625C17.2917 9.05417 16.85 8.4 16.25 7.8L16 7.55V10H14V4H20V6H17.25L17.65 6.35C18.4667 7.16667 19.0625 8.05417 19.4375 9.0125C19.8125 9.97083 20 10.95 20 11.95C20 13.8 19.4458 15.4458 18.3375 16.8875C17.2292 18.3292 15.7833 19.2833 14 19.75Z" fill="currentColor"></path></svg>
+        <span class="text-base">Browse collections</span>
+</a>      <a class="flex items-center gap-3 rounded-lg p-3 font-normal text-text-header-muted" href="../../help-and-support/index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="help-support" aria-hidden="true"><path d="M8.46445 8.46448L4.92893 4.92896M4.92893 19.0711L8.46448 15.5355M15.5355 15.5355L19.0711 19.071M19.0711 4.92891L15.5355 8.46445M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span class="text-base">Help &amp; support</span>
+</a>    </nav>
+  </div>
+
+  <div data-filter-modal-target="mount"></div>
+</header>
+<!-- END app/components/header_component.html.erb -->
+    <!-- BEGIN app/views/shared/_flash_messages.html.erb
+--><!-- END app/views/shared/_flash_messages.html.erb -->
+
+    <main id="main-container" class="flex min-h-screen w-full flex-col" aria-label="Main content">
+      <!-- BEGIN app/views/catalog/show.html.erb
+-->
+
+
+<!-- BEGIN app/components/breadcrumb_component.html.erb
+--><nav data-component="Breadcrumb" aria-label="Breadcrumb" class="flex w-full flex-wrap items-center gap-1 px-4 py-2 md:px-6 lg:px-10" style="background-color: #00354c">
+  <a aria-label="Home" class="flex items-center gap-1 text-text-header" href="../../index.html">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="home" aria-hidden="true"><path d="M4 21V9L12 3L20 9V21H14V14H10V21H4Z" fill="currentColor"></path></svg>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+</a>    <a class="text-base font-semibold text-text-header/70 hover:text-text-header hover:underline" href="../../collections/index.html">Collections</a>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 text-text-header/70" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    <a class="text-base font-semibold text-text-header/70 hover:text-text-header hover:underline" href="../../collections/medical-history-museum/index.html">Medical History Museum</a>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 text-text-header/70" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+  <span class="text-base font-semibold text-text-header" aria-current="page">Original Odhner Calculator</span>
+</nav>
+<!-- END app/components/breadcrumb_component.html.erb -->
+
+<article id="item-record" aria-labelledby="item-title">
+
+
+  <section aria-label="Item media" class="w-full bg-black pt-4">
+
+          <div class="uom-ds-media-viewer" data-controller="media-viewer" data-media-viewer-count-value="1">
+            <div class="uom-ds-media-viewer-frame">
+              <div class="uom-ds-media-viewer-stage">
+                  <img src="https://collections.mdhs.unimelb.edu.au/records/images/medium/4077/37afc389316c4364940159bb1a142e340208b82d.jpg" alt="" class="max-h-full max-w-full object-contain" data-media-viewer-target="image" data-index="0">
+                <button type="button" data-action="media-viewer#collapse" data-media-viewer-target="closeButton" hidden="" class="uom-ds-media-viewer-close" aria-label="Exit fullscreen">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="close" aria-hidden="true"><path d="M18 6L6 18M6 6L18 18" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+                </button>
+              </div>
+              <div class="uom-ds-media-viewer-controls">
+                <div class="flex items-center gap-1">
+                  <button type="button" data-action="media-viewer#toggleExpand" aria-label="Toggle fullscreen">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="fullscreen" aria-hidden="true"><path d="M4 9V4H9M20 9V4H15M4 15V20H9M20 15V20H15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+  </section>
+
+  <div class="uom-ds-section-shell">
+    <div class="flex w-full max-w-[1240px] flex-col gap-16">
+
+      <header class="flex flex-col gap-2">
+        <h1 id="item-title" class="font-display text-[48px] font-semibold leading-tight tracking-[-0.48px] text-text-brand">
+          Original Odhner Calculator
+        </h1>
+          <p class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+              <span class="text-[18px] font-semibold text-text-brand/70">
+                <a class="uom-ds-link-underlined" href="../../catalog/index.html?f%5Bcreator_ssim%5D%5B%5D=Original-Odhner+%28estab.+1917%2C+closed+1942%29">Original-Odhner (estab. 1917, closed 1942)</a>
+              </span>
+          </p>
+          <p class="text-sm text-text-tertiary">
+            Held by
+              <a class="font-semibold text-text-primary uom-ds-link-underlined" href="../../collections/medical-history-museum/index.html">Medical History Museum</a>
+          </p>
+      </header>
+
+    </div>
+  </div>
+
+  <section aria-label="Item details" class="flex w-full justify-center bg-[#f3f3f6] px-4 py-8 md:px-6 md:py-12 lg:px-10 lg:py-16">
+    <div class="flex w-full max-w-[1240px] flex-col gap-6 lg:flex-row lg:items-start">
+
+
+        <div class="flex flex-1 flex-col overflow-hidden rounded border border-[#dddfe7] bg-white">
+
+            <div class="p-6">
+              <!-- BEGIN app/components/table_component.html.erb
+--><div class="flex w-full flex-col gap-4">
+    <!-- BEGIN app/components/table_list_component.html.erb
+--><div class="flex w-full flex-col gap-3">
+  <h3 class="text-sm font-semibold uppercase tracking-wide text-text-tertiary">Object details</h3>
+  <div class="flex flex-col items-start w-full">
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Description
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                            The Original Odhner is a pinwheel calculator; a calculator mechanism that was designed for multiplication and division, as well as addition and subtraction. This model has a 10-digit setting register, 13-digit accumulator register, and an 8-digit revolutions register.
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Credit Line
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                            Transferred from the Melbourne School of Psychological Sciences, University of Melbourne, 2013
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Access
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                            <a class="uom-ds-link-underlined" href="../../catalog/index.html?f%5BobjAccess_ssi%5D%5B%5D=Open+Access">Open Access</a>
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Object Type
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                            <a class="uom-ds-link-underlined" href="../../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Cultural+Object">Cultural Object</a>
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Accession Number
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                            <span data-controller="copy" data-copy-text-value="MHM2013.286" class="flex flex-wrap items-center gap-2">
+                          <span>MHM2013.286</span>
+                          <button type="button" data-action="copy#copy" class="shrink-0 text-text-tertiary transition-colors hover:text-text-primary" aria-label="Copy Accession Number">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="copy" aria-hidden="true"><path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"></path></svg>
+                          </button>
+                          <span data-copy-target="status" role="status" aria-live="polite" class="text-xs text-text-tertiary"></span>
+                        </span>
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Named Collection
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                            <a class="uom-ds-link-underlined" href="../../catalog/index.html?f%5Bcollection_ssim%5D%5B%5D=Psychological+Sciences++Instrument+Collection">Psychological Sciences  Instrument Collection</a>
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Collection
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                              <a class="uom-ds-link-underlined" href="../../collections/medical-history-museum/index.html">Medical History Museum</a>
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+      <!-- BEGIN app/components/table_row_component.html.erb
+--><div class="flex w-full flex-col sm:flex-row">
+  <div class="w-full shrink-0 py-2 text-[14px] font-semibold text-[#707070] sm:min-w-[288px] sm:max-w-[288px]">
+    Responsible Unit
+  </div>
+  <div class="flex flex-1 items-center gap-[10px] py-2 text-[14px] text-[#222]">
+                            <a class="uom-ds-link-underlined" href="../../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Medical+History+Museum%2C+University+of+Melbourne">Medical History Museum, University of Melbourne</a>
+
+  </div>
+</div>
+<!-- END app/components/table_row_component.html.erb -->
+  </div>
+</div>
+<!-- END app/components/table_list_component.html.erb -->
+</div>
+<!-- END app/components/table_component.html.erb -->            </div>
+
+
+              <div class="h-px w-full bg-[#dddfe7]" role="separator" aria-hidden="true"></div>
+            <section aria-label="Subjects" class="flex flex-col gap-3 p-6">
+              <h2 class="text-sm font-semibold uppercase tracking-wide text-text-tertiary">Subject</h2>
+              <ul class="flex flex-wrap gap-2" role="list">
+                  <li>
+                    <a class="uom-ds-subject-tag" href="../../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=12%2C+School+of+Psychological+Sciences+number">12, School of Psychological Sciences number</a>
+                  </li>
+                  <li>
+                    <a class="uom-ds-subject-tag" href="../../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Psychological+Sciences++Instrument+Collection">Psychological Sciences  Instrument Collection</a>
+                  </li>
+              </ul>
+            </section>
+
+        </div>
+
+      <aside aria-label="Item actions and collection info" class="flex w-full shrink-0 flex-col gap-4 lg:w-[380px]" data-controller="record-action">
+
+        <section aria-label="Actions" class="flex flex-col gap-3 rounded border border-[#dddfe7] bg-white p-4">
+          <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Actions</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+          <ul class="flex flex-col gap-2" role="list">
+
+            <li>
+              <a target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center gap-1 rounded border border-[#b5baca] bg-white p-3 text-[18px] font-semibold text-[#000f46] transition-colors hover:bg-bg-light-hover" href="https://collections.mdhs.unimelb.edu.au/objects/32326/original-odhner-calculator">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-text-brand" data-icon="open-in-new"><path d="M19 19H5V5h7V3H3v18h18v-9h-2v7ZM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7Z" fill="currentColor"></path></svg>
+                <span>Cite this record</span>
+</a>            </li>
+
+            <li class="hidden">
+              <button type="button" data-action="record-action#open" data-record-action-dialog-id-param="cite-dialog" class="flex w-full items-center justify-center gap-1 rounded border border-[#b5baca] bg-white p-3 text-[18px] font-semibold text-[#000f46] transition-colors hover:bg-bg-light-hover">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-text-brand" data-icon="book"><path d="M5 4H19V20H5V4ZM9 4V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg>
+                <span>Cite this record</span>
+              </button>
+            </li>
+
+            <li>
+              <button type="button" data-action="record-action#open" data-record-action-dialog-id-param="permalink-dialog" class="flex w-full items-center justify-center gap-1 rounded border border-[#b5baca] bg-white p-3 text-[18px] font-semibold text-[#000f46] transition-colors hover:bg-bg-light-hover">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-text-brand" data-icon="share"><path d="M12 3V15 M12 3L8 7 M12 3L16 7 M5 12V19C5 19.5523 5.44772 20 6 20H18C18.5523 20 19 19.5523 19 19V12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <span>Copy permalink</span>
+              </button>
+            </li>
+
+            <li>
+              <button type="button" data-action="record-action#open" data-record-action-dialog-id-param="contact-dialog" class="flex w-full items-center justify-center gap-1 rounded border border-[#b5baca] bg-white p-3 text-[18px] font-semibold text-[#000f46] transition-colors hover:bg-bg-light-hover">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-text-brand" data-icon="help-support"><path d="M8.46445 8.46448L4.92893 4.92896M4.92893 19.0711L8.46448 15.5355M15.5355 15.5355L19.0711 19.071M19.0711 4.92891L15.5355 8.46445M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                <span>Contact collection</span>
+              </button>
+            </li>
+
+          </ul>
+        </section>
+
+          <section aria-label="About this collection" class="flex flex-col gap-4 rounded border border-[#dddfe7] bg-white p-4">
+            <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">About this collection</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+            <nav aria-label="Collection links">
+              <ul class="flex flex-col gap-6" role="list">
+                <li>
+                  <a class="flex items-start justify-between gap-1 text-[18px] font-semibold text-[#003f8b] hover:underline" href="../../collections/medical-history-museum/index.html">
+                    <span>Browse Medical History Museum</span>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-5 shrink-0" data-icon="link-arrow"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+</a>                </li>
+              </ul>
+            </nav>
+          </section>
+
+      </aside>
+    </div>
+  </section>
+</article>
+
+<dialog id="cite-dialog" class="uom-ds-action-dialog" aria-labelledby="cite-dialog-title" data-controller="citation record-action" data-action="click->record-action#backdropClose">
+  <article class="flex flex-col gap-4 p-6">
+    <header class="flex items-center justify-between gap-4">
+      <h2 id="cite-dialog-title" class="text-2xl font-semibold text-text-brand">Cite this record</h2>
+      <button type="button" data-action="record-action#closeDialog" class="shrink-0 text-text-tertiary hover:text-text-primary transition-colors" aria-label="Close dialog">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="close"><path d="M18 6L6 18M6 6L18 18" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+      </button>
+    </header>
+    <div class="flex flex-col gap-1">
+      <label for="cite-style" class="text-sm text-text-tertiary">Citation style</label>
+      <div class="relative flex h-11 items-center border border-stroke-brand bg-white">
+        <select id="cite-style" data-citation-target="select" data-action="citation#update" class="h-full w-full appearance-none bg-transparent px-3 pr-9 text-sm text-text-primary outline-none">
+            <option value="Harvard" data-citation-text="Original-Odhner (estab. 1917, closed 1942) <em>Original Odhner Calculator</em>, Medical History Museum, University of Melbourne. Available at: unimelb:item:medhist:32326 (Accessed: 14 September 2026)." data-citation-plain="Original-Odhner (estab. 1917, closed 1942) Original Odhner Calculator, Medical History Museum, University of Melbourne. Available at: unimelb:item:medhist:32326 (Accessed: 14 September 2026)." selected="">Harvard</option>
+            <option value="APA 7th" data-citation-text="Original-Odhner (estab. 1917, closed 1942). <em>Original Odhner Calculator</em>. Medical History Museum, University of Melbourne. unimelb:item:medhist:32326" data-citation-plain="Original-Odhner (estab. 1917, closed 1942). Original Odhner Calculator. Medical History Museum, University of Melbourne. unimelb:item:medhist:32326">APA 7th</option>
+            <option value="Chicago" data-citation-text="Original-Odhner (estab. 1917, closed 1942). <em>Original Odhner Calculator</em>. Medical History Museum, University of Melbourne. Persistent ID: unimelb:item:medhist:32326. Accessed 14 September 2026." data-citation-plain="Original-Odhner (estab. 1917, closed 1942). Original Odhner Calculator. Medical History Museum, University of Melbourne. Persistent ID: unimelb:item:medhist:32326. Accessed 14 September 2026.">Chicago</option>
+            <option value="MLA 9th" data-citation-text="Original-Odhner (estab. 1917, closed 1942). âOriginal Odhner Calculator.â <em>The University of Melbourne â Cultural Collections Search</em>, Medical History Museum, University of Melbourne. Accessed 14 September 2026." data-citation-plain="Original-Odhner (estab. 1917, closed 1942). âOriginal Odhner Calculator.â The University of Melbourne â Cultural Collections Search, Medical History Museum, University of Melbourne. Accessed 14 September 2026.">MLA 9th</option>
+        </select>
+        <span class="pointer-events-none absolute right-3 flex items-center text-text-brand" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="chevron-down"><path d="M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z" fill="currentColor"></path></svg>
+        </span>
+      </div>
+    </div>
+    <p data-citation-target="text" class="text-sm text-text-primary">Original-Odhner (estab. 1917, closed 1942) <em>Original Odhner Calculator</em>, Medical History Museum, University of Melbourne. Available at: unimelb:item:medhist:32326 (Accessed: 14 September 2026).</p>
+    <footer class="flex flex-col gap-1">
+      <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand w-full sm:w-auto" data-component="Button" data-variant="tertiary" data-action="citation#copy">
+        Copy citation
+</button>      <span data-citation-target="status" role="status" aria-live="polite" class="sr-only"></span>
+    </footer>
+  </article>
+</dialog>
+
+<dialog id="permalink-dialog" class="uom-ds-action-dialog" aria-labelledby="permalink-dialog-title" data-controller="copy record-action" data-copy-text-value="https://enterprise-services-group.github.io/CCS-HiFI-prototype/catalog/unimelb:item:medhist:32326" data-action="click->record-action#backdropClose">
+  <article class="flex flex-col gap-4 p-6">
+    <header class="flex items-center justify-between gap-4">
+      <h2 id="permalink-dialog-title" class="text-2xl font-semibold text-text-brand">Copy permalink</h2>
+      <button type="button" data-action="record-action#closeDialog" class="shrink-0 text-text-tertiary hover:text-text-primary transition-colors" aria-label="Close dialog">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="close"><path d="M18 6L6 18M6 6L18 18" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+      </button>
+    </header>
+    <p class="text-sm text-text-tertiary break-all">https://enterprise-services-group.github.io/CCS-HiFI-prototype/catalog/unimelb:item:medhist:32326</p>
+    <footer>
+      <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand w-full" data-component="Button" data-variant="tertiary" data-action="copy#copy" data-copy-target="button">
+        Copy link
+</button>      <span data-copy-target="status" role="status" aria-live="polite" class="sr-only"></span>
+    </footer>
+  </article>
+</dialog>
+
+<dialog id="contact-dialog" class="uom-ds-action-dialog" aria-labelledby="contact-dialog-title" data-controller="record-action" data-action="click->record-action#backdropClose">
+  <article class="flex flex-col gap-4 p-6">
+    <header class="flex items-center justify-between gap-4">
+      <h2 id="contact-dialog-title" class="text-2xl font-semibold text-text-brand">Contact collection</h2>
+      <button type="button" data-action="record-action#closeDialog" class="shrink-0 text-text-tertiary hover:text-text-primary transition-colors" aria-label="Close dialog">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="close"><path d="M18 6L6 18M6 6L18 18" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+      </button>
+    </header>
+      <p class="text-sm text-text-primary">For enquiries about this item, please contact the Medical History Museum.</p>
+      <nav aria-label="Collection contact links">
+        <ul class="flex flex-col gap-2" role="list">
+          <li>
+            <a class="flex items-center gap-2 text-sm font-semibold text-[#003f8b] hover:underline" href="../../collections/medical-history-museum/index.html">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4 shrink-0" data-icon="link-arrow"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+              <span>Visit collection page</span>
+</a>          </li>
+        </ul>
+      </nav>
+  </article>
+</dialog>
+
+  <section id="related-items" aria-label="Related items" class="uom-ds-section-shell bg-bg-light">
+    <div class="flex w-full max-w-[1240px] flex-col gap-8">
+      <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Related items</h2>
+  </div>
+    <div class="shrink-0">            <a class="text-[18px] font-semibold text-[#003f8b] underline decoration-from-font hover:no-underline" href="../../catalog/index.html?f%5Bcollection_ssim%5D%5B%5D=Medical+History+Museum">View all cultural objects</a>
+</div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->      <ol class="grid grid-cols-1 items-start gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3" aria-label="Related items">
+          <li>
+            <!-- BEGIN app/components/result_card_component.html.erb
+--><article aria-label="Surgical Amputation Set, c.1870" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+  <a class="flex flex-col w-full no-underline" href="../../catalog/unimelb:item:medhist:amputation-1870/index.html">
+
+      <div class="uom-ds-placeholder-surface flex w-full items-center justify-center" style="aspect-ratio: 4/3">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-10 text-primary/40 md:size-12" data-icon="archive-box" aria-hidden="true"><path d="M4 8H20V20H4V8ZM3 4H21V8H3V4ZM10.5 5.5H13.5V6.5H10.5V5.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg>
+      </div>
+
+    <div class="flex w-full flex-1 flex-col gap-4 p-4">
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Surgical Amputation Set, c.1870</span>
+
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Medical History Museum</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Cultural Object</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">c.1870</p>
+        </div>
+
+        <div class="flex w-fit items-center gap-1.5 rounded-full bg-[#f2f2f2] px-2.5 py-1">
+          <img class="size-[18px] shrink-0" alt="" src="../../assets/cc-icons/cc-2b086099.svg"><img class="size-[18px] shrink-0" alt="" src="../../assets/cc-icons/pd-fffb91f5.svg">
+          <span class="text-xs font-semibold text-[#555555]">Public Domain</span>
+        </div>
+    </div>
+
+</a></article>
+<!-- END app/components/result_card_component.html.erb -->
+          </li>
+          <li>
+            <!-- BEGIN app/components/result_card_component.html.erb
+--><article aria-label="Papier-mÃ¢chÃ© Anatomical Teaching Model, 1905" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+  <a class="flex flex-col w-full no-underline" href="../../catalog/unimelb:item:medhist:anatomy-model-1905/index.html">
+
+      <div class="uom-ds-placeholder-surface flex w-full items-center justify-center" style="aspect-ratio: 16/9">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-10 text-primary/40 md:size-12" data-icon="archive-box" aria-hidden="true"><path d="M4 8H20V20H4V8ZM3 4H21V8H3V4ZM10.5 5.5H13.5V6.5H10.5V5.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg>
+      </div>
+
+    <div class="flex w-full flex-1 flex-col gap-4 p-4">
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Papier-mÃ¢chÃ© Anatomical Teaching Model, 1905</span>
+
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Medical History Museum</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Cultural Object</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">1905</p>
+        </div>
+
+        <div class="flex w-fit items-center gap-1.5 rounded-full bg-[#f2f2f2] px-2.5 py-1">
+          <img class="size-[18px] shrink-0" alt="" src="../../assets/cc-icons/cc-2b086099.svg">
+          <span class="text-xs font-semibold text-[#555555]">In copyright</span>
+        </div>
+    </div>
+
+</a></article>
+<!-- END app/components/result_card_component.html.erb -->
+          </li>
+          <li>
+            <!-- BEGIN app/components/result_card_component.html.erb
+--><article aria-label="Photograph â First Cohort of Medical Graduates, 1888" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+  <a class="flex flex-col w-full no-underline" href="../../catalog/unimelb:item:medhist:graduation-photo-1888/index.html">
+
+      <div class="uom-ds-placeholder-surface flex w-full items-center justify-center" style="aspect-ratio: 4/5">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-10 text-primary/40 md:size-12" data-icon="photo" aria-hidden="true"><path d="M4 4H20V20H4V4ZM10.5 9A1.5 1.5 0 1 1 7.5 9A1.5 1.5 0 1 1 10.5 9ZM4 16L9 11L13 15L16 12L20 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path></svg>
+      </div>
+
+    <div class="flex w-full flex-1 flex-col gap-4 p-4">
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Photograph â First Cohort of Medical Graduates, 1888</span>
+
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Medical History Museum</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Photograph</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">1888</p>
+        </div>
+
+        <div class="flex w-fit items-center gap-1.5 rounded-full bg-[#f2f2f2] px-2.5 py-1">
+          <img class="size-[18px] shrink-0" alt="" src="../../assets/cc-icons/cc-2b086099.svg"><img class="size-[18px] shrink-0" alt="" src="../../assets/cc-icons/pd-fffb91f5.svg">
+          <span class="text-xs font-semibold text-[#555555]">Public Domain</span>
+        </div>
+    </div>
+
+</a></article>
+<!-- END app/components/result_card_component.html.erb -->
+          </li>
+      </ol>
+    </div>
+  </section>
+<!-- END app/views/catalog/show.html.erb -->
+    </main>
+
+    <!-- BEGIN app/components/footer_component.html.erb
+--><footer data-component="Footer" class="flex w-full flex-col items-start bg-primary">
+  <section id="acknowledgement-of-country" aria-labelledby="aoc-heading" class="flex w-full justify-center bg-footer-aoc px-4 py-10 lg:px-8">
+    <div class="flex w-full max-w-[1224px] flex-col gap-6 md:flex-row">
+      <div class="flex flex-col gap-4 md:w-1/3 lg:w-1/4">
+        <h2 id="aoc-heading" class="font-display text-xl font-semibold leading-tight text-text-header md:text-2xl">Acknowledgement of Country</h2>
+        <div class="flex items-center gap-4">
+          <img alt="Aboriginal flag" class="h-8 w-16" src="../../assets/flag-aboriginal-3df4ae7f.svg">
+          <img alt="Torres Strait Islander flag" class="h-8 w-16" src="../../assets/flag-torres-strait-eb5f8d4f.svg">
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 md:w-2/3 lg:w-3/4">
+        <p class="uom-ds-footer-copy">
+          The University of Melbourne acknowledge Aboriginal and Torres Strait Islander people as the Traditional
+          Owners of the unceded lands on which we work, learn and live. We pay respect to Elders past, present and
+          future, and acknowledge the importance of Indigenous knowledge in the Academy.
+        </p>
+        <a href="../../help-and-support/indigenous-cultural-data/index.html" class="uom-ds-footer-link">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+          Read about our Indigenous priorities
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex w-full justify-center px-4 py-10 lg:px-8">
+    <div class="flex w-full max-w-[1224px] flex-col gap-10 md:flex-row md:flex-wrap md:gap-6">
+      <nav class="uom-ds-footer-column" aria-label="Explore the collections">
+        <p class="uom-ds-footer-eyebrow">Explore</p>
+          <a href="../../collections/index.html" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Browse all collections
+          </a>
+          <a href="#explore-by-theme" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Explore by theme
+          </a>
+          <a href="#browse-by-object" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Browse by object
+          </a>
+          <a href="../../catalog/index.html" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Search the collections
+          </a>
+          <a href="../../help-and-support/index.html" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Help and support
+          </a>
+      </nav>
+
+      <nav class="uom-ds-footer-column" aria-label="University of Melbourne">
+        <p class="uom-ds-footer-eyebrow">University of Melbourne</p>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            About us
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Careers at Melbourne
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Safety and respect
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Newsroom
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Contact
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Campus locations
+          </a>
+      </nav>
+
+      <div id="contact-details" class="uom-ds-footer-column">
+        <p class="uom-ds-footer-eyebrow">Contact details</p>
+        <p class="uom-ds-footer-copy">
+          Phone <a href="tel:136352" class="uom-ds-link-underlined font-semibold">13 MELB (13 6352)</a><br>
+          International <a href="tel:+61390355511" class="uom-ds-link-underlined font-semibold">+61 3 9035 5511</a>
+        </p>
+        <p class="uom-ds-footer-copy">
+          <span class="font-semibold">Address</span><br>
+          The University of Melbourne<br>
+          Grattan Street, Parkville<br>
+          Victoria 3010<br>
+          Australia
+        </p>
+      </div>
+
+      <div class="uom-ds-footer-column">
+        <p class="uom-ds-footer-eyebrow">Connect with us</p>
+        <div class="flex items-center gap-6">
+            <a href="#" aria-label="Facebook"><img alt="" class="size-6" src="../../assets/social-facebook-256121e9.svg"></a>
+            <a href="#" aria-label="LinkedIn"><img alt="" class="size-6" src="../../assets/social-linkedin-a2201b9d.svg"></a>
+            <a href="#" aria-label="Instagram"><img alt="" class="size-6" src="../../assets/social-instagram-caddfbae.svg"></a>
+            <a href="#" aria-label="X (Twitter)"><img alt="" class="size-6" src="../../assets/social-x-twitter-a8f68b87.svg"></a>
+        </div>
+      </div>
+
+      <div class="uom-ds-footer-logo-column flex min-w-[144px] flex-1 items-center justify-center md:items-start md:justify-end">
+        <span role="img" aria-label="The University of Melbourne" class="inline-block bg-white size-36" style="mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); mask-size: contain; mask-repeat: no-repeat; mask-position: center center; -webkit-mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center center"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex w-full justify-center bg-footer-dark px-4 py-8 lg:px-8">
+    <div class="flex w-full max-w-[1224px] flex-col gap-8 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-6">
+      <div class="flex flex-col gap-6 text-xs font-semibold text-text-header md:flex-row md:items-center md:gap-3 md:text-sm">
+          <a href="#" class="uom-ds-link-underlined">Emergency</a>
+          <a href="#" class="uom-ds-link-underlined">Terms and privacy</a>
+          <a href="#" class="uom-ds-link-underlined">Accessibility</a>
+          <a href="#" class="uom-ds-link-underlined">Privacy</a>
+      </div>
+      <div class="flex flex-col gap-1 text-xs text-text-primary-inverse md:flex-row md:flex-wrap md:items-center md:gap-3 md:text-sm">
+        <p>The University of Melbourne (Australian University): <span class="font-semibold">PRV12150</span></p>
+        <p>CRICOS: <span class="font-semibold">00116K</span></p>
+        <p>ABN: <span class="font-semibold">84 002 705 224</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END app/components/footer_component.html.erb -->
+  
+
+</body></html><!-- END app/views/layouts/application.html.erb -->

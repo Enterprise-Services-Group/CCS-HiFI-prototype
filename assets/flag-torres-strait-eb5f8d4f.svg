@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="flag_torres_strait" clip-path="url(#clip0_0_210)">
+<path id="vector" d="M0 0V32H64V0H0Z" fill="#009966"/>
+<path id="vector_2" d="M0 7.556V24.4453H64V7.556H0Z" fill="black"/>
+<path id="vector_3" d="M0 8.444V23.5547H64V8.444H0Z" fill="#000099"/>
+<path id="vector_4" d="M32.8587 9.03733L32 11.968L31.1413 9.03733C21.896 11.0147 26.0733 19.0453 27.1813 21.148L24.9347 22.9627L28.912 21.5747V16.332C28.912 14.628 30.292 13.2467 31.9973 13.2467C33.7027 13.2467 35.0827 14.628 35.0827 16.332L35.088 21.5747L39.0653 22.9627L36.82 21.148C37.9267 19.0453 42.104 11.0147 32.8587 9.03733Z" fill="white"/>
+<path id="vector_5" d="M32.5933 16.352L31.9987 14.4773L31.4067 16.352L29.44 16.3373L31.0387 17.48L30.416 19.3453L31.9973 18.1773L33.5787 19.3453L32.9573 17.48L34.556 16.3373L32.5933 16.352Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_0_210">
+<rect width="64" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

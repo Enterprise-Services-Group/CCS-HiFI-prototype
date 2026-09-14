@@ -1,0 +1,179 @@
+/* Search results banner, matching Figma node 2097:63504. This is kept as a
+   standalone asset so the layout does not depend on a Tailwind rebuild. */
+.uom-ds-search-results-banner {
+  width: 100%;
+  border-bottom: 1px solid var(--color-stroke-weaker, #b5baca);
+  background: #fff;
+}
+
+.uom-ds-search-results-banner-inner {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 32px calc(var(--spacing) * 10);
+}
+
+.uom-ds-search-results-banner-copy {
+  min-width: 0;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.uom-ds-search-results-banner-heading {
+  color: var(--color-text-brand, #000f46);
+  font-family: var(--font-display, "Fraunces Variable", Georgia, serif);
+  font-size: 29.228px;
+  font-variation-settings: "SOFT" 0, "WONK" 1;
+  font-weight: 400;
+  letter-spacing: -0.2923px;
+  line-height: 33.612px;
+  overflow-wrap: anywhere;
+}
+
+.uom-ds-search-results-banner-description {
+  color: var(--color-text-tertiary, #707070);
+  font-family: var(--font-sans, "Source Sans 3", Arial, sans-serif);
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.uom-ds-search-results-banner-controls {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.uom-ds-search-results-banner-controls > [data-controller="facet-dropdown"] {
+  width: 220px;
+}
+
+.uom-ds-search-results-banner-controls > [data-controller="facet-dropdown"] button,
+.uom-ds-search-results-banner-controls > [data-controller="facet-dropdown"] [data-facet-dropdown-target="panel"],
+.uom-ds-search-results-banner-controls > [data-controller="facet-dropdown"] button > span {
+  border-color: var(--color-stroke-weak, #b5baca);
+}
+
+.uom-ds-search-results-view-toggle {
+  display: flex;
+  height: 48px;
+  align-items: stretch;
+}
+
+.uom-ds-search-results-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--color-stroke-weak, #b5baca);
+  padding: 0 8px;
+  color: var(--color-text-tertiary, #707070);
+  font-family: var(--font-sans, "Source Sans 3", Arial, sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.uom-ds-search-results-view-link + .uom-ds-search-results-view-link {
+  margin-left: -1px;
+}
+
+.uom-ds-search-results-view-link.is-active {
+  background: var(--color-surface-alt, #f7f7f7);
+  color: var(--color-text-brand, #000f46);
+}
+
+.uom-ds-search-results-view-link:hover,
+.uom-ds-search-results-view-link:focus-visible {
+  background: var(--color-search-hover-bg, #e3f6fd);
+  color: var(--color-text-brand, #000f46);
+}
+
+@media (max-width: 1023px) {
+  .uom-ds-search-results-banner-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 16px;
+  }
+
+  .uom-ds-search-results-banner-controls {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 479px) {
+  .uom-ds-search-results-banner-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .uom-ds-search-results-banner-controls > [data-controller="facet-dropdown"],
+  .uom-ds-search-results-view-toggle {
+    width: 100%;
+  }
+
+  .uom-ds-search-results-view-link {
+    flex: 1 1 50%;
+    justify-content: center;
+  }
+}
+
+/* ── Browse-all dark variant — editorial hero treatment */
+.uom-ds-search-results-banner--browse {
+  background: var(--color-bg-primary, #000f46);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.uom-ds-search-results-banner--browse .uom-ds-search-results-banner-inner {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  align-items: flex-end;
+}
+
+.uom-ds-search-results-banner--browse .uom-ds-search-results-banner-heading {
+  color: #ffffff;
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+}
+
+.uom-ds-search-results-banner--browse .uom-ds-search-results-banner-description {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.uom-ds-search-results-banner--browse .uom-ds-search-results-view-link {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.uom-ds-search-results-banner--browse .uom-ds-search-results-view-link.is-active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.uom-ds-search-results-banner--browse .uom-ds-search-results-view-link:hover,
+.uom-ds-search-results-banner--browse .uom-ds-search-results-view-link:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+@media (max-width: 1023px) {
+  .uom-ds-search-results-banner--browse .uom-ds-search-results-banner-inner {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    align-items: stretch;
+  }
+
+  .uom-ds-search-results-banner--browse .uom-ds-search-results-banner-heading {
+    font-size: 36px;
+  }
+}

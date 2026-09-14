@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="flag_aboriginal" clip-path="url(#clip0_0_236)">
+<path id="vector" d="M64 0H0V32H64V0Z" fill="#CC0000"/>
+<path id="vector_2" d="M64 0H0V16H64V0Z" fill="black"/>
+<path id="vector_3" d="M32 25.6C37.3019 25.6 41.6 21.3019 41.6 16C41.6 10.6981 37.3019 6.4 32 6.4C26.6981 6.4 22.4 10.6981 22.4 16C22.4 21.3019 26.6981 25.6 32 25.6Z" fill="#FFFF00"/>
+</g>
+<defs>
+<clipPath id="clip0_0_236">
+<rect width="64" height="32" fill="white"/>
+</clipPath>
+</defs>
+</svg>

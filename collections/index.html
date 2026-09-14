@@ -1,0 +1,1988 @@
+<!DOCTYPE html><!-- BEGIN app/views/layouts/application.html.erb
+--><html lang="en"><head>
+    <title>Collections â The University of Melbourne â Cultural Collections Search</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Cultural Collections Search">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+
+    
+
+      <meta name="description" content="Explore the University of Melbourne's cultural collections by theme, topic, century, and institution.">
+  <link rel="canonical" href="../collections/index.html">
+
+
+
+    <link rel="icon" href="../icon.png" type="image/png">
+    <link rel="icon" href="../icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../icon.png">
+
+
+    <link rel="stylesheet" href="../assets/application-93695a83.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../assets/card_image-034552e2.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../assets/responsive_overrides-4a8522a0.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../assets/search_results_banner-d9e1ad78.css" data-turbo-track="reload">
+<link rel="stylesheet" href="../assets/tailwind-16beeb73.css" data-turbo-track="reload">
+    <script type="importmap" data-turbo-track="reload" nonce="OR7MSy1E2bR8aGV9lgXuQg==">{
+  "imports": {
+    "application": "/assets/application-17abd09c.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-9fd88cd5.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/search_dropdown_renderer": "/assets/controllers/search_dropdown_renderer-49b5bb55.js",
+    "@github/auto-complete-element": "/assets/@github--auto-complete-element-dcaeae99.js",
+    "@popperjs/core": "/assets/@popperjs--core-c61fbf9e.js",
+    "bootstrap": "/assets/bootstrap-9304d36f.js",
+    "@github/combobox-nav": "/assets/@github--combobox-nav-dd202526.js",
+    "blacklight-frontend/bookmark_toggle": "/assets/blacklight-frontend/bookmark_toggle-4db80d2f.js",
+    "blacklight-frontend/button_focus": "/assets/blacklight-frontend/button_focus-9e66e362.js",
+    "blacklight-frontend/checkbox_submit": "/assets/blacklight-frontend/checkbox_submit-a4b81576.js",
+    "blacklight-frontend/core": "/assets/blacklight-frontend/core-79dd4d36.js",
+    "blacklight-frontend/debounce": "/assets/blacklight-frontend/debounce-a77752c3.js",
+    "blacklight-frontend/facet_suggest": "/assets/blacklight-frontend/facet_suggest-8a45a83f.js",
+    "blacklight-frontend": "/assets/blacklight-frontend/index-7d352063.js",
+    "blacklight-frontend/modal": "/assets/blacklight-frontend/modal-bc2d1d06.js",
+    "blacklight-frontend/search_context": "/assets/blacklight-frontend/search_context-1287545b.js",
+    "controllers/advanced_search_controller": "/assets/controllers/advanced_search_controller-80ebbcd7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/card_thumbnail_controller": "/assets/controllers/card_thumbnail_controller-f474101d.js",
+    "controllers/carousel_controller": "/assets/controllers/carousel_controller-7cd0d325.js",
+    "controllers/citation_controller": "/assets/controllers/citation_controller-a2c76099.js",
+    "controllers/copy_controller": "/assets/controllers/copy_controller-7911c560.js",
+    "controllers/date_histogram_controller": "/assets/controllers/date_histogram_controller-8719db11.js",
+    "controllers/facet_dropdown_controller": "/assets/controllers/facet_dropdown_controller-88eec59d.js",
+    "controllers/facet_search_controller": "/assets/controllers/facet_search_controller-4b1e690d.js",
+    "controllers/filter_modal_controller": "/assets/controllers/filter_modal_controller-cf446401.js",
+    "controllers/filter_tabs_controller": "/assets/controllers/filter_tabs_controller-6adaeca1.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/keyboard_shortcuts_controller": "/assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js",
+    "controllers/live_filter_controller": "/assets/controllers/live_filter_controller-059500ae.js",
+    "controllers/media_viewer_controller": "/assets/controllers/media_viewer_controller-b941babb.js",
+    "controllers/mega_menu_controller": "/assets/controllers/mega_menu_controller-0de8720b.js",
+    "controllers/mobile_menu_controller": "/assets/controllers/mobile_menu_controller-00e7d56f.js",
+    "controllers/motion_mosaic_controller": "/assets/controllers/motion_mosaic_controller-aa7208c5.js",
+    "controllers/popover_controller": "/assets/controllers/popover_controller-708a88f4.js",
+    "controllers/record_action_controller": "/assets/controllers/record_action_controller-fc9523e1.js",
+    "controllers/search_suggest_controller": "/assets/controllers/search_suggest_controller-8c8c4fdb.js",
+    "controllers/share_controller": "/assets/controllers/share_controller-8db659d3.js",
+    "controllers/show_more_controller": "/assets/controllers/show_more_controller-15ce54ba.js",
+    "controllers/sticky_top_reveal_controller": "/assets/controllers/sticky_top_reveal_controller-312a81f1.js",
+    "controllers/tooltip_controller": "/assets/controllers/tooltip_controller-f0b9e0b9.js"
+  }
+}</script>
+<link rel="modulepreload" href="../assets/application-17abd09c.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/turbo.min-9fd88cd5.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/stimulus.min-4b1e420e.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/stimulus-loading-1fc53fe7.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/search_dropdown_renderer-49b5bb55.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/@github--auto-complete-element-dcaeae99.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/@popperjs--core-c61fbf9e.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/bootstrap-9304d36f.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/@github--combobox-nav-dd202526.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/bookmark_toggle-4db80d2f.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/button_focus-9e66e362.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/checkbox_submit-a4b81576.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/core-79dd4d36.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/debounce-a77752c3.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/facet_suggest-8a45a83f.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/index-7d352063.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/modal-bc2d1d06.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/blacklight-frontend/search_context-1287545b.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/advanced_search_controller-80ebbcd7.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/application-3affb389.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/card_thumbnail_controller-f474101d.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/carousel_controller-7cd0d325.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/citation_controller-a2c76099.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/copy_controller-7911c560.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/date_histogram_controller-8719db11.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/facet_dropdown_controller-88eec59d.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/facet_search_controller-4b1e690d.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/filter_modal_controller-cf446401.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/filter_tabs_controller-6adaeca1.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/hello_controller-708796bd.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/index-ee64e1f1.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/keyboard_shortcuts_controller-dfcaf41b.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/live_filter_controller-059500ae.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/media_viewer_controller-b941babb.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/mega_menu_controller-0de8720b.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/mobile_menu_controller-00e7d56f.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/motion_mosaic_controller-aa7208c5.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/popover_controller-708a88f4.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/record_action_controller-fc9523e1.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/search_suggest_controller-8c8c4fdb.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/share_controller-8db659d3.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/show_more_controller-15ce54ba.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/sticky_top_reveal_controller-312a81f1.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<link rel="modulepreload" href="../assets/controllers/tooltip_controller-f0b9e0b9.js" nonce="OR7MSy1E2bR8aGV9lgXuQg==">
+<script type="module" nonce="OR7MSy1E2bR8aGV9lgXuQg==">import "application"</script>
+  </head>
+
+  <body class="min-h-screen overflow-x-clip bg-bg-light text-text-primary" data-controller="filter-modal keyboard-shortcuts" data-filter-modal-url-value="/catalog/filters">
+    <a href="#main-container" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[200] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-[#000f46] focus:shadow-lg focus:outline-none">
+      Skip to main content
+    </a>
+    <!-- BEGIN app/components/header_component.html.erb
+--><header data-component="Header" class="uom-ds-site-header z-50 w-full bg-primary" data-controller="mobile-menu">
+  <div class="flex min-h-[77px] items-center justify-between gap-2 p-4 lg:hidden">
+    <button type="button" aria-label="Open menu" data-action="mobile-menu#toggle" data-panel="menu" class="uom-ds-header-icon-button">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="menu" aria-hidden="true"><path d="M3 12H21M3 6H21M3 18H21" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+    </button>
+    <a href="../index.html">
+      <img alt="The University of Melbourne" class="h-10 w-10 object-contain" src="../assets/UoM_Logo_Vert_UnhousedAlt_onDark-20ff1950.png">
+</a>    <button type="button" aria-label="Open search" data-action="mobile-menu#toggle" data-panel="search" class="uom-ds-header-icon-button">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+    </button>
+  </div>
+
+  <div class="flex w-full items-stretch max-lg:hidden border-b border-stroke-weak">
+    <div class="flex shrink-0 w-[110px] border-r border-stroke-weak">
+      <a class="flex size-[110px] items-center justify-center p-2" href="../index.html">
+        <img alt="The University of Melbourne" class="h-full w-full object-contain" src="../assets/UoM_Logo_Vert_UnhousedAlt_onDark-20ff1950.png">
+</a>    </div>
+
+    <div class="flex min-w-0 flex-1 flex-col">
+      <div class="flex w-full justify-end border-b border-stroke-weak bg-footer-dark p-2">
+        <div class="w-full max-w-[288px]" data-controller="search-suggest" data-search-suggest-portal-value="true" data-search-suggest-search-url-value="/catalog">
+          <form class="flex h-12 w-full items-stretch border border-primary bg-white" action="/catalog" accept-charset="UTF-8" method="get">
+            <label class="flex min-w-0 flex-1 items-center">
+              <span class="sr-only">Search Cross Collections</span>
+              <input type="text" name="q" id="header-search-desktop-q" placeholder="Search Cross Collectionsâ¦" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-dropdown" aria-expanded="false" class="w-full min-w-0 border-0 bg-transparent px-3 text-lg text-text-tertiary outline-none placeholder:text-text-tertiary" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+            </label>
+            <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-primary bg-accent-secondary px-3 text-primary transition-colors hover:brightness-95">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+            </button>
+</form>          <!-- BEGIN app/components/search_dropdown_component.html.erb
+--><div id="header-search-dropdown" data-component="SearchDropdown" data-search-suggest-target="dropdown" hidden="" class="uom-ds-header-dropdown" role="listbox" aria-live="polite"></div>
+<!-- END app/components/search_dropdown_component.html.erb -->
+        </div>
+      </div>
+
+      <div class="flex h-[65px] w-full items-center justify-between p-2">
+        <a class="uom-ds-header-ghost-link" href="../index.html">Cultural Collections Search</a>
+        <nav class="relative flex items-center" aria-label="Primary navigation" data-controller="mega-menu">
+          <a class="uom-ds-header-ghost-link" href="../catalog/index.html?search_field=all_fields">Search all records</a>
+
+          <div class="relative">
+            <button type="button" class="uom-ds-header-ghost-link inline-flex items-center gap-1" data-action="mega-menu#toggle" data-menu="browse" aria-haspopup="true" aria-expanded="false" aria-controls="mega-menu-browse-panel">
+              Browse collections
+              <span class="mega-menu-chevron size-5" data-mega-menu-target="chevron" data-menu="browse">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="chevron-down" aria-hidden="true"><path d="M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z" fill="currentColor"></path></svg>
+              </span>
+            </button>
+            <div id="mega-menu-browse-panel" class="mega-menu-panel absolute right-0 top-full w-[540px] rounded-bl-lg rounded-br-lg border-t-2 border-accent bg-footer-dark shadow-[0px_10px_7.5px_rgba(0,0,0,0.35)]" data-mega-menu-target="panel" data-menu="browse" role="region" aria-labelledby="browse-collections-heading">
+              <div class="flex flex-col gap-6 p-8">
+                <div class="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                  <h2 id="browse-collections-heading" class="font-display text-3xl leading-tight">
+                    <a class="font-semibold text-white no-underline hover:underline" href="../collections/index.html">Browse collections</a>
+                  </h2>
+                </div>
+                <hr class="border-white/20">
+                <ul class="flex flex-col gap-6">
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../collections/grainger-museum/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Grainger Museum Collection</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">The personal collection of composer Percy Grainger including instruments, man...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../collections/ian-potter-art/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">University Art Collection</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">A major university art collection featuring Australian and international work...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../collections/medical-history-museum/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Medical History Museum</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Historical medical instruments, teaching models, pathological specimens and r...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../collections/university-archives/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">University Archives</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Official records documenting the history and administration of the University...</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../collections/rare-books/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Rare Books &amp; Special Collections</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Rare printed works, manuscripts, incunabula and illuminated texts from the Ba...</p>
+</a>                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <button type="button" class="uom-ds-header-ghost-link inline-flex items-center gap-1" data-action="mega-menu#toggle" data-menu="help" aria-haspopup="true" aria-expanded="false" aria-controls="mega-menu-help-panel">
+              Help and support
+              <span class="mega-menu-chevron size-5" data-mega-menu-target="chevron" data-menu="help">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5" data-icon="chevron-down" aria-hidden="true"><path d="M12 15.4L6 9.4L7.4 8L12 12.6L16.6 8L18 9.4L12 15.4Z" fill="currentColor"></path></svg>
+              </span>
+            </button>
+            <div id="mega-menu-help-panel" class="mega-menu-panel absolute right-0 top-full w-[540px] rounded-bl-lg rounded-br-lg border-t-2 border-accent bg-footer-dark shadow-[0px_10px_7.5px_rgba(0,0,0,0.35)]" data-mega-menu-target="panel" data-menu="help" role="region" aria-labelledby="help-support-heading">
+              <div class="flex flex-col gap-6 p-8">
+                <div class="flex items-center gap-2">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                  <h2 id="help-support-heading" class="font-display text-3xl font-semibold leading-tight text-white">
+                    <a class="no-underline hover:underline" href="../help-and-support/index.html">Help and support</a>
+                  </h2>
+                </div>
+                <hr class="border-white/20">
+                <ul class="flex flex-col gap-6">
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/search-tips/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Search Tips</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Cultural Collections Search is a search-first discovery platform. These tips help you find records quickly and precisely across all collections.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/metadata-and-fields/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Metadata and Fields</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Every record is described using a consistent set of metadata fields. Understanding these fields helps you interpret records and search more effectively.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/rights-and-licensing/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Rights and Licensing</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Rights vary from item to item. Always check the rights statement on an individual record before reusing material.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/citing-collections/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Citing Collections</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Cite collection items so others can locate the exact record you used. Every item record provides the details you need to build a citation.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/access-restrictions/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Access Restrictions Explained</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Records carry an Object Access Condition that tells you what you can do with the digital asset. Look for it on item records and result cards.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/faqs/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Frequently Asked Questions</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Answers to common questions about searching, downloading and using Cultural Collections Search.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/indigenous-cultural-data/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Indigenous Cultural Data and Access</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">How Cultural Collections Search supports the respectful management, description and discovery of Aboriginal and Torres Strait Islander cultural heritage, knowledge and collections.</p>
+</a>                    </li>
+                    <li>
+                      <a class="group flex flex-col gap-0.5 no-underline" href="../help-and-support/contact/index.html">
+                        <div class="flex items-start gap-1">
+                          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-0.5 size-6 shrink-0 text-white" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+                          <span class="text-lg font-semibold leading-6 text-white group-hover:underline">Contact the Collections Team</span>
+                        </div>
+                        <p class="pl-7 text-lg font-normal leading-relaxed text-text-secondary">Submit an enquiry, request access to an item, or ask for further information from the Collections team.</p>
+</a>                    </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div data-mobile-menu-target="panel" data-panel="search" hidden="" data-controller="search-suggest" data-search-suggest-search-url-value="/catalog" class="border-t border-stroke-weak px-4 py-4 lg:hidden">
+    <form class="flex h-12 w-full items-stretch border border-stroke-weak bg-white" action="/catalog" accept-charset="UTF-8" method="get">
+      <input type="text" name="q" id="header-search-mobile-q" placeholder="Search Cross Collectionsâ¦" class="w-full min-w-0 flex-1 border-0 bg-transparent px-3 text-lg text-text-brand outline-none placeholder:text-text-tertiary" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="header-search-suggestions" aria-expanded="false" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+      <button type="submit" aria-label="Submit search" class="flex shrink-0 items-center justify-center border-l border-stroke-weak bg-accent-secondary px-3 text-primary">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+      </button>
+</form>    <!-- BEGIN app/components/search_dropdown_component.html.erb
+--><div id="header-search-suggestions" data-component="SearchDropdown" data-search-suggest-target="dropdown" hidden="" class="uom-ds-header-dropdown" role="listbox" aria-live="polite"></div>
+<!-- END app/components/search_dropdown_component.html.erb -->
+  </div>
+
+  <div data-mobile-menu-target="panel" data-panel="menu" hidden="" class="lg:hidden">
+    <nav class="flex w-full flex-col gap-1 bg-primary p-4" aria-label="Mobile navigation">
+      <a class="flex items-center gap-3 rounded-lg bg-white/10 p-3 font-semibold text-text-header" href="../index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="home" aria-hidden="true"><path d="M4 21V9L12 3L20 9V21H14V14H10V21H4Z" fill="currentColor"></path></svg>
+        <span class="text-base">Home</span>
+</a>      <a class="flex items-center gap-3 rounded-lg p-3 font-normal text-text-header-muted" href="../catalog/index.html?search_field=all_fields">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+        <span class="text-base">Search all records</span>
+</a>      <a class="flex items-center gap-3 rounded-lg p-3 font-normal text-text-header-muted" href="../collections/index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="browse-collections" aria-hidden="true"><path d="M4 20V18H6.75L6.35 17.65C5.48333 16.8833 4.875 16.0083 4.525 15.025C4.175 14.0417 4 13.05 4 12.05C4 10.2 4.55417 8.55417 5.6625 7.1125C6.77083 5.67083 8.21667 4.71667 10 4.25V6.35C8.8 6.78333 7.83333 7.52083 7.1 8.5625C6.36667 9.60417 6 10.7667 6 12.05C6 12.8 6.14167 13.5292 6.425 14.2375C6.70833 14.9458 7.15 15.6 7.75 16.2L8 16.45V14H10V20H4ZM14 19.75V17.65C15.2 17.2167 16.1667 16.4792 16.9 15.4375C17.6333 14.3958 18 13.2333 18 11.95C18 11.2 17.8583 10.4708 17.575 9.7625C17.2917 9.05417 16.85 8.4 16.25 7.8L16 7.55V10H14V4H20V6H17.25L17.65 6.35C18.4667 7.16667 19.0625 8.05417 19.4375 9.0125C19.8125 9.97083 20 10.95 20 11.95C20 13.8 19.4458 15.4458 18.3375 16.8875C17.2292 18.3292 15.7833 19.2833 14 19.75Z" fill="currentColor"></path></svg>
+        <span class="text-base">Browse collections</span>
+</a>      <a class="flex items-center gap-3 rounded-lg p-3 font-normal text-text-header-muted" href="../help-and-support/index.html">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="help-support" aria-hidden="true"><path d="M8.46445 8.46448L4.92893 4.92896M4.92893 19.0711L8.46448 15.5355M15.5355 15.5355L19.0711 19.071M19.0711 4.92891L15.5355 8.46445M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        <span class="text-base">Help &amp; support</span>
+</a>    </nav>
+  </div>
+
+  <div data-filter-modal-target="mount"></div>
+</header>
+<!-- END app/components/header_component.html.erb -->
+    <!-- BEGIN app/views/shared/_flash_messages.html.erb
+--><!-- END app/views/shared/_flash_messages.html.erb -->
+
+    <main id="main-container" class="flex min-h-screen w-full flex-col" aria-label="Main content">
+      <!-- BEGIN app/views/catalog/collections.html.erb
+-->
+
+<!-- BEGIN app/components/breadcrumb_component.html.erb
+--><nav data-component="Breadcrumb" aria-label="Breadcrumb" class="flex w-full flex-wrap items-center gap-1 px-4 py-2 md:px-6 lg:px-10" style="background-color: #00354c">
+  <a aria-label="Home" class="flex items-center gap-1 text-text-header" href="../index.html">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="home" aria-hidden="true"><path d="M4 21V9L12 3L20 9V21H14V14H10V21H4Z" fill="currentColor"></path></svg>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+</a>  <span class="text-base font-semibold text-text-header" aria-current="page">Collections</span>
+</nav>
+<!-- END app/components/breadcrumb_component.html.erb -->
+
+<!-- BEGIN app/components/page_banner_component.html.erb
+--><section data-component="PageBanner" class="uom-ds-page-banner uom-ds-page-banner--hero uom-ds-page-banner--photo" style="--uom-pb-image: url('/assets/uom-banner-microscope-68fdc26f.jpg'); --uom-pb-position: right center" aria-labelledby="collections-heading">
+  <div class="uom-ds-page-banner-inner">
+    <div class="uom-ds-page-banner-body">
+
+      <div class="uom-ds-page-banner-copy">
+        <div class="flex flex-col gap-4">
+            <p class="text-[12px] tracking-[0.96px] md:text-[14px] md:tracking-[1.12px] lg:text-[18px] lg:tracking-[1.44px] font-semibold uppercase text-[#cdcdcd]">University of Melbourne</p>
+          <h1 class="font-display text-white font-normal leading-[1.2] text-[30px] tracking-[-0.3px] md:text-[40px] md:tracking-[-0.4px] lg:text-[48px] lg:tracking-[-0.48px]" id="collections-heading" style="font-variation-settings: &quot;SOFT&quot; 50, &quot;WONK&quot; 0, &quot;opsz&quot; 9">
+            Collections
+          </h1>
+        </div>
+
+          <p class="text-[16px] leading-[1.5] text-[#f4f4f4] md:text-[18px]">Explore our collections by theme, topic, century, and institution.</p>
+
+          <div class="uom-ds-page-banner-actions">
+            <div data-controller="search-suggest" data-search-suggest-portal-value="true" data-search-suggest-search-url-value="/catalog">
+              <form action="/catalog" method="get" class="uom-ds-hero-search" role="search" aria-label="Search artworks, manuscripts, photographsâ¦">
+                  <input type="hidden" name="f[collection_ssim][]" value="University Archives">
+                  <input type="hidden" name="f[collection_ssim][]" value="Rare Books &amp; Special Collections">
+                  <input type="hidden" name="f[collection_ssim][]" value="Personal Papers Collection">
+                  <input type="hidden" name="f[collection_ssim][]" value="Maps, Plans &amp; Architectural Drawings">
+                  <input type="hidden" name="f[collection_ssim][]" value="Anthropology Museum">
+                  <input type="hidden" name="f[collection_ssim][]" value="Zoology Museum">
+                  <input type="hidden" name="f[collection_ssim][]" value="Medical History Museum">
+                  <input type="hidden" name="f[collection_ssim][]" value="Henry Forman Atkinson Dental Museum">
+                  <input type="hidden" name="f[collection_ssim][]" value="Harry Brookes Allen Museum of Anatomy and Pathology">
+                  <input type="hidden" name="f[collection_ssim][]" value="FEIT">
+                  <input type="hidden" name="f[collection_ssim][]" value="Geology Museum">
+                  <input type="hidden" name="f[collection_ssim][]" value="University Herbarium">
+                  <input type="hidden" name="f[collection_ssim][]" value="Law Museum">
+                  <input type="hidden" name="f[collection_ssim][]" value="University Art Collection">
+                  <input type="hidden" name="f[collection_ssim][]" value="Prints, Drawings &amp; Watercolours">
+                  <input type="hidden" name="f[collection_ssim][]" value="Indigenous Australian Art Collection">
+                  <input type="hidden" name="f[collection_ssim][]" value="Photographic &amp; Pictorial Collection">
+                  <input type="hidden" name="f[collection_ssim][]" value="Audio-Visual Archive">
+                  <input type="hidden" name="f[collection_ssim][]" value="Ephemera &amp; Printed Images">
+                  <input type="hidden" name="f[collection_ssim][]" value="Grainger Museum Collection">
+                  <input type="hidden" name="f[collection_ssim][]" value="The Ed Muirhead Physics Museum">
+                <label class="uom-ds-header-search-field flex-1">
+                  <span class="sr-only">Search artworks, manuscripts, photographsâ¦</span>
+                  <input type="search" name="q" value="" placeholder="Search artworks, manuscripts, photographsâ¦" autocomplete="off" role="combobox" aria-autocomplete="list" aria-controls="banner-search-dropdown-hero" aria-expanded="false" class="uom-ds-header-search-input" data-search-suggest-target="input" data-action="input->search-suggest#fetch focus->search-suggest#onFocus keydown->search-suggest#onKeydown">
+                </label>
+                <button type="submit" aria-label="Search artworks, manuscripts, photographsâ¦" class="uom-ds-header-search-submit-btn">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-6" data-icon="search" aria-hidden="true"><path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14583 15.3708 4.8875 14.1125C3.62917 12.8542 3 11.3167 3 9.5C3 7.68333 3.62917 6.14583 4.8875 4.8875C6.14583 3.62917 7.68333 3 9.5 3C11.3167 3 12.8542 3.62917 14.1125 4.8875C15.3708 6.14583 16 7.68333 16 9.5C16 10.2333 15.8833 10.925 15.65 11.575C15.4167 12.225 15.1 12.8 14.7 13.3L21 19.6L19.6 21ZM9.5 14C10.75 14 11.8125 13.5625 12.6875 12.6875C13.5625 11.8125 14 10.75 14 9.5C14 8.25 13.5625 7.1875 12.6875 6.3125C11.8125 5.4375 10.75 5 9.5 5C8.25 5 7.1875 5.4375 6.3125 6.3125C5.4375 7.1875 5 8.25 5 9.5C5 10.75 5.4375 11.8125 6.3125 12.6875C7.1875 13.5625 8.25 14 9.5 14Z" fill="currentColor"></path></svg>
+                </button>
+              </form>
+              <!-- BEGIN app/components/search_dropdown_component.html.erb
+--><div id="banner-search-dropdown-hero" data-component="SearchDropdown" data-search-suggest-target="dropdown" hidden="" class="uom-ds-header-dropdown" role="listbox" aria-live="polite"></div>
+<!-- END app/components/search_dropdown_component.html.erb -->
+            </div>
+          </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+      <div class="uom-ds-banner-tooltip" data-controller="tooltip" data-action="keydown->tooltip#onKeydown">
+      <button type="button" data-tooltip-target="trigger" aria-expanded="false" aria-label="About this photo" data-action="mouseenter->tooltip#show mouseleave->tooltip#scheduleHide focus->tooltip#show blur->tooltip#scheduleHide click->tooltip#toggle" class="uom-ds-hero-tooltip-trigger">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="info" aria-hidden="true"><path d="M12 16V11M12 8H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </button>
+      <div data-tooltip-target="panel" hidden="" data-action="mouseenter->tooltip#show mouseleave->tooltip#scheduleHide" class="uom-ds-banner-tooltip-panel">
+        <p class="uom-ds-hero-tooltip-title">Rosenhain metallurgical microscope, 1914</p>
+        <a class="uom-ds-hero-tooltip-link" href="../catalog/unimelb:item:feit:rosenhain-microscope-1914/index.html">View record</a>
+      </div>
+    </div>
+
+</section>
+<!-- END app/components/page_banner_component.html.erb -->
+<!-- BEGIN app/views/catalog/_collections_browse_section.html.erb
+--><section aria-label="Themes" class="uom-ds-section-shell border-t border-stroke-weak">
+  <div class="flex w-full max-w-[1240px] flex-col gap-8">
+    <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Themes</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+      <div id="browse-themes-show-more" data-controller="show-more" data-show-more-show-text-value="Show more themes" data-show-more-hide-text-value="Show fewer themes">
+        <div id="browse-themes-grid" class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2 h-full md:row-span-2" href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Cultural+Object">
+  <div class="relative w-full overflow-hidden aspect-[3/2] md:aspect-auto md:h-full">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-art-vase-660c6eb7.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6 md:p-8">
+      <span class="text-xs md:text-sm font-semibold uppercase tracking-[1.2px] text-white/75">
+        901 items
+      </span>
+      <span class="font-display text-2xl leading-[1.15] md:text-[32px] md:leading-[1.15] font-semibold text-white">
+        Cultural Object
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2" href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Photograph">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-photograph-mof-f84f8905.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        273 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Photograph
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Publication">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-botanical-7e3d62c2.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        193 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Publication
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Artwork">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-art-okimono-06116789.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        173 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Artwork
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+        </div>
+          <div id="browse-themes-overflow" data-show-more-target="extra" hidden="" class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Video+%28Moving+Image%29">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-video-crooks-shibuya-a2ad436e.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        172 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Video (Moving Image)
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Manuscript">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-grainger-verso-3259c833.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        167 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Manuscript
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Audio+%28Interviews%29">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-grainger-7eb02317.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        155 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Audio (Interviews)
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BobjectType_ssim%5D%5B%5D=Scientific+Specimen">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-mec-microscope-4816a61f.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        151 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Scientific Specimen
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+          </div>
+          <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand mt-6 w-fit" data-component="Button" data-variant="tertiary" data-show-more-target="button" data-action="show-more#toggle" aria-expanded="false">
+            <span data-show-more-target="label">Show more themes</span>
+</button>      </div>
+  </div>
+</section><!-- END app/views/catalog/_collections_browse_section.html.erb -->
+
+<!-- BEGIN app/views/catalog/_collections_browse_section.html.erb
+--><section aria-label="Topics" class="uom-ds-section-shell border-t border-stroke-weak">
+  <div class="flex w-full max-w-[1240px] flex-col gap-8">
+    <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Topics</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+      <div id="browse-topics-show-more" data-controller="show-more" data-show-more-show-text-value="Show more topics" data-show-more-hide-text-value="Show fewer topics">
+        <div id="browse-topics-grid" class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2 h-full md:row-span-2" href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Museum">
+  <div class="relative w-full overflow-hidden aspect-[3/2] md:aspect-auto md:h-full">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-mhm-00048-4d3f05ea.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6 md:p-8">
+      <span class="text-xs md:text-sm font-semibold uppercase tracking-[1.2px] text-white/75">
+        564 items
+      </span>
+      <span class="font-display text-2xl leading-[1.15] md:text-[32px] md:leading-[1.15] font-semibold text-white">
+        Museum
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2" href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Archives">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-photo-eucalypt-studies-64af4f49.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        266 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Archives
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Art">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-art-goodenia-56a3d724.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        194 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Art
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Psychological+Sciences++Instrument+Collection">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-photo-eucalypt-studies-64af4f49.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        141 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Psychological Sciences  Instrument Collection
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+        </div>
+          <div id="browse-topics-overflow" data-show-more-target="extra" hidden="" class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Scientific">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-cary-1-71e64ff0.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        128 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Scientific
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Bush+Medicine+collection">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-grainger-7eb02317.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        119 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Bush Medicine collection
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Photographs">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-photograph-mof-f84f8905.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        119 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Photographs
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Study">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-botanical-7e3d62c2.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        82 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Study
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Model">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-mhm-microscope-02065f71.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        81 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Model
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Sketch">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-grainger-7eb02317.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        81 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Sketch
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Peter+MacCallum+Radiology+Collection">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-cary-1-71e64ff0.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        79 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Peter MacCallum Radiology Collection
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bsubject_ssim%5D%5B%5D=Record">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-apothecaries-96aab306.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        78 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Record
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+          </div>
+          <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand mt-6 w-fit" data-component="Button" data-variant="tertiary" data-show-more-target="button" data-action="show-more#toggle" aria-expanded="false">
+            <span data-show-more-target="label">Show more topics</span>
+</button>      </div>
+  </div>
+</section><!-- END app/views/catalog/_collections_browse_section.html.erb -->
+
+<!-- BEGIN app/views/catalog/_collections_browse_section.html.erb
+--><section aria-label="Providing institutions" class="uom-ds-section-shell border-t border-stroke-weak">
+  <div class="flex w-full max-w-[1240px] flex-col gap-8">
+    <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Providing institutions</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+      <div id="browse-providing-institutions-show-more" data-controller="show-more" data-show-more-show-text-value="Show more institutions" data-show-more-hide-text-value="Show fewer institutions">
+        <div id="browse-providing-institutions-grid" class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2 h-full md:row-span-2" href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Medical+History+Museum%2C+University+of+Melbourne">
+  <div class="relative w-full overflow-hidden aspect-[3/2] md:aspect-auto md:h-full">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-botanical-7e3d62c2.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6 md:p-8">
+      <span class="text-xs md:text-sm font-semibold uppercase tracking-[1.2px] text-white/75">
+        665 items
+      </span>
+      <span class="font-display text-2xl leading-[1.15] md:text-[32px] md:leading-[1.15] font-semibold text-white">
+        Medical History Museum, University of Melbourne
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2" href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Baillieu+Library%2C+University+of+Melbourne">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-art-eucalypt-cabinet-cb426e90.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        272 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Baillieu Library, University of Melbourne
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Potter+Museum+of+Art">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-art-okimono-06116789.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        215 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Potter Museum of Art
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Grainger+Museum">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-grainger-7eb02317.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        140 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Grainger Museum
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+        </div>
+          <div id="browse-providing-institutions-overflow" data-show-more-target="extra" hidden="" class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=University+of+Melbourne+Archives">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-photo-eucalypt-studies-64af4f49.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        137 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        University of Melbourne Archives
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=School+of+BioSciences">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-bosisto-145ba8ed.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        127 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        School of BioSciences
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Melbourne+Dental+School">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-dental-watson-a47ec71f.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        76 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Melbourne Dental School
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Melbourne+Law+School">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-apothecaries-96aab306.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        67 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Melbourne Law School
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=School+of+Geography%2C+Earth+and+Atmospheric+Sciences">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-botanical-7e3d62c2.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        66 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        School of Geography, Earth and Atmospheric Sciences
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=University+of+Melbourne%2C+Baillieu+Library">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-art-grandfathers-country-1f4860e1.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        59 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        University of Melbourne, Baillieu Library
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Harry+Brookes+Allen+Museum+of+Anatomy+and+Pathology%2C+University+of+Melbourne">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-botanical-7e3d62c2.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        57 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Harry Brookes Allen Museum of Anatomy and Pathology, University of Melbourne
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bholding_ssi%5D%5B%5D=Faculty+of+Medicine%2C+Dentistry+and+Health+Sciences">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-medicine-chest-2a02c944.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        55 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Faculty of Medicine, Dentistry and Health Sciences
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+          </div>
+          <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand mt-6 w-fit" data-component="Button" data-variant="tertiary" data-show-more-target="button" data-action="show-more#toggle" aria-expanded="false">
+            <span data-show-more-target="label">Show more institutions</span>
+</button>      </div>
+  </div>
+</section><!-- END app/views/catalog/_collections_browse_section.html.erb -->
+
+<!-- BEGIN app/views/catalog/_collections_browse_section.html.erb
+--><section aria-label="Features" class="uom-ds-section-shell border-t border-stroke-weak">
+  <div class="flex w-full max-w-[1240px] flex-col gap-8">
+    <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Features</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+      <div id="browse-features-show-more" data-controller="show-more" data-show-more-show-text-value="Show more features" data-show-more-hide-text-value="Show fewer features">
+        <div id="browse-features-grid" class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2 h-full md:row-span-2" href="../catalog/index.html?f%5BsubjectEvent_ssim%5D%5B%5D=World+War+II">
+  <div class="relative w-full overflow-hidden aspect-[3/2] md:aspect-auto md:h-full">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-bosisto-145ba8ed.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6 md:p-8">
+      <span class="text-xs md:text-sm font-semibold uppercase tracking-[1.2px] text-white/75">
+        116 items
+      </span>
+      <span class="font-display text-2xl leading-[1.15] md:text-[32px] md:leading-[1.15] font-semibold text-white">
+        World War II
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2" href="../catalog/index.html?f%5BsubjectEvent_ssim%5D%5B%5D=Gold+Rush">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-art-okimono-06116789.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        110 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Gold Rush
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BsubjectEvent_ssim%5D%5B%5D=Federation">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-grainger-7eb02317.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        103 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Federation
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BsubjectEvent_ssim%5D%5B%5D=Olympic+Games">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-nyarrin-b0414b94.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        100 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Olympic Games
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+        </div>
+          <div id="browse-features-overflow" data-show-more-target="extra" hidden="" class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5BsubjectEvent_ssim%5D%5B%5D=World+War+I">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-medicine-chest-2a02c944.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        96 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        World War I
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+          </div>
+          <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand mt-6 w-fit" data-component="Button" data-variant="tertiary" data-show-more-target="button" data-action="show-more#toggle" aria-expanded="false">
+            <span data-show-more-target="label">Show more features</span>
+</button>      </div>
+  </div>
+</section><!-- END app/views/catalog/_collections_browse_section.html.erb -->
+
+<!-- BEGIN app/views/catalog/_collections_browse_section.html.erb
+--><section aria-label="Centuries" class="uom-ds-section-shell border-t border-stroke-weak">
+  <div class="flex w-full max-w-[1240px] flex-col gap-8">
+    <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Centuries</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+      <div id="browse-centuries-show-more" data-controller="show-more" data-show-more-show-text-value="Show more centuries" data-show-more-hide-text-value="Show fewer centuries">
+        <div id="browse-centuries-grid" class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2 h-full md:row-span-2" href="../catalog/index.html?f%5Bera_ssim%5D%5B%5D=20th+Century">
+  <div class="relative w-full overflow-hidden aspect-[3/2] md:aspect-auto md:h-full">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-jack-britton-fcc4020f.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-6 md:p-8">
+      <span class="text-xs md:text-sm font-semibold uppercase tracking-[1.2px] text-white/75">
+        1,086 items
+      </span>
+      <span class="font-display text-2xl leading-[1.15] md:text-[32px] md:leading-[1.15] font-semibold text-white">
+        20th Century
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] col-span-2" href="../catalog/index.html?f%5Bera_ssim%5D%5B%5D=19th+Century">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-mhm-00048-4d3f05ea.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        384 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        19th Century
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bera_ssim%5D%5B%5D=Victorian+Era">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-art-vase-660c6eb7.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        373 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Victorian Era
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bera_ssim%5D%5B%5D=Contemporary">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/uom-nyarrin-b0414b94.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        359 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Contemporary
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+        </div>
+          <div id="browse-centuries-overflow" data-show-more-target="extra" hidden="" class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+              <!-- BEGIN app/views/catalog/_collections_image_tile.html.erb
+--><a class="group relative flex overflow-hidden bg-[#000a38] no-underline transition-shadow duration-300 hover:shadow-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003f8b] " href="../catalog/index.html?f%5Bera_ssim%5D%5B%5D=Pre-1800">
+  <div class="relative w-full overflow-hidden aspect-[4/3]">
+    <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" src="../assets/rec-mhm-inro-46-d0927cdd.jpg">
+    <div class="absolute inset-x-0 bottom-0 flex flex-col gap-1 p-4 md:p-5">
+      <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[1.2px] text-white/75">
+        72 items
+      </span>
+      <span class="font-display text-lg leading-tight md:text-xl font-semibold text-white">
+        Pre-1800
+      </span>
+    </div>
+    <span class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full bg-white/15 text-white opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-4" data-icon="arrow-right" aria-hidden="true"><path d="M12.6 12L8 7.4L9.4 6L15.4 12L9.4 18L8 16.6L12.6 12Z" fill="currentColor"></path></svg>
+    </span>
+  </div>
+</a><!-- END app/views/catalog/_collections_image_tile.html.erb -->
+          </div>
+          <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand mt-6 w-fit" data-component="Button" data-variant="tertiary" data-show-more-target="button" data-action="show-more#toggle" aria-expanded="false">
+            <span data-show-more-target="label">Show more centuries</span>
+</button>      </div>
+  </div>
+</section><!-- END app/views/catalog/_collections_browse_section.html.erb -->
+
+<section id="latest-galleries" aria-label="Latest galleries" class="uom-ds-section-shell border-t border-stroke-weak">
+  <div class="flex w-full max-w-[1240px] flex-col gap-8">
+    <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Latest galleries</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+    <div id="galleries-show-more" data-controller="show-more" data-show-more-show-text-value="Show more galleries" data-show-more-hide-text-value="Show fewer galleries">
+      <div id="galleries-grid" class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+          <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="University Archives" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/university-archives/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover" src="../assets/rec-photo-eucalypt-studies-64af4f49.jpg">
+        <span class="absolute right-2 top-2 rounded-full bg-white/90 p-1" title="May contain materials of cultural significance">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 text-status-warning-icon" data-icon="warning" aria-hidden="true"><path d="M1 21L12 2L23 21H1ZM12 18C12.2833 18 12.5208 17.9042 12.7125 17.7125C12.9042 17.5208 13 17.2833 13 17C13 16.7167 12.9042 16.4792 12.7125 16.2875C12.5208 16.0958 12.2833 16 12 16C11.7167 16 11.4792 16.0958 11.2875 16.2875C11.0958 16.4792 11 16.7167 11 17C11 17.2833 11.0958 17.5208 11.2875 17.7125C11.4792 17.9042 11.7167 18 12 18ZM11 15H13V10H11V15Z" fill="currentColor"></path></svg>
+          <span class="sr-only">May contain materials of cultural significance</span>
+        </span>
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">University Archives</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Official records documenting the history and administration of the University of Melbourne since its founding in 1853.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      68 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+          <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Rare Books &amp; Special Collections" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/rare-books/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover" src="../assets/rec-grainger-verso-3259c833.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Rare Books &amp; Special Collections</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Rare printed works, manuscripts, incunabula and illuminated texts from the Baillieu Library's Special Collections.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      79 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+          <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Personal Papers Collection" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/personal-papers/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-contain" src="../assets/rec-mhm-apothecaries-96aab306.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Personal Papers Collection</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Papers, correspondence and personal records donated by academics, researchers and notable figures.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      58 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+          <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Maps, Plans &amp; Architectural Drawings" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/maps-plans/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover" src="../assets/uom-grainger-7eb02317.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Maps, Plans &amp; Architectural Drawings</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Historical maps, architectural plans, survey charts and drawings documenting places, buildings and campuses.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      74 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+      </div>
+        <div id="galleries-overflow" data-show-more-target="extra" hidden="" class="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Anthropology Museum" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/anthropology-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/rec-mhm-inro-46-d0927cdd.jpg">
+        <span class="absolute right-2 top-2 rounded-full bg-white/90 p-1" title="May contain materials of cultural significance">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 text-status-warning-icon" data-icon="warning" aria-hidden="true"><path d="M1 21L12 2L23 21H1ZM12 18C12.2833 18 12.5208 17.9042 12.7125 17.7125C12.9042 17.5208 13 17.2833 13 17C13 16.7167 12.9042 16.4792 12.7125 16.2875C12.5208 16.0958 12.2833 16 12 16C11.7167 16 11.4792 16.0958 11.2875 16.2875C11.0958 16.4792 11 16.7167 11 17C11 17.2833 11.0958 17.5208 11.2875 17.7125C11.4792 17.9042 11.7167 18 12 18ZM11 15H13V10H11V15Z" fill="currentColor"></path></svg>
+          <span class="sr-only">May contain materials of cultural significance</span>
+        </span>
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Anthropology Museum</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Ethnographic and archaeological objects from cultures worldwide, including significant Australian collections.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      52 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Zoology Museum" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/zoology-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-contain" src="../assets/rec-mhm-bosisto-145ba8ed.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Zoology Museum</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Natural history specimens including vertebrates, invertebrates, and comparative anatomy collections.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      62 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Medical History Museum" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/medical-history-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/rec-mhm-medicine-chest-2a02c944.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Medical History Museum</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Historical medical instruments, teaching models, pathological specimens and records documenting medical education.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      11214 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Henry Forman Atkinson Dental Museum" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/dental-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-contain" src="../assets/rec-dental-watson-a47ec71f.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Henry Forman Atkinson Dental Museum</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Instruments, equipment and teaching materials documenting the history of dentistry and oral health education.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      79 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Harry Brookes Allen Museum of Anatomy and Pathology" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/anatomy-pathology-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/uom-mhm-microscope-02065f71.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Harry Brookes Allen Museum of Anatomy and Pathology</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Anatomical and pathological specimens, models and teaching collections supporting medical education and research.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      54 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="FEIT" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/feit/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/uom-mec-microscope-4816a61f.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">FEIT</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Records, instruments and teaching collections from the Faculty of Engineering and Information Technology.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      51 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Geology Museum" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/geology-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/uom-mec-microscope-4816a61f.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Geology Museum</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Mineralogy, petrology and palaeontology specimens including significant geological samples from across Australia.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      66 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="University Herbarium" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/university-herbarium/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/uom-botanical-7e3d62c2.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">University Herbarium</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Pressed plant specimens from the 19th century onwards, including rare and endemic species from across Australia.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      67 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Law Museum" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/law-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-contain" src="../assets/rec-mhm-apothecaries-96aab306.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Law Museum</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Historic legal instruments, court records, archival documents and artefacts relating to the history of law.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      67 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="University Art Collection" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/ian-potter-art/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-contain" src="../assets/rec-art-okimono-06116789.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">University Art Collection</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">A major university art collection featuring Australian and international works spanning painting, sculpture and works on paper.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      62 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Prints, Drawings &amp; Watercolours" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/prints-drawings/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/rec-art-goodenia-56a3d724.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Prints, Drawings &amp; Watercolours</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Original prints, drawings, watercolours and works on paper from the 18th to 21st centuries from Australia and abroad.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      71 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Indigenous Australian Art Collection" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/indigenous-art/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover" src="../assets/uom-nyarrin-b0414b94.jpg">
+        <span class="absolute right-2 top-2 rounded-full bg-white/90 p-1" title="May contain materials of cultural significance">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 text-status-warning-icon" data-icon="warning" aria-hidden="true"><path d="M1 21L12 2L23 21H1ZM12 18C12.2833 18 12.5208 17.9042 12.7125 17.7125C12.9042 17.5208 13 17.2833 13 17C13 16.7167 12.9042 16.4792 12.7125 16.2875C12.5208 16.0958 12.2833 16 12 16C11.7167 16 11.4792 16.0958 11.2875 16.2875C11.0958 16.4792 11 16.7167 11 17C11 17.2833 11.0958 17.5208 11.2875 17.7125C11.4792 17.9042 11.7167 18 12 18ZM11 15H13V10H11V15Z" fill="currentColor"></path></svg>
+          <span class="sr-only">May contain materials of cultural significance</span>
+        </span>
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Indigenous Australian Art Collection</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Works by Aboriginal and Torres Strait Islander artists spanning bark paintings, acrylic works, fibre art and more.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      66 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Photographic &amp; Pictorial Collection" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/photographic-collection/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/uom-photograph-mof-f84f8905.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Photographic &amp; Pictorial Collection</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Historical photographs, glass plate negatives, lantern slides and pictorial records from the 19th century onwards.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      62 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Audio-Visual Archive" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/audio-visual-archive/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover" src="../assets/rec-video-crooks-shibuya-a2ad436e.jpg">
+        <span class="absolute right-2 top-2 rounded-full bg-white/90 p-1" title="May contain materials of cultural significance">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 text-status-warning-icon" data-icon="warning" aria-hidden="true"><path d="M1 21L12 2L23 21H1ZM12 18C12.2833 18 12.5208 17.9042 12.7125 17.7125C12.9042 17.5208 13 17.2833 13 17C13 16.7167 12.9042 16.4792 12.7125 16.2875C12.5208 16.0958 12.2833 16 12 16C11.7167 16 11.4792 16.0958 11.2875 16.2875C11.0958 16.4792 11 16.7167 11 17C11 17.2833 11.0958 17.5208 11.2875 17.7125C11.4792 17.9042 11.7167 18 12 18ZM11 15H13V10H11V15Z" fill="currentColor"></path></svg>
+          <span class="sr-only">May contain materials of cultural significance</span>
+        </span>
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Audio-Visual Archive</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Film, video and sound recordings including ethnographic recordings, oral histories and historical footage.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      73 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Ephemera &amp; Printed Images" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/ephemera-collection/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/rec-art-eucalypt-cabinet-cb426e90.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Ephemera &amp; Printed Images</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Printed ephemera including postcards, broadsides, posters and illustrated printed material from across the collections.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      58 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="Grainger Museum Collection" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/grainger-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover" src="../assets/uom-grainger-7eb02317.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">Grainger Museum Collection</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">The personal collection of composer Percy Grainger including instruments, manuscripts, correspondence and experimental machines.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      29636 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+            <!-- BEGIN app/views/catalog/_collections_gallery_card.html.erb
+--><!-- BEGIN app/components/card_image_component.html.erb
+--><article data-component="CardImage" aria-label="The Ed Muirhead Physics Museum" class="flex w-full flex-col items-start transition-colors overflow-hidden border border-stroke-weaker bg-white hover:border-stroke-brand">
+  <a class="flex h-full w-full flex-col items-start" href="../collections/ed-muirhead-physics-museum/index.html">
+    <div class="relative flex w-full min-h-8 items-center justify-center overflow-hidden" role="group" aria-label="Preview image">
+            <div class="relative flex w-full items-center justify-center overflow-hidden" style="aspect-ratio: 240/135">
+      <img alt="" loading="lazy" class="absolute inset-0 size-full object-cover uom-ds-crop-anchor-up" src="../assets/uom-mhm-microscope-02065f71.jpg">
+    </div>
+
+    </div>
+    <div class="flex w-full flex-col gap-[24px] p-6 flex-1" role="group" aria-label="Card details">
+      <div class="flex w-full flex-1 flex-col gap-4" role="group" aria-label="Card summary">
+        <span class="text-[20px] font-semibold leading-[1.2] text-text-brand">The Ed Muirhead Physics Museum</span>
+          <p class="text-[18px] leading-[1.5] text-text-primary line-clamp-2">Historic optical and measurement instruments from the University of Melbourne's School of Physics.</p>
+      </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      0 items
+    </span>
+
+    </div>
+</a></article>
+<!-- END app/components/card_image_component.html.erb --><!-- END app/views/catalog/_collections_gallery_card.html.erb -->
+        </div>
+        <button type="button" class="flex items-center justify-center gap-2 font-semibold h-12 px-6 text-lg border-2 border-stroke-brand text-text-brand mt-6 w-fit" data-component="Button" data-variant="tertiary" data-show-more-target="button" data-action="show-more#toggle" aria-expanded="false">
+          <span data-show-more-target="label">Show more galleries</span>
+</button>    </div>
+  </div>
+</section>
+
+  <section id="recent-items" aria-label="Recent items" class="uom-ds-section-shell border-t border-stroke-weak">
+    <div class="flex w-full max-w-[1240px] flex-col gap-8">
+      <!-- BEGIN app/components/section_header_component.html.erb
+--><div data-component="SectionHeader" class="flex w-full flex-wrap items-center gap-x-10 gap-y-4">
+  <div class="flex min-w-[260px] flex-1 flex-col gap-3">
+    <h2 class="font-display text-[36px] font-normal leading-[1.2] tracking-[-0.36px] text-text-primary" style="font-variation-settings: &quot;SOFT&quot; 0, &quot;WONK&quot; 1">Recent items</h2>
+  </div>
+</div>
+<!-- END app/components/section_header_component.html.erb -->
+      <div id="recent-items-masonry" class="columns-1 gap-x-10 sm:columns-2 lg:columns-3 [&amp;>*]:mb-8 [&amp;>*]:break-inside-avoid">
+          <!-- BEGIN app/components/result_card_component.html.erb
+--><article aria-label="X Y Plotter" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+  <a class="flex flex-col w-full no-underline" href="../catalog/unimelb:item:medhist:32287/index.html">
+
+      <div class="uom-ds-placeholder-surface w-full" data-controller="card-thumbnail">
+        <img alt="" class="block w-full" data-card-thumbnail-target="img" src="https://collections.mdhs.unimelb.edu.au/records/images/medium/4038/4001a942b6392dde916a3e34f2c7da2d530e3c73.jpg">
+      </div>
+
+    <div class="flex w-full flex-1 flex-col gap-4 p-4">
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">X Y Plotter</span>
+
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Medical History Museum</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Cultural Object</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">1960s</p>
+        </div>
+
+    </div>
+
+</a></article>
+<!-- END app/components/result_card_component.html.erb -->
+          <!-- BEGIN app/components/result_card_component.html.erb
+--><article aria-label="Rotator with Spiral" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+  <a class="flex flex-col w-full no-underline" href="../catalog/unimelb:item:medhist:32288/index.html">
+
+      <div class="uom-ds-placeholder-surface w-full" data-controller="card-thumbnail">
+        <img alt="" class="block w-full" data-card-thumbnail-target="img" src="https://collections.mdhs.unimelb.edu.au/records/images/medium/4039/32c11d5021af49cfeb5cb258619d374dbc8831cd.jpg">
+      </div>
+
+    <div class="flex w-full flex-1 flex-col gap-4 p-4">
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Rotator with Spiral</span>
+
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Medical History Museum</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Cultural Object</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">1960s</p>
+        </div>
+
+    </div>
+
+</a></article>
+<!-- END app/components/result_card_component.html.erb -->
+          <!-- BEGIN app/components/result_card_component.html.erb
+--><article aria-label="Ansbacher Effect Apparatus" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+  <a class="flex flex-col w-full no-underline" href="../catalog/unimelb:item:medhist:32289/index.html">
+
+      <div class="uom-ds-placeholder-surface w-full" data-controller="card-thumbnail">
+        <img alt="" class="block w-full" data-card-thumbnail-target="img" src="https://collections.mdhs.unimelb.edu.au/records/images/medium/4040/ba992fe702d0073dc15b1d3aac2f35db8f1768a7.jpg">
+      </div>
+
+    <div class="flex w-full flex-1 flex-col gap-4 p-4">
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Ansbacher Effect Apparatus</span>
+
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Medical History Museum</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Cultural Object</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">1950s</p>
+        </div>
+
+    </div>
+
+</a></article>
+<!-- END app/components/result_card_component.html.erb -->
+          <!-- BEGIN app/components/result_card_component.html.erb
+--><article aria-label="Kinesthetic Apparatus" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
+  <a class="flex flex-col w-full no-underline" href="../catalog/unimelb:item:medhist:32290/index.html">
+
+      <div class="uom-ds-placeholder-surface w-full" data-controller="card-thumbnail">
+        <img alt="" class="block w-full" data-card-thumbnail-target="img" src="https://collections.mdhs.unimelb.edu.au/records/images/medium/4041/48c2be1be6808804dce5ec2a014b9ac2dfff124c.jpg">
+      </div>
+
+    <div class="flex w-full flex-1 flex-col gap-4 p-4">
+      <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">Kinesthetic Apparatus</span>
+
+
+        <div class="flex flex-col gap-1">
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Medical History Museum</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">Cultural Object</p>
+            <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">1970</p>
+        </div>
+
+    </div>
+
+</a></article>
+<!-- END app/components/result_card_component.html.erb -->
+      </div>
+    </div>
+  </section>
+<!-- END app/views/catalog/collections.html.erb -->
+    </main>
+
+    <!-- BEGIN app/components/footer_component.html.erb
+--><footer data-component="Footer" class="flex w-full flex-col items-start bg-primary">
+  <section id="acknowledgement-of-country" aria-labelledby="aoc-heading" class="flex w-full justify-center bg-footer-aoc px-4 py-10 lg:px-8">
+    <div class="flex w-full max-w-[1224px] flex-col gap-6 md:flex-row">
+      <div class="flex flex-col gap-4 md:w-1/3 lg:w-1/4">
+        <h2 id="aoc-heading" class="font-display text-xl font-semibold leading-tight text-text-header md:text-2xl">Acknowledgement of Country</h2>
+        <div class="flex items-center gap-4">
+          <img alt="Aboriginal flag" class="h-8 w-16" src="../assets/flag-aboriginal-3df4ae7f.svg">
+          <img alt="Torres Strait Islander flag" class="h-8 w-16" src="../assets/flag-torres-strait-eb5f8d4f.svg">
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 md:w-2/3 lg:w-3/4">
+        <p class="uom-ds-footer-copy">
+          The University of Melbourne acknowledge Aboriginal and Torres Strait Islander people as the Traditional
+          Owners of the unceded lands on which we work, learn and live. We pay respect to Elders past, present and
+          future, and acknowledge the importance of Indigenous knowledge in the Academy.
+        </p>
+        <a href="../help-and-support/indigenous-cultural-data/index.html" class="uom-ds-footer-link">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+          Read about our Indigenous priorities
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex w-full justify-center px-4 py-10 lg:px-8">
+    <div class="flex w-full max-w-[1224px] flex-col gap-10 md:flex-row md:flex-wrap md:gap-6">
+      <nav class="uom-ds-footer-column" aria-label="Explore the collections">
+        <p class="uom-ds-footer-eyebrow">Explore</p>
+          <a href="../collections/index.html" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Browse all collections
+          </a>
+          <a href="#explore-by-theme" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Explore by theme
+          </a>
+          <a href="#browse-by-object" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Browse by object
+          </a>
+          <a href="../catalog/index.html" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Search the collections
+          </a>
+          <a href="../help-and-support/index.html" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Help and support
+          </a>
+      </nav>
+
+      <nav class="uom-ds-footer-column" aria-label="University of Melbourne">
+        <p class="uom-ds-footer-eyebrow">University of Melbourne</p>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            About us
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Careers at Melbourne
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Safety and respect
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Newsroom
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Contact
+          </a>
+          <a href="#" class="uom-ds-footer-link">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0 text-accent md:size-6" data-icon="link-arrow" aria-hidden="true"><path d="M14 18L12.6 16.55L16.15 13H4V11H16.15L12.6 7.45L14 6L20 12L14 18Z" fill="currentColor"></path></svg>
+            Campus locations
+          </a>
+      </nav>
+
+      <div id="contact-details" class="uom-ds-footer-column">
+        <p class="uom-ds-footer-eyebrow">Contact details</p>
+        <p class="uom-ds-footer-copy">
+          Phone <a href="tel:136352" class="uom-ds-link-underlined font-semibold">13 MELB (13 6352)</a><br>
+          International <a href="tel:+61390355511" class="uom-ds-link-underlined font-semibold">+61 3 9035 5511</a>
+        </p>
+        <p class="uom-ds-footer-copy">
+          <span class="font-semibold">Address</span><br>
+          The University of Melbourne<br>
+          Grattan Street, Parkville<br>
+          Victoria 3010<br>
+          Australia
+        </p>
+      </div>
+
+      <div class="uom-ds-footer-column">
+        <p class="uom-ds-footer-eyebrow">Connect with us</p>
+        <div class="flex items-center gap-6">
+            <a href="#" aria-label="Facebook"><img alt="" class="size-6" src="../assets/social-facebook-256121e9.svg"></a>
+            <a href="#" aria-label="LinkedIn"><img alt="" class="size-6" src="../assets/social-linkedin-a2201b9d.svg"></a>
+            <a href="#" aria-label="Instagram"><img alt="" class="size-6" src="../assets/social-instagram-caddfbae.svg"></a>
+            <a href="#" aria-label="X (Twitter)"><img alt="" class="size-6" src="../assets/social-x-twitter-a8f68b87.svg"></a>
+        </div>
+      </div>
+
+      <div class="uom-ds-footer-logo-column flex min-w-[144px] flex-1 items-center justify-center md:items-start md:justify-end">
+        <span role="img" aria-label="The University of Melbourne" class="inline-block bg-white size-36" style="mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); mask-size: contain; mask-repeat: no-repeat; mask-position: center center; -webkit-mask-image: url(/assets/uom-logo-vertical-b4b3886b.svg); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center center"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex w-full justify-center bg-footer-dark px-4 py-8 lg:px-8">
+    <div class="flex w-full max-w-[1224px] flex-col gap-8 md:flex-row md:flex-wrap md:items-center md:justify-between md:gap-6">
+      <div class="flex flex-col gap-6 text-xs font-semibold text-text-header md:flex-row md:items-center md:gap-3 md:text-sm">
+          <a href="#" class="uom-ds-link-underlined">Emergency</a>
+          <a href="#" class="uom-ds-link-underlined">Terms and privacy</a>
+          <a href="#" class="uom-ds-link-underlined">Accessibility</a>
+          <a href="#" class="uom-ds-link-underlined">Privacy</a>
+      </div>
+      <div class="flex flex-col gap-1 text-xs text-text-primary-inverse md:flex-row md:flex-wrap md:items-center md:gap-3 md:text-sm">
+        <p>The University of Melbourne (Australian University): <span class="font-semibold">PRV12150</span></p>
+        <p>CRICOS: <span class="font-semibold">00116K</span></p>
+        <p>ABN: <span class="font-semibold">84 002 705 224</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- END app/components/footer_component.html.erb -->
+  
+
+</body></html><!-- END app/views/layouts/application.html.erb -->

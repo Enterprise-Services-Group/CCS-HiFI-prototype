@@ -1,0 +1,35 @@
+/* Card image hover — every <img> inside a CardImage component (marked with
+   data-component="CardImage") zooms *out* beneath the cursor: the object-
+   cover photo scales slightly down so the frame opening reveals more of the
+   subject (the inverse of the old per-card zoom-in tricks). Applied
+   component-wide, so no individual image_tag in the call sites needs extra
+   Tailwind classes. Unlayered CSS beats Tailwind's layered group-hover
+   utilities regardless of specificity, so any inline scale classes on an
+   image are overridden here consistently. */
+[data-component="CardImage"] .card-image-media img,
+[data-component="CardImage"] img {
+  transition: transform 500ms ease-out;
+}
+
+[data-component="CardImage"]:hover img {
+  transform: scale(0.96);
+}
+
+/* Smart-crop crop anchor (SmartCrop lib): when a cover crop has to discard
+   most of a vertical photo, bias the kept band upward — museum object shots
+   sit the subject above the mount/baseboard, so 'center 30%' keeps it while
+   'center' would slice across it. The two classes interoperate: cropping
+   (object-position) is independent of the hover transform above. */
+[data-component="CardImage"] img.uom-ds-crop-anchor-up {
+  object-position: center 30%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-component="CardImage"] img {
+    transition: none;
+  }
+
+  [data-component="CardImage"]:hover img {
+    transform: none;
+  }
+}
