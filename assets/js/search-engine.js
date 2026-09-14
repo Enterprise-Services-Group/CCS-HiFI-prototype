@@ -24,6 +24,16 @@
 // - The sticky toolbar's "applied filter" chip row is not reproduced —
 //   applied filters are visible inside the Filters modal itself instead.
 (async function () {
+  // Stacking fix: this page's search-results banner is `position:relative
+  // z-[60]`, and the header's mega-menu panel is also z-60 but appears EARLIER
+  // in the DOM — for equal z-index the later element paints on top, so the
+  // banner covered the upper half of the open panel (nav dropdown "under the
+  // banner-inner"). The panel must beat the banner and the sticky toolbar
+  // (z-50), so pin it just above both (the filter modal stays safe on z-[200]).
+  const headerStackingFix = document.createElement("style");
+  headerStackingFix.textContent = ".mega-menu-panel { z-index: 70; }";
+  document.head.appendChild(headerStackingFix);
+
   const DATA_BASE = "../assets/data/";
   const PLACEHOLDER_ICON_SVG =
     '<svg viewBox="0 0 24 24" fill="none" class="size-10 text-primary/40 md:size-12" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5Z" stroke="currentColor" stroke-width="1.5"/><path d="m4 16 4.5-4.5a2 2 0 0 1 2.8 0L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="15" cy="9" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg>';
@@ -235,7 +245,7 @@
   }
 
   function cardHTML(record, tokens) {
-    const href = `${record.id}/index.html`;
+    const href = `../catalog/${record.id}/index.html`;
     const snippet = highlightSnippet(record, tokens);
     return `
       <article aria-label="${escapeHtml(titleOf(record))}" class="w-full overflow-hidden rounded-[4px] bg-white shadow-[0_1px_2px_0_rgba(0,0,0,0.08)] transition-shadow hover:shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
@@ -252,7 +262,7 @@
   }
 
   function listRowHTML(record, tokens) {
-    const href = `${record.id}/index.html`;
+    const href = `../catalog/${record.id}/index.html`;
     const snippet = highlightSnippet(record, tokens);
     return `
       <article class="flex w-full items-center gap-4 border-b border-stroke-weaker py-4">
