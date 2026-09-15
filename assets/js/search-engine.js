@@ -65,6 +65,111 @@
     return (first(record.title) || "").toString();
   }
 
+  // ── Typo-tolerant matching (JS port of lib/fuzzy_query.rb) ─────────────
+  // Same thresholds as the Rails app's SearchBuilder#add_fuzzy_query: only
+  // bare alphanumeric words of at least 5 characters get fuzzy-matched, at
+  // edit distance 1, against whole words in the candidate text — anything
+  // shorter is left as a plain substring match (a short word fuzzed at
+  // distance 1 is too loose to stay precise, confirmed live against Solr:
+  // see fuzzy_query.rb's MIN_TERM_LENGTH comment).
+  var FUZZY_MIN_TERM_LENGTH = 5;
+
+  function isFuzzyCandidate(token) {
+    return token.length >= FUZZY_MIN_TERM_LENGTH && /^[a-z0-9]+$/i.test(token);
+  }
+
+  // True if `a` and `b` differ by at most one single-character edit
+  // (insertion, deletion, or substitution) — a lightweight edit-distance-1
+  // check, not a full Levenshtein matrix, since fuzzy_query.rb only ever
+  // asks for distance 1.
+  function withinEditDistanceOne(a, b) {
+    if (a === b) return true;
+    if (Math.abs(a.length - b.length) > 1) return false;
+    let i = 0;
+    let j = 0;
+    let edits = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i++;
+        j++;
+        continue;
+      }
+      edits++;
+      if (edits > 1) return false;
+      if (a.length === b.length) {
+        i++;
+        j++;
+      } else if (a.length > b.length) {
+        i++;
+      } else {
+        j++;
+      }
+    }
+    edits += a.length - i + (b.length - j);
+    return edits <= 1;
+  }
+
+  function fuzzyIncludes(text, token) {
+    if (!text) return false;
+    if (text.includes(token)) return true;
+    if (!isFuzzyCandidate(token)) return false;
+    return text.split(/[^a-z0-9]+/i).some((word) => word.length >= 2 && withinEditDistanceOne(word, token));
+  }
+
+  // ── Natural-language date phrases (JS port of lib/query_date_parser.rb) ─
+  // Same four patterns, same narrow-by-design scope (a wrong silent match on
+  // ordinary text would be worse than not matching every date-shaped
+  // phrase) — see query_date_parser.rb's own comment.
+  var DATE_PATTERNS = {
+    decade: /\b(\d{3})0s\b/i,
+    century: /\b(\d{1,2})(?:st|nd|rd|th)[\s-]century\b/i,
+    before: /\bbefore\s+(\d{3,4})\b/i,
+    after: /\b(?:after|since)\s+(\d{3,4})\b/i,
+  };
+
+  function buildDateRange(query, matchText, from, to) {
+    return {
+      remainingQuery: query.replace(matchText, " ").replace(/\s+/g, " ").trim(),
+      from: from,
+      to: to,
+    };
+  }
+
+  function extractDateRange(query) {
+    if (!query) return null;
+    let m = query.match(DATE_PATTERNS.decade);
+    if (m) {
+      const start = Number(m[1] + "0");
+      return buildDateRange(query, m[0], start, start + 9);
+    }
+    m = query.match(DATE_PATTERNS.century);
+    if (m) {
+      const century = Number(m[1]);
+      return buildDateRange(query, m[0], (century - 1) * 100 + 1, century * 100);
+    }
+    m = query.match(DATE_PATTERNS.before);
+    if (m) return buildDateRange(query, m[0], null, Number(m[1]) - 1);
+    m = query.match(DATE_PATTERNS.after);
+    if (m) return buildDateRange(query, m[0], Number(m[1]) + 1, null);
+    return null;
+  }
+
+  // Single place that turns a raw `state.q` into search tokens plus an
+  // optional inferred year range — every caller that needs either (matching,
+  // scoring, highlighting, the zero-result word-drop suggestion) goes
+  // through this so they can never disagree about what the query means.
+  function deriveQuery(q) {
+    const raw = (q || "").trim();
+    const dateRange = extractDateRange(raw);
+    const remaining = dateRange ? dateRange.remainingQuery : raw;
+    const tokens = remaining.toLowerCase().split(/\s+/).filter(Boolean);
+    return {
+      tokens: tokens,
+      yearFrom: dateRange ? dateRange.from : null,
+      yearTo: dateRange ? dateRange.to : null,
+    };
+  }
+
   // ── Rights category (port of RightsHelper#rights_category) ─────────────
   function rightsCategory(raw) {
     if (!raw) return null;
@@ -135,7 +240,7 @@
     for (const token of tokens) {
       let matched = false;
       for (const [text, weight] of fields) {
-        if (text.includes(token)) {
+        if (fuzzyIncludes(text, token)) {
           score += weight;
           matched = true;
         }
@@ -143,6 +248,15 @@
       if (!matched) return -1;
     }
     return score;
+  }
+
+  function matchesYearRange(record, yearFrom, yearTo) {
+    if (yearFrom == null && yearTo == null) return true;
+    const year = Number(record.year);
+    if (Number.isNaN(year)) return false;
+    if (yearFrom != null && year < yearFrom) return false;
+    if (yearTo != null && year > yearTo) return false;
+    return true;
   }
 
   function matchesFacet(record, field, selected) {
@@ -167,9 +281,10 @@
   // to compute "if I also picked this value" counts against everything else
   // that's currently applied.
   function computeMatches(s, excludeField) {
-    const tokens = s.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const { tokens, yearFrom, yearTo } = deriveQuery(s.q);
     return records.filter((r) => {
       if (tokens.length && searchScore(r, tokens) < 0) return false;
+      if (!matchesYearRange(r, yearFrom, yearTo)) return false;
       for (const field of Object.keys(s.f)) {
         if (field === excludeField) continue;
         if (!matchesFacet(r, field, s.f[field])) return false;
@@ -183,7 +298,7 @@
   }
 
   function sortRecords(list, s) {
-    const tokens = s.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const { tokens } = deriveQuery(s.q);
     const scored = list.map((r) => ({ r, score: tokens.length ? searchScore(r, tokens) : 0 }));
     if (s.sort === "year-asc") {
       scored.sort((a, b) => (Number(a.r.year) || Infinity) - (Number(b.r.year) || Infinity));
@@ -278,7 +393,26 @@
       </article>`;
   }
 
-  function renderResults(pageRecords, tokens) {
+  // Zero-result multi-word recovery (JS port of CatalogController's
+  // build_word_drop_suggestion): tries dropping each token in turn and
+  // returns whichever single drop returns the most results, so the empty
+  // state can offer one concrete next step instead of just generic advice.
+  // Only tried once truly zero results come back (not fuzzy — same
+  // deliberate choice as the Rails version, so the count shown is exact).
+  function wordDropSuggestion(tokens) {
+    if (tokens.length < 2) return null;
+    let best = null;
+    tokens.forEach((word, i) => {
+      const remaining = tokens.filter((_, j) => j !== i).join(" ");
+      const count = computeMatches(Object.assign({}, state, { q: remaining })).length;
+      if (count > 0 && (!best || count > best.count)) {
+        best = { dropped: word, query: remaining, count: count };
+      }
+    });
+    return best;
+  }
+
+  function renderResults(pageRecords, tokens, total) {
     if (!documentsEl) return;
     if (state.view === "list") {
       documentsEl.className = "flex w-full flex-col";
@@ -288,7 +422,11 @@
       documentsEl.innerHTML = pageRecords.map((r) => cardHTML(r, tokens)).join("");
     }
     if (!pageRecords.length) {
-      documentsEl.innerHTML = '<p class="w-full py-16 text-center text-text-tertiary">No results match your search and filters. Try removing a filter or broadening your search term.</p>';
+      const suggestion = total === 0 ? wordDropSuggestion(tokens) : null;
+      const suggestionHTML = suggestion
+        ? `<p class="mt-2"><button type="button" data-word-drop-query="${escapeHtml(suggestion.query)}" class="uom-ds-link-underlined font-semibold">Try without “${escapeHtml(suggestion.dropped)}”</button> — ${suggestion.count.toLocaleString()} result${suggestion.count === 1 ? "" : "s"}</p>`
+        : "";
+      documentsEl.innerHTML = `<div class="w-full py-16 text-center text-text-tertiary"><p>No results match your search and filters. Try removing a filter or broadening your search term.</p>${suggestionHTML}</div>`;
     }
   }
 
@@ -432,14 +570,14 @@
 
   function render({ pushUrl = true } = {}) {
     const matches = computeMatches(state);
-    const tokens = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const { tokens } = deriveQuery(state.q);
     const sorted = sortRecords(matches, state);
     const totalPages = Math.max(1, Math.ceil(sorted.length / state.perPage));
     state.page = Math.min(Math.max(1, state.page), totalPages);
     const pageRecords = sorted.slice((state.page - 1) * state.perPage, state.page * state.perPage);
 
     renderHeading(sorted.length);
-    renderResults(pageRecords, tokens);
+    renderResults(pageRecords, tokens, sorted.length);
     renderPagination(totalPages);
     updateToggles();
     syncControls();
@@ -474,6 +612,15 @@
   });
 
   document.addEventListener("click", (e) => {
+    const wordDrop = e.target.closest("[data-word-drop-query]");
+    if (wordDrop) {
+      e.preventDefault();
+      state.q = wordDrop.dataset.wordDropQuery;
+      state.page = 1;
+      render();
+      return;
+    }
+
     const pageNav = e.target.closest("[data-page-nav]");
     if (pageNav) {
       e.preventDefault();
