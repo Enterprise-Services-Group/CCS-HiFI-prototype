@@ -2,9 +2,9 @@
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
   <ShortName>Blacklight</ShortName>
   <Description>Blacklight Search</Description>
-  <Image height="16" width="16" type="image/x-icon">http://127.0.0.1:3100/assets/favicon-e81d0818.ico</Image>
+  <Image height="16" width="16" type="image/x-icon">http://127.0.0.1:3000/assets/favicon-e81d0818.ico</Image>
   <Contact/>
-  <Url type="text/html" method="get" template="http://127.0.0.1:3100/catalog?q={searchTerms}&amp;amp;page={startPage?}"/>
-  <Url type="application/rss+xml" method="get" template="http://127.0.0.1:3100/catalog.rss?q={searchTerms}&amp;amp;page={startPage?}"/>
-  <Url type="application/x-suggestions+json" method="get" template="http://127.0.0.1:3100/catalog/opensearch.json?q={searchTerms}"/>
+  <Url type="text/html" method="get" template="http://127.0.0.1:3000/catalog?q={searchTerms}&amp;amp;page={startPage?}"/>
+  <Url type="application/rss+xml" method="get" template="http://127.0.0.1:3000/catalog.rss?q={searchTerms}&amp;amp;page={startPage?}"/>
+  <Url type="application/x-suggestions+json" method="get" template="http://127.0.0.1:3000/catalog/opensearch.json?q={searchTerms}"/>
 </OpenSearchDescription>

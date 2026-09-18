@@ -7,7 +7,7 @@ import { Controller } from "@hotwired/stimulus"
 // turns the SAME stage into a fullscreen lightbox rather than duplicating
 // markup in a separate overlay.
 export default class extends Controller {
-  static targets = ["image", "thumbnail", "counter", "closeButton"]
+  static targets = ["image", "thumbnail", "counter", "closeButton", "metadataPanel", "metadataToggle"]
   static values = { index: { type: Number, default: 0 }, count: { type: Number, default: 1 } }
 
   connect() {
@@ -76,6 +76,20 @@ export default class extends Controller {
     if (this.hasCloseButtonTarget) this.closeButtonTarget.hidden = true
   }
 
+  // Europeana-style "Media metadata" panel toggle — docked beside the stage,
+  // opened/closed from the info button in the viewer controls (or its own
+  // close button), independent of the fullscreen/expand state above.
+  toggleMetadata() {
+    if (!this.hasMetadataPanelTarget) return
+    this.metadataPanelTarget.hidden = !this.metadataPanelTarget.hidden
+    this._syncMetadataToggle()
+  }
+
+  _syncMetadataToggle() {
+    const expanded = this.hasMetadataPanelTarget && !this.metadataPanelTarget.hidden
+    this.metadataToggleTargets.forEach((btn) => btn.setAttribute("aria-expanded", String(expanded)))
+  }
+
   render() {
     this.imageTargets.forEach((img) => {
       img.hidden = Number(img.dataset.index) !== this.indexValue
@@ -95,7 +109,13 @@ export default class extends Controller {
   }
 
   _onKeydown(event) {
-    if (event.key === "Escape") this.collapse()
+    if (event.key === "Escape") {
+      this.collapse()
+      if (this.hasMetadataPanelTarget && !this.metadataPanelTarget.hidden) {
+        this.metadataPanelTarget.hidden = true
+        this._syncMetadataToggle()
+      }
+    }
     if (this.countValue <= 1) return
     if (event.key === "ArrowRight") this.next()
     if (event.key === "ArrowLeft") this.prev()

@@ -11,17 +11,28 @@ header,
 footer,
 div,
 aside,
-dl {
+dl,
+nav,
+article,
+figure,
+ul,
+ol,
+li,
+p,
+search,
+fieldset,
+address,
+hgroup {
   min-width: 0;
 }
 
-/* Exceptions to the blanket `div { min-width: 0 }` above: this file is plain,
+/* Exceptions to the blanket `min-width: 0` above: this file is plain,
    unlayered CSS, which per the Cascade Layers spec always wins over Tailwind's
    layered utilities regardless of specificity (see the DDS import comment in
-   application.css) — so any `min-w-[...]` utility on a <div> is silently
-   canceled unless re-asserted here at a higher specificity than the bare
-   `div` selector above. Affects FacetDropdownComponent's panel (needs a
-   280px floor so its value list doesn't collapse to its trigger's width —
+   application.css) — so any `min-w-[...]` utility on a listed element is
+   silently canceled unless re-asserted here at a higher specificity than the
+   bare element selectors above. Affects FacetDropdownComponent's panel (needs
+   a 280px floor so its value list doesn't collapse to its trigger's width —
    confirmed via live inspection, was rendering ~130px wide) and the footer's
    contact column (needs a 144px floor as a flex item). */
 [data-facet-dropdown-target="panel"] {
@@ -118,5 +129,22 @@ th {
   .uom-ds-footer-copy,
   .uom-ds-footer-link {
     width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .uom-ds-search-results-banner-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .uom-ds-search-results-banner-controls > [data-controller="facet-dropdown"],
+  .uom-ds-search-results-view-toggle {
+    width: 100%;
+  }
+
+  .uom-ds-search-results-view-link {
+    flex: 1 1 50%;
+    justify-content: center;
   }
 }
