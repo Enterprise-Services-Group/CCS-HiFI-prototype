@@ -131,20 +131,3 @@ th {
     width: 100%;
   }
 }
-
-@media (max-width: 479px) {
-  .uom-ds-search-results-banner-controls {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
-  .uom-ds-search-results-banner-controls > [data-controller="facet-dropdown"],
-  .uom-ds-search-results-view-toggle {
-    width: 100%;
-  }
-
-  .uom-ds-search-results-view-link {
-    flex: 1 1 50%;
-    justify-content: center;
-  }
-}

@@ -18,8 +18,9 @@
 // from this same in-memory dataset instead of hitting the network.
 //
 // Known simplifications versus the live app (documented, not accidental):
-// - Result-card/list-row thumbnails use a single generic placeholder icon for
-//   records with no real image, rather than a per-object-type icon.
+// - Records with no real image render no thumbnail block at all (matching
+//   the server index rendering); list-row thumbnails use a single generic
+//   icon rather than the real image.
 // - The rights pill shows its category label without the per-category icon.
 // - The sticky toolbar's "applied filter" chip row is not reproduced —
 //   applied filters are visible inside the Filters modal itself instead.
@@ -342,11 +343,13 @@
   }
 
   function thumbnailHTML(record) {
-    if (record.thumbnail) {
-      const src = record.thumbnail.startsWith("http") ? record.thumbnail : "../" + record.thumbnail.replace(/^\//, "");
-      return `<div class="uom-ds-placeholder-surface w-full"><img src="${escapeHtml(src)}" alt="" class="block w-full" loading="lazy"></div>`;
-    }
-    return `<div class="uom-ds-placeholder-surface flex w-full items-center justify-center" style="aspect-ratio:4/3">${PLACEHOLDER_ICON_SVG}</div>`;
+    // Mirrors ResultCardComponent's index rendering (show_placeholder:false):
+    // a record with no real image gets no thumbnail block at all, not a
+    // generic placeholder — otherwise imageless cards render ~2x taller
+    // than the server's (212px vs 427px for the same record).
+    if (!record.thumbnail) return "";
+    const src = record.thumbnail.startsWith("http") ? record.thumbnail : "../" + record.thumbnail.replace(/^\//, "");
+    return `<div class="uom-ds-placeholder-surface w-full"><img src="${escapeHtml(src)}" alt="" class="block w-full" loading="lazy"></div>`;
   }
 
   function metadataItems(record) {
@@ -369,7 +372,7 @@
           <div class="flex w-full flex-1 flex-col gap-4 p-4">
             <span class="text-[18px] font-semibold leading-[1.5] text-text-primary">${escapeHtml(titleOf(record))}</span>
             ${snippet ? `<p class="line-clamp-3 text-[13px] leading-snug text-text-tertiary [&_mark]:bg-transparent [&_mark]:font-semibold [&_mark]:text-text-brand">${snippet}</p>` : ""}
-            ${metadataItems(record).length ? `<div class="flex flex-col gap-1">${metadataItems(record).map((i) => `<p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">${escapeHtml(i)}</p>`).join("")}</div>` : ""}
+            ${metadataItems(record).length ? `<ul class="flex flex-col gap-1">${metadataItems(record).map((i) => `<li class="text-xs font-semibold uppercase tracking-wider text-text-tertiary">${escapeHtml(i)}</li>`).join("")}</ul>` : ""}
             ${rightsPillHTML(record)}
           </div>
         </a>
@@ -381,9 +384,10 @@
     const snippet = highlightSnippet(record, tokens);
     return `
       <article class="flex w-full items-center gap-4 border-b border-stroke-weaker py-4">
+        ${record.thumbnail ? `
         <a href="${href}" class="block shrink-0" tabindex="-1" aria-hidden="true">
           <div class="uom-ds-placeholder-surface flex size-20 items-center justify-center">${PLACEHOLDER_ICON_SVG}</div>
-        </a>
+        </a>` : ""}
         <div class="flex min-w-0 flex-1 flex-col gap-1">
           <a href="${href}" class="font-sans text-base font-semibold text-text-brand no-underline hover:underline">${escapeHtml(titleOf(record))}</a>
           ${metadataItems(record).length ? `<p class="line-clamp-1 text-sm text-text-tertiary">${escapeHtml(metadataItems(record).join(" · "))}</p>` : ""}
